@@ -22,3 +22,15 @@ def Area(files_directory):
 
 
 def Raman_normalisation():
+
+
+
+
+
+
+
+
+
+    def exicted_wavelength_list (first,last,step):
+    l_x = list(range(first,last+1,step))
+    return (l_x)
