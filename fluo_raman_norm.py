@@ -31,6 +31,28 @@ def Raman_normalisation():
 
 
 
-    def exicted_wavelength_list (first,last,step):
-    l_x = list(range(first,last+1,step))
-    return (l_x)
+  def excited_wavelength_list(first, last, step):
+    # Convertir start, end et step en float
+    first = float(first)
+    last = float(last)
+    step = float(step)
+    
+    # Créer une liste vide pour stocker les nombres
+    l_x = []
+    
+    # Générer la liste de nombres en fonction des types de start, end et step
+    if isinstance(step, int):
+        # Si step est un entier, générer une liste de nombres entiers
+        l_x = list(range(int(first), int(last) + 1, int(step)))
+    else:
+        # Si step est un float, générer une liste de nombres à virgule flottante
+        current = first
+        while current <= last:
+            rounded_current = round(current, 1)
+            if rounded_current.is_integer():
+                l_x.append(int(rounded_current))
+            else:
+                l_x.append(rounded_current)
+            current += step
+    
+    return l_x
