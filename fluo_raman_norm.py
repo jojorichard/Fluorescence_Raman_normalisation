@@ -96,7 +96,7 @@ def Area(files_directory):
     df = pd.read_excel(files_directory)
     raman = df.loc[(df['EmWl [nm]'] >= 371) & (df['EmWl [nm]'] <= 428)]
     dif = np.diff(raman['EmWl [nm]'])
-    l_ex = (exicted_wavelength_list(250,600,10))  # Ajouter partie qui demande les bornes et le pas
+    l_ex = (excited_wavelength_list(250,600,10))  # Ajouter partie qui demande les bornes et le pas
     collumn = {}
     Arp = pd.DataFrame(columns=[f'Int({i})' for i in l_ex], index=[0])
     print(df)
@@ -121,7 +121,7 @@ def Raman_normalisation(files_directory, Area):
     df = pd.read_excel(files_directory)
     columns_of_interest = df.columns[df.columns.str.startswith('Int')]  
     normalised = df.copy()
-    normalised[columns_of_interest] = normalised[columns_of_interest].div(A.iloc[0])
+    normalised[columns_of_interest] = normalised[columns_of_interest].div(Area.iloc[0])
     normalised.to_excel('normalised_Raman.xlsx', index=False)
     return normalised    
 
