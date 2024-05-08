@@ -1,6 +1,6 @@
-import numpy as np
+import numpy as np    
 import pandas as pd
-371 428
+
 def Area(files_directory):
     '''
     Calculate the Area of the water Raman peak for each exitation wavelenght.
@@ -10,49 +10,43 @@ def Area(files_directory):
 
     Returns: Arp the Area of the water Raman peak calculated using the trap
     '''
-    df = pd.read_csv(files_directory)
-    dif = np.diff(df['EmWl [nm]'])
+    df = pd.read_excel(files_directory)
+    raman = df.loc[(df['EmWl [nm]'] >= 371) & (df['EmWl [nm]'] <= 428)]
+    dif = np.diff(raman['EmWl [nm]'])
+    l_ex = (exicted_wavelength_list(250,600,10))  # Ajouter partie qui demande les bornes et le pas
+    collumn = {}
+    Arp = pd.DataFrame(columns=[f'Int({i})' for i in l_ex], index=[0])
+    print(df)
+    print(Arp)
 
     for i in l_ex:
-
-        fluo_avg = (df[f'Int{str(l_ex)}))'][:-1] + df[f'Int{str(l_ex)}))'][1:]) / 2
-        Arp = np.sum(dif * lem_avg)
-        print(f'The Area of the water Raman peak is: {Arp}')
+        fluo_avg = (raman["Int(" + str(i) + ")"][:-1] + raman["Int(" + str(i) + ")"][1:]) / 2
+        A = np.sum(dif[0] * fluo_avg)
+        print(f'The Area of the water Raman peak at {i} nm is: {A}')
+        Arp[f'Int({i})'] = A
     return Arp
 
-
-def Raman_normalisation():
-
-
-
-
-
-
-
-
-
-  def excited_wavelength_list(first, last, step):
-    # Convertir start, end et step en float
-    first = float(first)
-    last = float(last)
-    step = float(step)
+def Raman_normalisation(files_directory, Area):
+    '''
+    Normalise all the fluorecence values in each exitation waveleght with the area of the Raman peak computed in the Area function
     
-    # Créer une liste vide pour stocker les nombres
-    l_x = []
+    Args: files_directory the files directory of the spectroscopy matrice, Area a dataframe containing the wavelenght exitation in each collumn and the associaced Raman Area
     
-    # Générer la liste de nombres en fonction des types de start, end et step
-    if isinstance(step, int):
-        # Si step est un entier, générer une liste de nombres entiers
-        l_x = list(range(int(first), int(last) + 1, int(step)))
-    else:
-        # Si step est un float, générer une liste de nombres à virgule flottante
-        current = first
-        while current <= last:
-            rounded_current = round(current, 1)
-            if rounded_current.is_integer():
-                l_x.append(int(rounded_current))
-            else:
-                l_x.append(rounded_current)
-            current += step
-    
-    return l_x
+    Returns: A new files containing the normalised matrice
+    '''
+
+    df = pd.read_excel(files_directory)
+    columns_of_interest = df.columns[df.columns.str.startswith('Int')]  
+    normalised = df.copy()
+    normalised[columns_of_interest] = normalised[columns_of_interest].div(A.iloc[0])
+    normalised.to_excel('normalised_Raman.xlsx', index=False)
+    return normalised    
+
+def exicted_wavelength_list (first,last,step):
+    l_x = list(range(first,last+1,step))
+    return (l_x)
+
+
+def fluo_raman_norm(files_directory):
+    Area = Area(files_directory)
+    Raman_normalisation(files_directory, Area)
