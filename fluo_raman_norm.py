@@ -42,9 +42,7 @@ def Raman_normalisation(files_directory, Area):
     normalised.to_excel('normalised_Raman.xlsx', index=False)
     return normalised    
 
-def exicted_wavelength_list (first,last,step):
-    l_x = list(range(first,last+1,step))
-    return (l_x)
+
 
 
 def fluo_raman_norm(files_directory):
