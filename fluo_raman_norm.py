@@ -129,5 +129,5 @@ def Raman_normalisation(files_directory, Area):
 
 
 def fluo_raman_norm(files_directory):
-    Area = Area(files_directory)
-    Raman_normalisation(files_directory, Area)
+    A = Area(files_directory)
+    Raman_normalisation(files_directory, A)
