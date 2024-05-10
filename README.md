@@ -30,7 +30,7 @@ If you need jupyter lab, install it
 ## 🛠️ Development installation
 Initialize Git (only for the first time).
 
-Note: You should have create an empty repository on https://github.com:~~pschwllr/fluo~~.
+Note: You should have create an empty repository on https://github.com:____pschwllr/fluo____.
 
 ```
 git init
@@ -38,7 +38,7 @@ git add *
 git add .*
 git commit -m "Initial commit" 
 git branch -M main
-git remote add origin git@github.com:~~pschwllr/fluo~~.git 
+git remote add origin git@github.com:____pschwllr/fluo____.git 
 git push -u origin main
 ```
 
@@ -47,13 +47,25 @@ Then add and commit changes as usual.
 To install the package, run
 
 ```
-(fluo) $ pip install -e ".~~[test,doc]"~~
+(fluo) $ pip install -e ".___[test,doc]"___
 ```
 
 ## Run test and coverage
-The
+
+```
+(conda_env) $ pip install tox
+(conda_env) $ tox
+```
+
+
 ## Generate coverage badge
-The
+Works after running tox
+
+```
+(conda_env) $ pip install "genbadge[coverage]"
+(conda_env) $ genbadge coverage -i coverage.xml
+```
+
 ### 📫☎️ Reach us 👩‍💻👨‍💻
 The
 💫
