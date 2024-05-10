@@ -43,12 +43,12 @@ To install the package, run
 ```
 (fluo) $ pip install -e ".___[test,doc]"___
 ```
-## Run test and coverage
+## 🔎 Run test and coverage
 ```
 (conda_env) $ pip install tox
 (conda_env) $ tox
 ```
-## Generate coverage badge
+## 🔌 Generate coverage badge
 Works after running tox
 ```
 (conda_env) $ pip install "genbadge[coverage]"
@@ -56,7 +56,9 @@ Works after running tox
 ```
 ## 📫☎️ Reaching us 👩‍💻👨‍💻
 Justine Serra : justine.serratosio@gmail.com
+
 Coralie Reuse : coralie.reuse@gmail.com
+
 Jonas Richard : jonas.richard@hotmail.fr
 ## ✒️ License
 ![LICENSE](https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/LICENSE)
@@ -68,8 +70,6 @@ Jonas Richard : jonas.richard@hotmail.fr
 🗯️
 🧭
 🚨
-🔌
 💡
- 	🔎
-   	📄
+ 📄
    
