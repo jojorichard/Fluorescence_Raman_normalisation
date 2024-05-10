@@ -18,18 +18,15 @@ conda create -n fluo python=3.10
 ```
 conda activate fluo
 ```
-
 If you need jupyter lab, install it
 
 ```
 (ch200) $ pip install jupyterlab
 ```
-
 ## 🛠️ Development installation
 Initialize Git (only for the first time).
 
 Note: You should have create an empty repository on https://github.com:____pschwllr/fluo____.
-
 ```
 git init
 git add * 
@@ -39,31 +36,23 @@ git branch -M main
 git remote add origin git@github.com:____pschwllr/fluo____.git 
 git push -u origin main
 ```
-
 Then add and commit changes as usual.
 
 To install the package, run
-
 ```
 (fluo) $ pip install -e ".___[test,doc]"___
 ```
-
 ## Run test and coverage
-
 ```
 (conda_env) $ pip install tox
 (conda_env) $ tox
 ```
-
-
 ## Generate coverage badge
 Works after running tox
-
 ```
 (conda_env) $ pip install "genbadge[coverage]"
 (conda_env) $ genbadge coverage -i coverage.xml
 ```
-
 ## 📫☎️ Reach us 👩‍💻👨‍💻
 The
 
