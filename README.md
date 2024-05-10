@@ -71,7 +71,8 @@ Works after running tox
 The
 
 ## ✒️ License
-[LICENSE](
+![LICENSE](https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/LICENSE)
+
 💫
 💦
 💥
