@@ -9,6 +9,8 @@ The
 ## 🔥Usage
 The
 ## ⚙️ Installation
+J'ai juste recopier l'exemple du prof, faudra voir si on ajoute / enlève des trucs ou pas !!!
+
 Create a new environment, you may also give the environment a different name.
 
 ```
@@ -26,7 +28,28 @@ If you need jupyter lab, install it
 ```
 
 ## 🛠️ Development installation
-The
+Initialize Git (only for the first time).
+
+Note: You should have create an empty repository on https://github.com:~~pschwllr/fluo~~.
+
+```
+git init
+git add * 
+git add .*
+git commit -m "Initial commit" 
+git branch -M main
+git remote add origin git@github.com:~~pschwllr/fluo~~.git 
+git push -u origin main
+```
+
+Then add and commit changes as usual.
+
+To install the package, run
+
+```
+(fluo) $ pip install -e ".~~[test,doc]"~~
+```
+
 ## Run test and coverage
 The
 ## Generate coverage badge
