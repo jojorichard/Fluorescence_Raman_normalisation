@@ -1,4 +1,4 @@
-![Cover image](https://www.pexels.com/fr-fr/photo/lumineux-leger-circulation-trafic-7062223/)
+![](https://www.pexels.com/fr-fr/photo/lumineux-leger-circulation-trafic-7062223/)
 
 
 # Fluorescence Raman normalisation
