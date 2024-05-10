@@ -10,7 +10,11 @@
 💫 💦 💥 💯 🗯️ 🧭 🚨 💡 📄
 
 ## 🎯 Content in a nutshell
-The
+This project has for aim to analyse the fluorescence of water thanks to fluorescence spectroscopy. This special type of spectroscopy is based on the different excited wavelengths emitted by the solution. The results will be analysed thanks to the different Raman cross section of water which will vary depending on the content of the solution. 
+
+The following program will normalize the values thanks to the Raman cross section of water which will serve as a neutral measure. The normalisation area will be calculated for the excited wavelengths of choice and the graphs will be plotted and provided if wanted. 
+
+This code will optimize the fluorescence values analysis by directly providing the normalisation area and graphs. 
 ## 🔥Usage
 Concretley, your file (Excel for now) will be entered in the program by sliding it in to avoid lecture complications. Few questions will be asked throughout the process as to make it interactive and include personal preferences, from which the answers are required. For instance, the first and last measured excited wavelength or the step of the apparatus must necessarily and precisely be filled. Later, on the graphs will be plotted at one’s preference.  
 ## ⚙️ Installation
@@ -24,7 +28,7 @@ conda activate fluo
 If you need jupyter lab, install it
 
 ```
-(ch200) $ pip install jupyterlab
+(fluo) $ pip install jupyterlab
 ```
 ## 🛠️ Development installation
 Initialize Git (only for the first time).
