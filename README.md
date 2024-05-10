@@ -1,4 +1,4 @@
-# ⚡ Fluorescence Raman normalisation ⚡
+# ⚡ Fluorescence spectroscopy analysis ⚡
 
 ![picture](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/22fd9a95-884a-421d-abfe-041311cd3af8)
 ![Capture d'écran 2024-05-10 203345](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/6c230a04-e5e5-43e0-9218-f44ae51f7aee)
@@ -12,7 +12,7 @@
 ## 🎯 Content in a nutshell
 The
 ## 🔥Usage
-The
+Concretley, your file (Excel for now) will be entered in the program by sliding it in to avoid lecture complications. Few questions will be asked throughout the process as to make it interactive and include personal preferences, from which the answers are required. For instance, the first and last measured excited wavelength or the step of the apparatus must necessarily and precisely be filled. Later, on the graphs will be plotted at one’s preference.  
 ## ⚙️ Installation
 Create a new environment, you may also give the environment a different name.
 ```
