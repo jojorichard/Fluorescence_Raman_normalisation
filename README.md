@@ -3,13 +3,14 @@
 ![picture](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/22fd9a95-884a-421d-abfe-041311cd3af8)
 ![Capture d'écran 2024-05-10 203345](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/6c230a04-e5e5-43e0-9218-f44ae51f7aee)
 
+**J'ai juste recopier l'exemple du prof, faudra voir si on ajoute / enlève des trucs ou pas !!!**
+
 
 ## 🎯 Content in a nutshell
 The
 ## 🔥Usage
 The
 ## ⚙️ Installation
-J'ai juste recopier l'exemple du prof, faudra voir si on ajoute / enlève des trucs ou pas !!!
 
 Create a new environment, you may also give the environment a different name.
 
@@ -66,8 +67,11 @@ Works after running tox
 (conda_env) $ genbadge coverage -i coverage.xml
 ```
 
-### 📫☎️ Reach us 👩‍💻👨‍💻
+## 📫☎️ Reach us 👩‍💻👨‍💻
 The
+
+## ✒️ License
+[LICENSE](
 💫
 💦
 💥
@@ -79,4 +83,4 @@ The
 💡
  	🔎
    	📄
-     	✒️
+   
