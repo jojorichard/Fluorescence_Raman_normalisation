@@ -7,6 +7,7 @@
 
 **J'ai mis en _ _ _évidence_ _ _ comme ça ce qu'il faudra encore modifier / adapter**
 
+💫 💦 💥 💯 🗯️ 🧭 🚨 💡 📄
 
 ## 🎯 Content in a nutshell
 The
@@ -63,14 +64,3 @@ Coralie Reuse : coralie.reuse23@gmail.com
 Jonas Richard : jonas.richard@hotmail.fr
 ## ✒️ License
 This code is published under the ![MIT LICENSE](https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/LICENSE)
-
-💫
-💦
-💥
-💯
-🗯️
-🧭
-🚨
-💡
- 📄
-   
