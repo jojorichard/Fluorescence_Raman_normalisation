@@ -17,7 +17,8 @@ conda create -n fluo python=3.10
 
 ```
 conda activate fluo
-``` 
+```
+
 If you need jupyter lab, install it
 
 ```
