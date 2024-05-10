@@ -10,7 +10,12 @@ The
 The
 ## ⚙️ Installation
 The
+
 If you need jupyter lab, install it
+
+'''
+(ch200) $ pip install jupyterlab
+'''
 
 ## 🛠️ Development installation
 The
