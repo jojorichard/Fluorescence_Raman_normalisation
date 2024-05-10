@@ -28,21 +28,21 @@ If you need jupyter lab, install it
 ## 🛠️ Development installation
 Initialize Git (only for the first time).
 
-Note: You should have create an empty repository on https://github.com:____pschwllr/fluo____.
+Note: You should have create an empty repository on https://github.com:_ _ _pschwllr/fluo_ _ _.
 ```
 git init
 git add * 
 git add .*
 git commit -m "Initial commit" 
 git branch -M main
-git remote add origin git@github.com:____pschwllr/fluo____.git 
+git remote add origin git@github.com:_ _ _pschwllr/fluo_ _ _.git 
 git push -u origin main
 ```
 Then add and commit changes as usual.
 
 To install the package, run
 ```
-(fluo) $ pip install -e ".___[test,doc]"___
+(fluo) $ pip install -e "._ _ _[test,doc]"_ _ _
 ```
 ## 🔎 Run test and coverage
 ```
