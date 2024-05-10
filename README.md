@@ -4,7 +4,8 @@
 ![Capture d'écran 2024-05-10 203345](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/6c230a04-e5e5-43e0-9218-f44ae51f7aee)
 
 **J'ai juste recopier l'exemple du prof, faudra voir si on ajoute / enlève des trucs ou pas !!!**
-**J'ai mis en ___évidence___ comme ça ce qu'il faudra encore modifier / adapter**
+
+**J'ai mis en _ _ _évidence_ _ _ comme ça ce qu'il faudra encore modifier / adapter**
 
 
 ## 🎯 Content in a nutshell
