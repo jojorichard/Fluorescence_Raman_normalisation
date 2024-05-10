@@ -7,7 +7,7 @@
 
 **J'ai mis en _ _ _évidence_ _ _ comme ça ce qu'il faudra encore modifier / adapter**
 
-💫 💦 💥 💯 🗯️ 🧭 🚨 💡 📄
+💫 💦 💥 💯 🗯️ 🧭 🚨 💡 
 
 ## 🎯 Content in a nutshell
 This project has for aim to analyse the fluorescence of water thanks to fluorescence spectroscopy. This special type of spectroscopy is based on the different excited wavelengths emitted by the solution. The results will be analysed thanks to the different Raman cross section of water which will vary depending on the content of the solution. 
@@ -60,6 +60,8 @@ Works after running tox
 (conda_env) $ pip install "genbadge[coverage]"
 (conda_env) $ genbadge coverage -i coverage.xml
 ```
+## 📄 Testing
+Models and results can be found _ _ _here_ _ _. -> mettre un lien qui renvoie à un document à télécharcher
 ## 📫☎️ Reaching us 👩‍💻👨‍💻
 Justine Serra : justine.serratosio@gmail.com
 
