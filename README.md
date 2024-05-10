@@ -58,11 +58,11 @@ Works after running tox
 ## 📫☎️ Reaching us 👩‍💻👨‍💻
 Justine Serra : justine.serratosio@gmail.com
 
-Coralie Reuse : coralie.reuse@gmail.com
+Coralie Reuse : coralie.reuse23@gmail.com
 
 Jonas Richard : jonas.richard@hotmail.fr
 ## ✒️ License
-![LICENSE](https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/LICENSE)
+This code is published under the ![MIT LICENSE](https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/LICENSE)
 
 💫
 💦
