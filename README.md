@@ -9,8 +9,15 @@ The
 ## 🔥Usage
 The
 ## ⚙️ Installation
-The
+Create a new environment, you may also give the environment a different name.
 
+```
+conda create -n fluo python=3.10 
+```
+
+```
+conda activate fluo
+``` 
 If you need jupyter lab, install it
 
 ```
