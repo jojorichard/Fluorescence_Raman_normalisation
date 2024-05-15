@@ -90,27 +90,27 @@ def excited_wavelength_list(first, last, step):
 
 
 class ExcelFileUploaderAndConverter:
-"""
-A class to upload and convert Excel files using a tkinter GUI.
-
-Attributes:
-- root (tk.Tk): The root tkinter window.
-- file_contents (pandas.DataFrame): The content of the uploaded Excel file.
-- uploaded_file: (None): Information about the uploaded file.
-- file_label (tk.Label): A label widget for displaying instructions to select a file.
-- upload_button (tk.Button): A button widget to trigger the file upload process.
-- output_text (tk.Text): A text widget to display the content of the uploaded file.
-- success_message_label (tk.Label): A label widget to display success messages.
-- error_message_label (tk.Label): A label widget to display error messages.
-"""
+    """
+    A class to upload and convert Excel files using a tkinter GUI.
+    
+    Attributes:
+    - root (tk.Tk): The root tkinter window.
+    - file_contents (pandas.DataFrame): The content of the uploaded Excel file.
+    - uploaded_file: (None): Information about the uploaded file.
+    - file_label (tk.Label): A label widget for displaying instructions to select a file.
+    - upload_button (tk.Button): A button widget to trigger the file upload process.
+    - output_text (tk.Text): A text widget to display the content of the uploaded file.
+    - success_message_label (tk.Label): A label widget to display success messages.
+    - error_message_label (tk.Label): A label widget to display error messages.
+    """
 
     def __init__(self, root):
-    """
-    Initializes the ExcelFileUploaderAndConverter instance.
-
-    Parameters:
-    - root (tk.Tk): The root tkinter window.
-    """
+        """
+        Initializes the ExcelFileUploaderAndConverter instance.
+    
+        Parameters:
+        - root (tk.Tk): The root tkinter window.
+        """
         # Initialize the class with a tkinter root window
         self.root = root
         self.file_contents = None
@@ -136,9 +136,9 @@ Attributes:
         self.error_message_label.pack()
 
     def _handle_upload(self):
-    """
-    Handles the file upload process triggered by the 'Upload' button click.
-    """
+        """
+        Handles the file upload process triggered by the 'Upload' button click.
+        """
 
         # Open a file dialog to select an Excel file
         file_path = filedialog.askopenfilename(filetypes=[("Excel files", "*.xlsx;*.xls")])
@@ -165,18 +165,18 @@ Attributes:
 
 
     def _process_excel_file(self):
-    """
-    Processes the uploaded Excel file and displays its content in the output_text widget.
-    """
+        """
+        Processes the uploaded Excel file and displays its content in the output_text widget.
+        """
 
         # Clear the output_text widget and display the content of the uploaded Excel file
         self.output_text.delete("1.0", tk.END)
         self.output_text.insert(tk.END, str(self.file_contents))
 
     def _display_success_message(self):
-    """
-    Displays a success message in the success_message_label widget.
-    """
+        """
+        Displays a success message in the success_message_label widget.
+        """
         # Configure the success_message_label widget to display a success message
         self.success_message_label.config(text="Upload successful.", fg="green")
 
@@ -185,9 +185,9 @@ Attributes:
     
 
     def _display_error_message(self):
-    """
-    Displays an error message in the error_message_label widget.
-    """
+        """
+        Displays an error message in the error_message_label widget.
+        """
 
         # Configure the error_message_label widget to display an error message
         self.error_message_label.config(text="Upload unsuccessful, please try again.", fg="red")
@@ -196,9 +196,9 @@ Attributes:
         self.success_message_label.config(text="")
 
 def main():
-"""
-The main function to create the tkinter window and instantiate the ExcelFileUploaderAndConverter class.
-"""
+    """
+    The main function to create the tkinter window and instantiate the ExcelFileUploaderAndConverter class.
+    """
 
     # Create the main tkinter window
     root = tk.Tk()
