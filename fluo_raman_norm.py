@@ -83,65 +83,67 @@ def excited_wavelength_list(first, last, step):
             current += step
     
     return l_x
-#excel file dataframe
+#excel file dataframe, file stored under the variable "file_contents"
 import io
 import pandas as pd
-import ipywidgets as widgets
-from IPython.display import display
+import tkinter as tk
+from tkinter import filedialog
 
 class ExcelFileUploaderAndConverter:
-    def __init__(self):
+    def __init__(self, root):
+        self.root = root
         self.file_contents = None
         self.uploaded_file = None
-        self.file_widget = widgets.FileUpload(accept=".xlsx,.xls", multiple=False, description="Select a file")
-        self.upload_button = widgets.Button(description="Upload")
-        self.upload_button.on_click(self._handle_upload)
-        self.output_widget = widgets.Output()
-        self.message_widget = widgets.HTML(value="<p style='color: gray; font-size: 0.9em;'>Once the file is selected, please click on the 'Upload' button.</p>")
-        self.success_message_widget = widgets.HTML(value="")
-        self.error_message_widget = widgets.HTML(value="")
 
-    def _handle_upload(self, btn):
-        if self.file_widget.value:
+        self.file_label = tk.Label(self.root, text="Select an Excel file:")
+        self.file_label.pack()
+
+        self.upload_button = tk.Button(self.root, text="Upload", command=self._handle_upload)
+        self.upload_button.pack()
+
+        self.output_text = tk.Text(self.root)
+        self.output_text.pack()
+
+        self.success_message_label = tk.Label(self.root, text="")
+        self.success_message_label.pack()
+
+        self.error_message_label = tk.Label(self.root, text="")
+        self.error_message_label.pack()
+
+    def _handle_upload(self):
+        file_path = filedialog.askopenfilename(filetypes=[("Excel files", "*.xlsx;*.xls")])
+        if file_path:
             try:
-                if isinstance(self.file_widget.value, tuple):
-                    file_info = self.file_widget.value[0]
-                else:
-                    file_info = next(iter(self.file_widget.value.values()))
-                self.file_contents = file_info['content']
-                self.uploaded_file = file_info
+                self.file_contents = pd.read_excel(file_path)
                 self._process_excel_file()
                 self._display_success_message()
             except Exception as e:
                 self._display_error_message()
-                with self.output_widget:
-                    self.output_widget.clear_output()
-                    print("An error occurred during uploading:", str(e))
+                self.output_text.insert(tk.END, f"An error occurred during uploading: {str(e)}\n")
         else:
-            with self.output_widget:
-                self.output_widget.clear_output()
-                print("Please upload an Excel file first.")
+            self.output_text.insert(tk.END, "Please select an Excel file.\n")
 
     def _process_excel_file(self):
-        excel_content = pd.read_excel(io.BytesIO(self.file_contents))
-        
-        with self.output_widget:
-            self.output_widget.clear_output()
-            display(excel_content)
+        self.output_text.delete("1.0", tk.END)
+        self.output_text.insert(tk.END, str(self.file_contents))
 
     def _display_success_message(self):
-        self.success_message_widget.value = "<p style='color: green; font-size: 0.9em;'>Upload successful.</p>"
-        self.error_message_widget.value = ""
+        self.success_message_label.config(text="Upload successful.", fg="green")
+        self.error_message_label.config(text="")
 
     def _display_error_message(self):
-        self.error_message_widget.value = "<p style='color: red; font-size: 0.9em;'>Upload unsuccessful, please try again.</p>"
-        self.success_message_widget.value = ""
+        self.error_message_label.config(text="Upload unsuccessful, please try again.", fg="red")
+        self.success_message_label.config(text="")
 
-    def render(self):
-        display(widgets.VBox([self.file_widget, self.message_widget, self.upload_button, self.success_message_widget, self.error_message_widget, self.output_widget]))
+def main():
+    root = tk.Tk()
+    root.title("Excel File Uploader and Converter")
+    uploader = ExcelFileUploaderAndConverter(root)
+    uploader.root.mainloop()
 
-excel_uploader_and_converter = ExcelFileUploaderAndConverter()
-excel_uploader_and_converter.render()
+if __name__ == "__main__":
+    main()
+
 
 
 
