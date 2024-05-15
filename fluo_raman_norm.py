@@ -17,9 +17,6 @@ else:
 step=input("Please insert the measure step of your spectroscopy machine (no unit needed):")
 
 
-
-
-
 def conversion_coma_point(step):
     """
     This fonction converts the coma in a point so that python recognises the number under the float form.
