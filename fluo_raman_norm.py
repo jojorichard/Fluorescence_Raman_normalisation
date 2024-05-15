@@ -111,19 +111,24 @@ Attributes:
     Parameters:
     - root (tk.Tk): The root tkinter window.
     """
+        # Initialize the class with a tkinter root window
         self.root = root
         self.file_contents = None
         self.uploaded_file = None
 
+        # Create a label widget to prompt the user to select an Excel file
         self.file_label = tk.Label(self.root, text="Select an Excel file:")
         self.file_label.pack()
 
+        # Create a button widget for uploading files, with a command to call _handle_upload method
         self.upload_button = tk.Button(self.root, text="Upload", command=self._handle_upload)
         self.upload_button.pack()
 
+        # Create a text widget to display the content of the uploaded Excel file
         self.output_text = tk.Text(self.root)
         self.output_text.pack()
 
+        # Create label widgets for displaying success and error messages
         self.success_message_label = tk.Label(self.root, text="")
         self.success_message_label.pack()
 
@@ -134,16 +139,28 @@ Attributes:
     """
     Handles the file upload process triggered by the 'Upload' button click.
     """
+
+        # Open a file dialog to select an Excel file
         file_path = filedialog.askopenfilename(filetypes=[("Excel files", "*.xlsx;*.xls")])
         if file_path:
             try:
+
+                # Read the selected Excel file and store its content in self.file_contents
                 self.file_contents = pd.read_excel(file_path)
+
+                # Process the Excel file content
                 self._process_excel_file()
+
+                # Display success message
                 self._display_success_message()
             except Exception as e:
+
+                # Display error message if an error occurs during file processing
                 self._display_error_message()
                 self.output_text.insert(tk.END, f"An error occurred during uploading: {str(e)}\n")
         else:
+
+            # Display a message if no file is selected
             self.output_text.insert(tk.END, "Please select an Excel file.\n")
 
 
@@ -151,6 +168,8 @@ Attributes:
     """
     Processes the uploaded Excel file and displays its content in the output_text widget.
     """
+
+        # Clear the output_text widget and display the content of the uploaded Excel file
         self.output_text.delete("1.0", tk.END)
         self.output_text.insert(tk.END, str(self.file_contents))
 
@@ -158,7 +177,10 @@ Attributes:
     """
     Displays a success message in the success_message_label widget.
     """
+        # Configure the success_message_label widget to display a success message
         self.success_message_label.config(text="Upload successful.", fg="green")
+
+        # Clear the error message
         self.error_message_label.config(text="")
     
 
@@ -166,19 +188,30 @@ Attributes:
     """
     Displays an error message in the error_message_label widget.
     """
+
+        # Configure the error_message_label widget to display an error message
         self.error_message_label.config(text="Upload unsuccessful, please try again.", fg="red")
+
+        # Clear the success message
         self.success_message_label.config(text="")
 
 def main():
 """
 The main function to create the tkinter window and instantiate the ExcelFileUploaderAndConverter class.
 """
+
+    # Create the main tkinter window
     root = tk.Tk()
     root.title("Excel File Uploader and Converter")
+
+    # Instantiate the ExcelFileUploaderAndConverter class with the root window
     uploader = ExcelFileUploaderAndConverter(root)
+
+    # Run the tkinter event loop
     uploader.root.mainloop()
 
 if __name__ == "__main__":
+    # Call the main function when the script is executed
     main()
 
 
