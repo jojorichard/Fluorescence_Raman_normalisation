@@ -7,7 +7,7 @@
 **J'ai mis en _ _ _évidence_ _ _ comme ça ce qu'il faudra encore modifier / adapter**
 
 💫 💦 💥 💯 🗯️ 🧭 🚨 ☎️ 👩‍💻 👨‍💻
-📝📉📊📌📍✂️📏
+📝📉📊📌📍✂️📏 ▶
 
 ## 🎯 Content in a nutshell
 This project has for aim to analyse the fluorescence of water thanks to fluorescence spectroscopy. This special type of spectroscopy is based on the different excited wavelengths emitted by the solution. The results will be analysed thanks to the different Raman cross section of water which will vary depending on the content of the solution. 
@@ -90,7 +90,7 @@ excited_wavelength_list(first, last, step)
 ```   
 The arguments of the functions are the following and are asked beforehand to the user: the first and last excited wavelengths values measure and the step of the spectroscopy machine.
 This function also takes into consideration the different types of values (only one decimal after the point, converts the float values ".0" in int) to ensure that the list contains the exact same values than in the excel file.
-### 👩‍💻 Windows to upload the excel file (upload button)
+### ▶ Windows to upload the excel file (upload button)
 Initialize the upload of the excel file by browsing through the user's computer through an window and upload button.
 ```
 __init__(self, root)
@@ -103,12 +103,15 @@ It is important to note that this function is the first one of the follwing clas
 ```
 class ExcelFileUploaderAndConverter
 ```
-### Name of the function
-The function in on sentence
+### 💯 Excel upload
+This function handles the file upload process triggered by the 'Upload' button click created by the above function.
 ```
-the code to copy paste
+_handle_upload(self)
 ```   
-Details of the function
+The argument of the function is self which is a reference to the current instance of the class (ExcelFileUploaderAndConverter).
+The function also displays several message changing depending on the possible events of the uploading process.
+It is important to note that this function is the second of the class (ExcelFileUploaderAndConverter).
+
 ### Name of the function
 The function in on sentence
 ```
