@@ -2,6 +2,9 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.graph_objs as go
+import io
+import tkinter as tk
+from tkinter import filedialog
 
 #Initial condition
 a=input("Are your values in nanometers? If yes, write Yes, if not write No:")
@@ -83,14 +86,31 @@ def excited_wavelength_list(first, last, step):
             current += step
     
     return l_x
-#excel file dataframe, file stored under the variable "file_contents"
-import io
-import pandas as pd
-import tkinter as tk
-from tkinter import filedialog
+#excel file dataframe, file stored under the variable "file_contents
+
 
 class ExcelFileUploaderAndConverter:
+"""
+A class to upload and convert Excel files using a tkinter GUI.
+
+Attributes:
+- root (tk.Tk): The root tkinter window.
+- file_contents (pandas.DataFrame): The content of the uploaded Excel file.
+- uploaded_file: (None): Information about the uploaded file.
+- file_label (tk.Label): A label widget for displaying instructions to select a file.
+- upload_button (tk.Button): A button widget to trigger the file upload process.
+- output_text (tk.Text): A text widget to display the content of the uploaded file.
+- success_message_label (tk.Label): A label widget to display success messages.
+- error_message_label (tk.Label): A label widget to display error messages.
+"""
+
     def __init__(self, root):
+    """
+    Initializes the ExcelFileUploaderAndConverter instance.
+
+    Parameters:
+    - root (tk.Tk): The root tkinter window.
+    """
         self.root = root
         self.file_contents = None
         self.uploaded_file = None
@@ -111,6 +131,9 @@ class ExcelFileUploaderAndConverter:
         self.error_message_label.pack()
 
     def _handle_upload(self):
+    """
+    Handles the file upload process triggered by the 'Upload' button click.
+    """
         file_path = filedialog.askopenfilename(filetypes=[("Excel files", "*.xlsx;*.xls")])
         if file_path:
             try:
@@ -123,19 +146,33 @@ class ExcelFileUploaderAndConverter:
         else:
             self.output_text.insert(tk.END, "Please select an Excel file.\n")
 
+
     def _process_excel_file(self):
+    """
+    Processes the uploaded Excel file and displays its content in the output_text widget.
+    """
         self.output_text.delete("1.0", tk.END)
         self.output_text.insert(tk.END, str(self.file_contents))
 
     def _display_success_message(self):
+    """
+    Displays a success message in the success_message_label widget.
+    """
         self.success_message_label.config(text="Upload successful.", fg="green")
         self.error_message_label.config(text="")
+    
 
     def _display_error_message(self):
+    """
+    Displays an error message in the error_message_label widget.
+    """
         self.error_message_label.config(text="Upload unsuccessful, please try again.", fg="red")
         self.success_message_label.config(text="")
 
 def main():
+"""
+The main function to create the tkinter window and instantiate the ExcelFileUploaderAndConverter class.
+"""
     root = tk.Tk()
     root.title("Excel File Uploader and Converter")
     uploader = ExcelFileUploaderAndConverter(root)
