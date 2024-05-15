@@ -96,9 +96,8 @@ Initialize the upload of the excel file by browsing through the user's computer 
 __init__(self, root)
 ```
 The arguments of the function are defined as follows:
-
-    self: A reference to the current instance of the class.
-    root: An instance of the tkinter.Tk class representing the root tkinter window.
+self: A reference to the current instance of the class.
+root: An instance of the tkinter.Tk class representing the root tkinter window.
 It is important to note that this function is the first one of the follwing class:
 ```
 class ExcelFileUploaderAndConverter
