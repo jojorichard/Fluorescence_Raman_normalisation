@@ -18,15 +18,16 @@ step=input("Please insert the measure step of your spectroscopy machine (no unit
 
 
 
-"""
-This fonction converts the coma in a point so that python recognises the number under the float form.
 
-Parameters: the step previously entered.
-
-Returns: the initial step if it is an integer or in the float form or the step converted in float.
-"""
 
 def conversion_coma_point(step):
+    """
+    This fonction converts the coma in a point so that python recognises the number under the float form.
+    
+    Parameters: the step previously entered.
+    
+    Returns: the initial step if it is an integer or in the float form or the step converted in float.
+    """
     if "," in step:
         step = step.replace(",", ".")
         return step
@@ -52,17 +53,20 @@ if first>last:
 
 
 
-"""
-This fonction creates a list with excited wavelengths in terms of the step, from the first value and last 
-entered value. It consists of two main parts: the first if the step is an integer, the other if the step ia a float.
 
-Parameters: first(int) and last (int) excited wavelengths value.
-
-Returns: a list of excited wavelength value in the exact where the integer values are in the form int, and the 
-others are in the form float.
-"""
 
 def excited_wavelength_list(first, last, step):
+    """
+    This fonction creates a list with excited wavelengths in terms of the step, from the first value and last 
+    entered value. It consists of two main parts: the first if the step is an integer, the other if the step ia a float.
+    
+    Parameters: first(int) and last (int) excited wavelengths value.
+    
+    Returns: a list of excited wavelength value in the exact where the integer values are in the form int, and the 
+    others are in the form float.
+    """
+
+    
     # Conversion first, last, end in float
     first = float(first)
     last = float(last)
