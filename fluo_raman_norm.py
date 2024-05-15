@@ -130,11 +130,11 @@ class ExcelFileUploaderAndConverter:
             display(excel_content)
 
     def _display_success_message(self):
-        self.success_message_widget.value = "<p style='color: green; font-size: 0.9em;'>Uploading successful.</p>"
+        self.success_message_widget.value = "<p style='color: green; font-size: 0.9em;'>Upload successful.</p>"
         self.error_message_widget.value = ""
 
     def _display_error_message(self):
-        self.error_message_widget.value = "<p style='color: red; font-size: 0.9em;'>Uploading unsuccessful, please try again.</p>"
+        self.error_message_widget.value = "<p style='color: red; font-size: 0.9em;'>Upload unsuccessful, please try again.</p>"
         self.success_message_widget.value = ""
 
     def render(self):
@@ -142,10 +142,6 @@ class ExcelFileUploaderAndConverter:
 
 excel_uploader_and_converter = ExcelFileUploaderAndConverter()
 excel_uploader_and_converter.render()
-
-a=input("Are the values displayed correctly (Yes/No)?")
-if a== "no" or "No":
-    raise ValueError ("The program cannot continue due to unfit data. Please upload again your file.")
 
 
 
