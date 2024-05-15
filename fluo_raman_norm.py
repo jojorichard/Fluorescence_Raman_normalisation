@@ -214,9 +214,9 @@ def plot_fluorescence_graph():
     chemin = input("What is the exact file location : ")
     df = pd.read_excel(chemin, sheet_name=None)
     Feuil = input("What is the exact name of the sheet on Excel  : ")
-    X = input("What is the exact name of the excitation wavelength column on Excel : ")
-    wavelength = input("What is the wavelength of interest in nm : ")
-    Y = input("What is the exact name of the emission wavelength column of interest on Excel : ")
+    X = input("What is the exact name of the emission wavelength column on Excel : ")
+    wavelength = input("What is the excitation wavelength of interest in nm : ")
+    Y = input("What is the exact name of the excitation wavelength column of interest on Excel : ")
 
     EmWl = df[Feuil][X]
     Int = df[Feuil][Y]
@@ -331,9 +331,9 @@ def plot_superimposed_graphs():
             chemin = input("What is the exact file location : ")
             for i in range(1, int(number_of_graph) + 1):
                 Feuil = input(f"What is exact name of the sheet on Excel for curve {i}: ")
-                X = input(f"What is the exact name of the excitation wavelength column on Excel for curve {i}: ")
-                wavelength = input(f"What is the wavelength of interest for curve {i} in nm: ")
-                Y = input(f"What is the exact name of the emission wavelength column of interest on Excel for curve {i}: ")
+                X = input(f"What is the exact name of the emission wavelength column on Excel for curve {i}: ")
+                wavelength = input(f"What is the excitation wavelength of interest for curve {i} in nm: ")
+                Y = input(f"What is the exact name of the excitation wavelength column of interest on Excel for curve {i}: ")
                 # Adding the variables to the corresponding list
                 chemins.append(chemin)
                 Feuils.append(Feuil)
