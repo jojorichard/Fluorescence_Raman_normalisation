@@ -64,7 +64,12 @@ Works after running tox
 ## 📄 Testing
 Models and results can be found _ _ _here_ _ _. -> mettre un lien qui renvoie à un document à télécharcher
 ## 💡Functions
-
+### Function to plot a specific excited wavelength on a graph
+This function plots fluorescence data on a standard graph and/or an interactive graph, depending on the users choices.
+```
+def plot_fluorescence_graph():
+```   
+This function prompts the user to provide the file location, the sheet name on Excel, the names of the excitation and emission wavelength columns in an Excel file, and the excitation wavelength of interest in nanometers (nm) to label the curve on the graph. It then plots the fluorescence data on a standard graph and/or an interactive graph using Plotly.
 ## 📫 Reaching us 
 Justine Serra : justine.serratosio@gmail.com
 
