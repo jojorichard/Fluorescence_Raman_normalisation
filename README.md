@@ -83,18 +83,26 @@ conversion_coma_point(step):
 The argument of the function is the step of the spectroscopy machine (given by the user).
 The given step will be analysed and converted if necessary.
 
-### Name of the function
-The function in on sentence
+### 📝 List of the excited wavelengths considering the step of the spectroscopy machine
+The function returns a list of the excited wavelengths depending on the step and its type (float or integer).
 ```
-the code to copy paste
+excited_wavelength_list(first, last, step)
 ```   
-Details of the function
-### Name of the function
-The function in on sentence
+The arguments of the functions are the following and are asked beforehand to the user: the first and last excited wavelengths values measure and the step of the spectroscopy machine.
+This function also takes into consideration the different types of values (only one decimal after the point, converts the float values ".0" in int) to ensure that the list contains the exact same values than in the excel file.
+### 👩‍💻 Windows to upload the excel file (upload button)
+Initialize the upload of the excel file by browsing through the user's computer through an window and upload button.
 ```
-the code to copy paste
-```   
-Details of the function
+__init__(self, root)
+```
+The arguments of the function are defined as follows:
+
+    self: A reference to the current instance of the class.
+    root: An instance of the tkinter.Tk class representing the root tkinter window.
+It is important to note that this function is the first one of the follwing class:
+```
+class ExcelFileUploaderAndConverter
+```
 ### Name of the function
 The function in on sentence
 ```
