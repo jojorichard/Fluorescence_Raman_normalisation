@@ -7,7 +7,7 @@
 **J'ai mis en _ _ _évidence_ _ _ comme ça ce qu'il faudra encore modifier / adapter**
 
 💫 💦 💥 💯 🗯️ 🧭 🚨 ☎️ 👩‍💻 👨‍💻
-📝📉📊📌📍✂️↔️📏
+📝📉📊📌📍✂️📏
 
 ## 🎯 Content in a nutshell
 This project has for aim to analyse the fluorescence of water thanks to fluorescence spectroscopy. This special type of spectroscopy is based on the different excited wavelengths emitted by the solution. The results will be analysed thanks to the different Raman cross section of water which will vary depending on the content of the solution. 
@@ -75,7 +75,7 @@ This function plots a superposition of several excited wavelenghts on a standard
 plot_superimposed_graphs():
 ``` 
 This function prompts the user to input the number of graphs they want to superimpose. It then collects data for each graph, including file location, sheet name on Excel, column names for excitation and emission wavelengths, and the excited wavelengths of interest to label the graph. It plots a static graph and, if wanted, an interactive graph showing the superimposed curves.
-### Conversion coma to point (step)
+### ↔️ Conversion coma to point (step)
 The function converts the coma to a point if the step is given with a coma.
 ```
 conversion_coma_point(step):
