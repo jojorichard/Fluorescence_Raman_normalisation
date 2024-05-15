@@ -7,7 +7,7 @@
 **J'ai mis en _ _ _évidence_ _ _ comme ça ce qu'il faudra encore modifier / adapter**
 
 💫 💦 💥 💯 🗯️ 🧭 🚨 ☎️ 👩‍💻 👨‍💻
-📝📊📌📍✂️↔️📏
+📝📉📊📌📍✂️↔️📏
 
 ## 🎯 Content in a nutshell
 This project has for aim to analyse the fluorescence of water thanks to fluorescence spectroscopy. This special type of spectroscopy is based on the different excited wavelengths emitted by the solution. The results will be analysed thanks to the different Raman cross section of water which will vary depending on the content of the solution. 
@@ -69,7 +69,7 @@ This function plots fluorescence data on a standard graph and/or an interactive 
 plot_fluorescence_graph():
 ```   
 This function prompts the user to provide the file location, the sheet name on Excel, the names of the excitation and emission wavelength columns in an Excel file, and the excitation wavelength of interest in nanometers (nm) to label the curve on the graph. It then plots the fluorescence data on a standard graph and/or an interactive graph using Plotly.
-### 📉 Function to plot several excited wavelength on a graph
+### 📈 Function to plot several excited wavelength on a graph
 This function plots a superposition of several excited wavelenghts on a standard graph and, if wanted, an interactive graph.   
  ```    
 plot_superimposed_graphs():
