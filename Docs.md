@@ -1,6 +1,8 @@
 # ⚡Fluorescence spectroscopy analysis⚡
 
-## 💡Main functions
+## 💡Main features
+
+## 💡Complementary features
 
 ### 📈 Function to plot a specific excited wavelength on a graph
 This function plots fluorescence data on a standard graph and/or an interactive graph, depending on the users choices.
@@ -14,8 +16,6 @@ This function plots a superposition of several excited wavelenghts on a standard
 plot_superimposed_graphs():
 ``` 
 This function prompts the user to input the number of graphs they want to superimpose. It then collects data for each graph, including file location, sheet name on Excel, column names for excitation and emission wavelengths, and the excited wavelengths of interest to label the graph. It plots a static graph and, if wanted, an interactive graph showing the superimposed curves.
-
-## 💡Side functions
 
 ### ↔️ Conversion coma to point (step)
 The function converts the coma to a point if the step is given with a coma.
