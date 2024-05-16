@@ -99,6 +99,7 @@ This function takes onto consideration the response of the user. It starts the e
 It is the sixth function of the class (ExcelFileUploaderAndConverter).
 
 **▶ Windows to upload the excel file (upload button)**
+
 Initialize the upload of the excel file by browsing through the user's computer through an window and upload button.
 ```
 __init__(self, root)
@@ -113,6 +114,7 @@ class ExcelFileUploaderAndConverter
 ```
 
 **💯 Excel upload and dataframe conversion**
+
 This function handles the file upload process triggered by the 'Upload' button click created by the above function and converts the content into dataframe.
 ```
 _handle_upload(self)
@@ -122,6 +124,7 @@ The function also displays several message changing depending on the possible ev
 It is important to note that this function is the second of the class (ExcelFileUploaderAndConverter).
 
 **🔭 Content display**
+
 The function displays the dataframe (converted from the uploaded excel file).
 ```
 _process_excel_file(self)
@@ -131,6 +134,7 @@ It is the third function of the class (ExcelFileUploaderAndConverter).
 Returns the dataframe.
 
 **✅ Successful upload**
+
 The function prints "successful upload" if the upload was well processed.
 ```
 _display_success_message(self)
@@ -140,6 +144,7 @@ It is the fourth function of the class (ExcelFileUploaderAndConverter).
 Returns the successful upload message. 
 
 **❌ Unsuccessful upload**
+
 The function prints "unsuccessful upload" if the upload was not well processed.
 ```
 _display_error_message(self)
