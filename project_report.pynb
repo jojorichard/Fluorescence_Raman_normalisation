@@ -1,1 +1,27 @@
+# ⚡Fluorescence spectroscopy analysis⚡
+
+## ⚙️Project functionality
+
+## 🔎Results
+
+## 🚨Limitations
+- The user is obliged to  fill manually the step, the first and last excited wavelength values. This process was not automated as different apparatus may produce different files and we decided to make it interactive, to be more inclusive, rather than automatically. 
+- For the plot of suppoimposed graphs, a maximum of seven curve was allowed in order to end up with a readable graph. This can be easyl changed if necessary by adding some more colors for the curve in the list named "colors" and by changing the error message to a higher number.
+
+- Some types of files may not be readable --> à voir comment avec Jonas...
+- PIQUE DE RAMAN and its sometimes-strange --> à voir comment avec Jonas...
+- autre problème rencontré
+
+## 💥Challenges
+- Personalisation
+- Include a maximum of cases --> interactive questions to include preferences and more cases.
+- Read different types of files. 
+
+This code is meant to serve a wide range of spectroscopy machines with different file output. To do so, many questions are asked to the user, from which the answers are required, such as: apparatus’s step, first and last excited wavelength values, name of the column in the file, ... Some loops were nevertheless created to enable the user to take "shortcuts" if for example all the datas are located on the exact same file.
+
+Normalization of the values was a crucial step because it is essential to determine the correct Raman cross-section of water. This process allows for the results obtained to be compared accurately with those from any other instrument or experimental setup.
+
+
+
+Furthermore, our aim was to create an interactive code to allow a maximum of personalisation. We, thus, included several customized functionalities when plotting the graph. For instance, superposing various excited wavelengths curves in one graph or only plotting one excited wavelength in particular. Moreover, several graphs with different functionalities are propsed: 2-dimensional and 3-dimensional graphs as well as zooming in a particuliar section of the graph is also possible.
 
