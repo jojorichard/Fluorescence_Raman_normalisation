@@ -7,13 +7,13 @@
 ### 📈 Function to plot a specific excited wavelength on a graph
 This function plots fluorescence data on a standard graph and/or an interactive graph, depending on the users choices.
 ```
-plot_fluorescence_graph():
+plot_fluorescence_graph()
 ```   
 This function prompts the user to provide the excitation wavelength of interest in nanometers (nm) to label the curve on the graph and to select the values of interest. It then plots the fluorescence data on a standard graph and/or an interactive graph using Plotly.
 ### 📈 Function to plot several excited wavelength on a graph
 This function plots a superposition of several excited wavelenghts on a standard graph and, if wanted, an interactive graph.   
  ```    
-plot_superimposed_graphs():
+plot_superimposed_graphs()
 ``` 
 This function prompts the user to input the number of graphs they want to superimpose. It then collects data for each graph, including file location, sheet name on Excel, column names for excitation and emission wavelengths, and the excited wavelengths of interest to label the graph. It plots a static graph and, if wanted, an interactive graph showing the superimposed curves.
 
