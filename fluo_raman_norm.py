@@ -136,7 +136,7 @@ if __name__ == "__main__":
 
 def read_excel():
     file_path = read_eem()
-    eem = pd.read_excel(file_path)-é-
+    eem = pd.read_excel(file_path)
     new_columns = [col if i == 0 else int(re.search(r'\d+', col).group()) for i, col in enumerate(eem.columns)]
     eem.columns = new_columns
     return eem
