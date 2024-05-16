@@ -284,15 +284,10 @@ def plot_fluorescence_graph():
     None
     """
     # Wavelenth of interest
-    chemin = input("What is the exact file location : ")
-    df = pd.read_excel(chemin, sheet_name=None)
-    Feuil = input("What is the exact name of the sheet on Excel  : ")
-    X = input("What is the exact name of the emission wavelength column on Excel : ")
-    wavelength = input("What is the excitation wavelength of interest in nm : ")
-    Y = input("What is the exact name of the excitation wavelength column of interest on Excel : ")
 
-    EmWl = df[Feuil][X]
-    Int = df[Feuil][Y]
+    wavelength = input("What is the excitation wavelength of interest in nm : ")
+    EmWl = eem["EmWl [nm]"]
+    Int = eem[wavelength]
 
     # Ask the user if he wants to display the standard graph
     while True:
