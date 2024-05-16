@@ -9,138 +9,133 @@ from tkinter import filedialog
 
 
 
-class ExcelFileUploaderAndConverter:
+import tkinter as tk
+from tkinter import filedialog
+import pandas as pd
+import re
+
+def read_eem():
     """
-    A class to upload and convert Excel files using a tkinter GUI.
-    
-    Attributes:
-    - root (tk.Tk): The root tkinter window.
-    - file_contents (pandas.DataFrame): The content of the uploaded Excel file.
-    - uploaded_file: (None): Information about the uploaded file.
-    - file_label (tk.Label): A label widget for displaying instructions to select a file.
-    - upload_button (tk.Button): A button widget to trigger the file upload process.
-    - output_text (tk.Text): A text widget to display the content of the uploaded file.
-    - success_message_label (tk.Label): A label widget to display success messages.
-    - error_message_label (tk.Label): A label widget to display error messages.
+    Opens a Tkinter window for selecting an Excel file and displays its contents.
+
+    Returns:
+        str or None: The path of the selected Excel file, or None if no file is selected.
     """
-
-    def __init__(self, root):
-        """
-        Initializes the ExcelFileUploaderAndConverter instance.
-    
-        Parameters:
-        - root (tk.Tk): The root tkinter window.
-        """
-        # Initialize the class with a tkinter root window
-        self.root = root
-        self.file_contents = None
-        self.uploaded_file = None
-
-        # Create a label widget to prompt the user to select an Excel file
-        self.file_label = tk.Label(self.root, text="Select an Excel file:")
-        self.file_label.pack()
-
-        # Create a button widget for uploading files, with a command to call _handle_upload method
-        self.upload_button = tk.Button(self.root, text="Upload", command=self._handle_upload)
-        self.upload_button.pack()
-
-        # Create a text widget to display the content of the uploaded Excel file
-        self.output_text = tk.Text(self.root)
-        self.output_text.pack()
-
-        # Create label widgets for displaying success and error messages
-        self.success_message_label = tk.Label(self.root, text="")
-        self.success_message_label.pack()
-
-        self.error_message_label = tk.Label(self.root, text="")
-        self.error_message_label.pack()
-
-    def _handle_upload(self):
-        """
-        Handles the file upload process triggered by the 'Upload' button click.
-        """
-
-        # Open a file dialog to select an Excel file
-        file_path = filedialog.askopenfilename(filetypes=[("Excel files", "*.xlsx;*.xls")])
-        if file_path:
-            try:
-
-                # Read the selected Excel file and store its content in self.file_contents
-                self.file_contents = pd.read_excel(file_path)
-
-                # Process the Excel file content
-                self._process_excel_file()
-
-                # Display success message
-                self._display_success_message()
-            except Exception as e:
-
-                # Display error message if an error occurs during file processing
-                self._display_error_message()
-                self.output_text.insert(tk.END, f"An error occurred during uploading: {str(e)}\n")
-        else:
-
-            # Display a message if no file is selected
-            self.output_text.insert(tk.END, "Please select an Excel file.\n")
-
-
-    def _process_excel_file(self):
-        """
-        Processes the uploaded Excel file and displays its content in the output_text widget.
-        """
-
-        # Clear the output_text widget and display the content of the uploaded Excel file
-        self.output_text.delete("1.0", tk.END)
-        self.output_text.insert(tk.END, str(self.file_contents))
-
-    def _display_success_message(self):
-        """
-        Displays a success message in the success_message_label widget.
-        """
-        # Configure the success_message_label widget to display a success message
-        self.success_message_label.config(text="Upload successful.", fg="green")
-
-        # Clear the error message
-        self.error_message_label.config(text="")
-    
-
-    def _display_error_message(self):
-        """
-        Displays an error message in the error_message_label widget.
-        """
-
-        # Configure the error_message_label widget to display an error message
-        self.error_message_label.config(text="Upload unsuccessful, please try again.", fg="red")
-
-        # Clear the success message
-        self.success_message_label.config(text="")
-
-def main():
-    """
-    The main function to create the tkinter window and instantiate the ExcelFileUploaderAndConverter class.
-    """
-
-    # Create the main tkinter window
     root = tk.Tk()
     root.title("Excel File Uploader and Converter")
 
-    # Instantiate the ExcelFileUploaderAndConverter class with the root window
-    uploader = ExcelFileUploaderAndConverter(root)
+    file_contents = None
+    file_path = None
 
-    # Run the tkinter event loop
-    uploader.root.mainloop()
+    def _handle_upload():
+        """
+        Handles the file upload process.
 
-if __name__ == "__main__":
-    # Call the main function when the script is executed
-    main()
+        Returns:
+            str or None: The path of the selected Excel file, or None if no file is selected.
+        """
+        nonlocal file_contents, file_path
+        path = filedialog.askopenfilename()
+        if path:
+            if path.endswith(('.xls', '.xlsx')):
+                try:
+                    file_contents = pd.read_excel(path)
+                    file_path = path
+                    _process_excel_file()
+                    _display_success_message()
+                except Exception as e:
+                    _display_error_message()
+                    output_text.insert(tk.END, f"An error occurred during uploading: {str(e)}\n")
+            else:
+                file_path = path
+                _display_success_message_no_conversion()
+        else:
+            output_text.insert(tk.END, "Please select a file.\n")
+        
+        return file_path
+
+    def _process_excel_file():
+        """
+        Displays the contents of the uploaded Excel file in the GUI.
+        """
+        output_text.delete("1.0", tk.END)
+        output_text.insert(tk.END, str(file_contents))
+
+    def _display_success_message():
+        """
+        Displays a success message in the GUI.
+        """
+        success_message_label.config(text="Upload successful.", fg="green")
+        error_message_label.config(text="")
+        print_file_path()
+        close_window_label.config(text="Please close the window to continue the code")
+
+    def _display_success_message_no_conversion():
+        """
+        Displays a success message for non-Excel files in the GUI.
+        """
+        success_message_label.config(text="File uploaded successfully (not an Excel file).", fg="green")
+        error_message_label.config(text="")
+        print_file_path()
+        close_window_label.config(text="Please close the window to continue the code")
+
+    def _display_error_message():
+        """
+        Displays an error message in the GUI.
+        """
+        error_message_label.config(text="Upload unsuccessful, please try again.", fg="red")
+        success_message_label.config(text="")
+
+    def print_file_path():
+        """
+        Prints the file path to the console.
+        """
+        if file_path:
+            print("File Path:", file_path)
+        else:
+            print("No file has been uploaded yet.")
+
+    file_label = tk.Label(root, text="Select an Excel file:")
+    file_label.pack()
+
+    upload_button = tk.Button(root, text="Upload", command=_handle_upload)
+    upload_button.pack()
+
+    output_text = tk.Text(root)
+    output_text.pack()
+
+    success_message_label = tk.Label(root, text="")
+    success_message_label.pack()
+
+    error_message_label = tk.Label(root, text="")
+    error_message_label.pack()
+
+    close_window_label = tk.Label(root, text="")
+    close_window_label.pack()
+
+    root.mainloop()
+
+    return file_path
 
 def read_excel():
-    file_path = read_eem()
-    eem = pd.read_excel(file_path)
-    new_columns = [col if i == 0 else int(re.search(r'\d+', col).group()) for i, col in enumerate(eem.columns)]
-    eem.columns = new_columns
-    return eem
+    """
+    Uploads and reads an Excel file, and modifies column names.
 
+    Returns:
+        pandas.DataFrame or None: The DataFrame containing the Excel file data, or None if no file is selected.
+    """
+    file_path = read_eem()
+    if file_path:
+        eem = pd.read_excel(file_path)
+        new_columns = [col if i == 0 else int(re.search(r'\d+', col).group()) for i, col in enumerate(eem.columns)]
+        eem.columns = new_columns
+        return eem
+    else:
+        print("No file selected.")
+
+# Call read_excel function to upload and read Excel file
+eem_data = read_excel()
+print(eem_data)  # Print the DataFrame to console
 
 
 
