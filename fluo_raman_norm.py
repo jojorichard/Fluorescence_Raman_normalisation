@@ -285,7 +285,7 @@ def plot_fluorescence_graph():
     """
     # Wavelenth of interest
 
-    wavelength = input("What is the excitation wavelength of interest in nm : ")
+    wavelength = int(input("What is the excitation wavelength of interest in nm : "))
     EmWl = eem["EmWl [nm]"]
     Int = eem[wavelength]
 
