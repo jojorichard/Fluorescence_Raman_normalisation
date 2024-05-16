@@ -88,7 +88,7 @@ The function in one sentence
 copy paste
 ```
 Details
-
+The description of the complementary features can be found under ![Docs](https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/LICENSE)
 ## 📫 Reaching us 
 Justine Serra : justine.serratosio@gmail.com
 
