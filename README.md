@@ -97,6 +97,7 @@ def main()
 ```
 This function takes onto consideration the response of the user. It starts the event loop which allows the tkinter application to become interactive, processing user input and updating the GUI in response to events. Once the event loop is started, the program will continue running until the user closes the main window or exits the application.
 It is the sixth function of the class (ExcelFileUploaderAndConverter).
+
 **▶ Windows to upload the excel file (upload button)**
 Initialize the upload of the excel file by browsing through the user's computer through an window and upload button.
 ```
@@ -110,6 +111,7 @@ It is important to note that this function is the first one of the follwing clas
 ```
 class ExcelFileUploaderAndConverter
 ```
+
 **💯 Excel upload and dataframe conversion**
 This function handles the file upload process triggered by the 'Upload' button click created by the above function and converts the content into dataframe.
 ```
@@ -136,6 +138,7 @@ _display_success_message(self)
 The argument of the function is self which is a reference to the current instance of the class (ExcelFileUploaderAndConverter).
 It is the fourth function of the class (ExcelFileUploaderAndConverter).
 Returns the successful upload message. 
+
 **❌ Unsuccessful upload**
 The function prints "unsuccessful upload" if the upload was not well processed.
 ```
