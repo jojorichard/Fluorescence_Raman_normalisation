@@ -5,13 +5,6 @@ import plotly.graph_objs as go
 import io
 import tkinter as tk
 from tkinter import filedialog
-
-
-
-
-import tkinter as tk
-from tkinter import filedialog
-import pandas as pd
 import re
 
 def read_eem():
