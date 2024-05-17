@@ -44,7 +44,31 @@ The function displays the dataframe (converted from the uploaded excel file) and
 _process_excel_file()
 ```
 This function is called in the _handle_upload() function above. It asks the user's confirmation (yes/no) before continuing reading the code.
+
 It is important to note that a ValueError is raised if the user's answer is "no" as the code left will not work appropriately.
+
+**✅ Successful upload**
+
+The function prints "successful upload" in the GUI upon successful upload.
+```
+_display_success_message()
+```   
+The message is written in green at the botton of the upload window.
+**✅ Successful upload for non excel files**
+
+The function displays "successful upload" in the GUI upon successful for non-Excel files in the GUI.
+```
+_display_success_message_no_conversion()
+```   
+The message is written in green at the botton of the upload window.
+
+**❌ Unsuccessful upload**
+
+The function displays in the GUI "unsuccessful upload" upon failed uplaod. 
+```
+_display_error_message()
+```
+The message is written in red at the botton of the upload window.
 
 ### 🔭 Normalised dataframe
 The function converts the file into normalised dataframe and prints it.
@@ -56,35 +80,23 @@ It is important to note that the present function only works  for excel files.
 For any other type of file, one could use the pathfile form the above function and converts it dataframe. 
 
 
-**🔭 Content display**
 
-The function displays the dataframe (converted from the uploaded excel file).
+
+**✅ Successful upload for non excel files**
+
+The function displays "successful upload" in the GUI upon successful for non-Excel files in the GUI.
 ```
-_process_excel_file()
+_display_success_message_no_conversion()
 ```   
-The argument of the function is self which is a reference to the current instance of the class (ExcelFileUploaderAndConverter).
-It is the third function of the class (ExcelFileUploaderAndConverter).
-Returns the dataframe.
-
-**✅ Successful upload**
-
-The function prints "successful upload" if the upload was well processed.
-```
-_display_success_message(self)
-```   
-The argument of the function is self which is a reference to the current instance of the class (ExcelFileUploaderAndConverter).
-It is the fourth function of the class (ExcelFileUploaderAndConverter).
-Returns the successful upload message. 
+The message is written in green at the botton of the upload window.
 
 **❌ Unsuccessful upload**
 
-The function prints "unsuccessful upload" if the upload was not well processed.
+The function displays in the GUI "unsuccessful upload" upon failed uplaod. 
 ```
-_display_error_message(self)
+_display_error_message()
 ```
-The argument of the function is self which is a reference to the current instance of the class (ExcelFileUploaderAndConverter).
-It is the fifth function of the class (ExcelFileUploaderAndConverter).
-Returns the unsuccessful upload message.
+The message is written in red at the botton of the upload window.
 ### function's name
 The function in one sentence
 ```
