@@ -47,6 +47,8 @@ This function is called in the _handle_upload() function above. It asks the user
 
 It is important to note that a ValueError is raised if the user's answer is "no" as the code left will not work appropriately.
 
+This function is called in _handle_upload() function.
+
 **✅ Successful upload**
 
 The function prints "successful upload" in the GUI upon successful upload.
@@ -54,6 +56,9 @@ The function prints "successful upload" in the GUI upon successful upload.
 _display_success_message()
 ```   
 The message is written in green at the botton of the upload window.
+
+This function is called in _handle_upload() function.
+
 **✅ Successful upload for non excel files**
 
 The function displays "successful upload" in the GUI upon successful for non-Excel files in the GUI.
@@ -62,6 +67,8 @@ _display_success_message_no_conversion()
 ```   
 The message is written in green at the botton of the upload window.
 
+This function is called in _handle_upload() function.
+
 **❌ Unsuccessful upload**
 
 The function displays in the GUI "unsuccessful upload" upon failed uplaod. 
@@ -69,6 +76,16 @@ The function displays in the GUI "unsuccessful upload" upon failed uplaod.
 _display_error_message()
 ```
 The message is written in red at the botton of the upload window.
+
+This function is called in _handle_upload() function.
+
+**🎥 Filepath print**
+
+The function prints the filepath to the console oncce the file is uploaded.
+```
+print_file_path()
+```   
+It is important to check whether the correct filepath was printed to ensure a smooth continuation.
 
 ### 🔭 Normalised dataframe
 The function converts the file into normalised dataframe and prints it.
@@ -82,13 +99,13 @@ For any other type of file, one could use the pathfile form the above function a
 
 
 
-**✅ Successful upload for non excel files**
+**🎥 Filepath print**
 
-The function displays "successful upload" in the GUI upon successful for non-Excel files in the GUI.
+The function prints the filepath to the console oncce the file is uploaded.
 ```
-_display_success_message_no_conversion()
+print_file_path()
 ```   
-The message is written in green at the botton of the upload window.
+It is important to check whether the correct filepath was printed to ensure a smooth continuation.
 
 **❌ Unsuccessful upload**
 
