@@ -17,28 +17,23 @@ plot_superimposed_graphs()
 ``` 
 This function prompts the user to input the number of graphs they want to superimpose. It then collects data for each graph, including file location, sheet name on Excel, column names for excitation and emission wavelengths, and the excited wavelengths of interest to label the graph. It plots a static graph and, if wanted, an interactive graph showing the superimposed curves.
 
-### ↔️ Conversion coma to point (step)
-The function converts the coma to a point if the step is given with a coma.
+### 💫 Upload of the file 
+The function uploads the file, find the pathfile and retrun it.
 ```
-conversion_coma_point(step)
+read_eem()
 ```   
-The argument of the function is the step of the spectroscopy machine (given by the user).
-The given step will be analysed and converted if necessary.
+The function (containing 6 sub-functions) opens a Tkinter window for selecting an Excel file, displays its contents in dataframe, 
+and asks the user for confirmation on the data display.✅ ❌
+It is important to note that if the file is not under the excel format, the function will only return the path without displaying its contents.
 
-### 📝 List of the excited wavelengths considering the step of the spectroscopy machine
-The function returns a list of the excited wavelengths depending on the step and its type (float or integer).
+### 🔭 Normalised dataframe
+The function converts the file into normalised dataframe and prints it.
 ```
-excited_wavelength_list(first, last, step)
-```   
-The arguments of the functions are the following and are asked beforehand to the user: the first and last excited wavelengths values measure and the step of the spectroscopy machine.
-This function also takes into consideration the different types of values (only one decimal after the point, converts the float values ".0" in int) to ensure that the list contains the exact same values than in the excel file.
-### 💫 Instantiation of the class
-The main function to create the tkinter window and instantiate the ExcelFileUploaderAndConverter class.
+read_excel()
 ```
-def main()
-```
-This function takes onto consideration the response of the user. It starts the event loop which allows the tkinter application to become interactive, processing user input and updating the GUI in response to events. Once the event loop is started, the program will continue running until the user closes the main window or exits the application.
-It is the sixth function of the class (ExcelFileUploaderAndConverter).
+The function converts the excel file into dataframe by taking the pathfile form the above function and converts it in normalised dataframe.
+It is important to note that the present function only works  for excel files.
+For any other type of file, one could use the pathfile form the above function and converts it dataframe. 
 
 **▶ Windows to upload the excel file (upload button)**
 
