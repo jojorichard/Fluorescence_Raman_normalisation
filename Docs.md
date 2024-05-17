@@ -26,6 +26,15 @@ The function (containing 6 sub-functions) opens a Tkinter window for selecting a
 and asks the user for confirmation on the data display.✅ ❌
 It is important to note that if the file is not under the excel format, the function will only return the path without displaying its contents.
 
+**▶ Window to upload the excel file (upload button)**
+The function handles the file upload process and displays the contents converted in dataframe if it's an Excel file.
+
+```
+_handle_upload()
+```
+The function returns the pathfile (str) or None if no file is selected.
+It is important to note that the function returns the pathfile of any file regardless of its type; only a excel file's contents (converted in dataframe) is displayed. 
+
 ### 🔭 Normalised dataframe
 The function converts the file into normalised dataframe and prints it.
 ```
