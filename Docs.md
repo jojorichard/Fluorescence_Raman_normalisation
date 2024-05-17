@@ -26,14 +26,25 @@ The function (containing 6 sub-functions) opens a Tkinter window for selecting a
 and asks the user for confirmation on the data display.✅ ❌
 It is important to note that if the file is not under the excel format, the function will only return the path without displaying its contents.
 
-**▶ Window to upload the excel file (upload button)**
+**▶ Window to upload the excel file and dataframe display**
+
 The function handles the file upload process and displays the contents converted in dataframe if it's an Excel file.
 
 ```
 _handle_upload()
 ```
 The function returns the pathfile (str) or None if no file is selected.
+
 It is important to note that the function returns the pathfile of any file regardless of its type; only a excel file's contents (converted in dataframe) is displayed. 
+
+**🔬 Content display and confirmation on the data display**
+
+The function displays the dataframe (converted from the uploaded excel file) and asks the user's confirmation on the correct or incorrect dataframe display.
+```
+_process_excel_file()
+```
+This function is called in the _handle_upload() function above. It asks the user's confirmation (yes/no) before continuing reading the code.
+It is important to note that a ValueError is raised if the user's answer is "no" as the code left will not work appropriately.
 
 ### 🔭 Normalised dataframe
 The function converts the file into normalised dataframe and prints it.
@@ -44,36 +55,12 @@ The function converts the excel file into dataframe by taking the pathfile form 
 It is important to note that the present function only works  for excel files.
 For any other type of file, one could use the pathfile form the above function and converts it dataframe. 
 
-**▶ Windows to upload the excel file (upload button)**
-
-Initialize the upload of the excel file by browsing through the user's computer through an window and upload button.
-```
-__init__(self, root)
-```
-The arguments of the function are defined as follows:
-- self: A reference to the current instance of the class.
-- root: An instance of the tkinter.Tk class representing the root tkinter window.
-
-It is important to note that this function is the first one of the follwing class:
-```
-class ExcelFileUploaderAndConverter
-```
-
-**💯 Excel upload and dataframe conversion**
-
-This function handles the file upload process triggered by the 'Upload' button click created by the above function and converts the content into dataframe.
-```
-_handle_upload(self)
-```   
-The argument of the function is self which is a reference to the current instance of the class (ExcelFileUploaderAndConverter).
-The function also displays several message changing depending on the possible events of the uploading process.
-It is important to note that this function is the second of the class (ExcelFileUploaderAndConverter).
 
 **🔭 Content display**
 
 The function displays the dataframe (converted from the uploaded excel file).
 ```
-_process_excel_file(self)
+_process_excel_file()
 ```   
 The argument of the function is self which is a reference to the current instance of the class (ExcelFileUploaderAndConverter).
 It is the third function of the class (ExcelFileUploaderAndConverter).
