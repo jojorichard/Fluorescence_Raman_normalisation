@@ -64,6 +64,25 @@ Works after running tox
 Models and results can be found _ _ _here_ _ _. -> mettre un lien qui renvoie à un document à télécharcher
 ## 💡Features
 
+
+### 💫 File's upload 
+The function uploads the file, find the pathfile and retrun it.
+```
+read_eem()
+```   
+The function (containing 6 sub-functions) opens a Tkinter window for selecting an Excel file, displays its contents in dataframe, 
+and asks the user for confirmation on the data display.✅ ❌
+It is important to note that if the file is not under the excel format, the function will only return the path without displaying its contents.
+
+### 🔭 Normalised dataframe
+The function converts the file into normalised dataframe and prints it.
+```
+read_excel()
+```
+The function converts the excel file into dataframe by taking the pathfile form the above function and converts it in normalised dataframe.
+It is important to note that the present function only works  for excel files.
+For any other type of file, one could use the pathfile form the above function and converts it dataframe. 
+
 ### function's name
 The function in one sentence
 ```
