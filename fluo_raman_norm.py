@@ -5,41 +5,49 @@ import plotly.graph_objs as go
 import io
 import tkinter as tk
 from tkinter import filedialog
+from tkinter import messagebox
 import re
+
 
 def read_eem():
     """
-    Opens a Tkinter window for selecting an Excel file and displays its contents.
+    Opens a Tkinter window for selecting an Excel file, displays its contents, 
+    and asks the user for confirmation on the data display.
 
     Returns:
         str or None: The path of the selected Excel file, or None if no file is selected.
     """
+    # Initialize the main Tkinter window
     root = tk.Tk()
     root.title("Excel File Uploader and Converter")
 
+    # Initialize variables to hold file contents and path
     file_contents = None
     file_path = None
 
     def _handle_upload():
         """
-        Handles the file upload process.
+        Handles the file upload process and displays the contents if it's an Excel file.
 
         Returns:
             str or None: The path of the selected Excel file, or None if no file is selected.
         """
         nonlocal file_contents, file_path
+        # Open file dialog to select a file
         path = filedialog.askopenfilename()
         if path:
             if path.endswith(('.xls', '.xlsx')):
                 try:
+                    # Read the selected Excel file
                     file_contents = pd.read_excel(path)
                     file_path = path
-                    _process_excel_file()
-                    _display_success_message()
+                    _process_excel_file()  # Display the contents
+                    _display_success_message()  # Show success message
                 except Exception as e:
-                    _display_error_message()
+                    _display_error_message()  # Show error message if there's an issue
                     output_text.insert(tk.END, f"An error occurred during uploading: {str(e)}\n")
             else:
+                # Handle non-Excel file uploads
                 file_path = path
                 _display_success_message_no_conversion()
         else:
@@ -49,14 +57,21 @@ def read_eem():
 
     def _process_excel_file():
         """
-        Displays the contents of the uploaded Excel file in the GUI.
+        Displays the contents of the uploaded Excel file in the GUI and 
+        asks the user for confirmation on the data display.
         """
-        output_text.delete("1.0", tk.END)
-        output_text.insert(tk.END, str(file_contents))
+        output_text.delete("1.0", tk.END)  # Clear the text widget
+        output_text.insert(tk.END, str(file_contents))  # Insert the contents of the file
+        root.update()  # Update the GUI
+
+        # Ask the user if the data was displayed correctly
+        user_response = messagebox.askyesno("Confirmation", "Was the data correctly displayed?")
+        if not user_response:
+            raise ValueError("The code cannot continue due to incorrect data. Please upload a new file.")
 
     def _display_success_message():
         """
-        Displays a success message in the GUI.
+        Displays a success message in the GUI upon successful upload.
         """
         success_message_label.config(text="Upload successful.", fg="green")
         error_message_label.config(text="")
@@ -74,7 +89,7 @@ def read_eem():
 
     def _display_error_message():
         """
-        Displays an error message in the GUI.
+        Displays an error message in the GUI if the upload fails.
         """
         error_message_label.config(text="Upload unsuccessful, please try again.", fg="red")
         success_message_label.config(text="")
@@ -88,40 +103,42 @@ def read_eem():
         else:
             print("No file has been uploaded yet.")
 
-    file_label = tk.Label(root, text="Select an Excel file:")
+    # GUI components for file upload and messages
+    file_label = tk.Label(root, text="Select an Excel file:")  # Label to instruct the user
     file_label.pack()
 
-    upload_button = tk.Button(root, text="Upload", command=_handle_upload)
+    upload_button = tk.Button(root, text="Upload", command=_handle_upload)  # Upload button
     upload_button.pack()
 
-    output_text = tk.Text(root)
+    output_text = tk.Text(root)  # Text widget to display file contents
     output_text.pack()
 
-    success_message_label = tk.Label(root, text="")
+    success_message_label = tk.Label(root, text="")  # Label for success messages
     success_message_label.pack()
 
-    error_message_label = tk.Label(root, text="")
+    error_message_label = tk.Label(root, text="")  # Label for error messages
     error_message_label.pack()
 
-    close_window_label = tk.Label(root, text="")
+    close_window_label = tk.Label(root, text="")  # Label to instruct closing the window
     close_window_label.pack()
 
-    root.mainloop()
+    root.mainloop()  # Start the Tkinter main loop
 
     return file_path
 
 def read_excel():
     """
-    Uploads and reads an Excel file, and modifies column names.
+    Uploads and reads an Excel file, then modifies column names.
 
     Returns:
         pandas.DataFrame or None: The DataFrame containing the Excel file data, or None if no file is selected.
     """
-    file_path = read_eem()
+    file_path = read_eem()  # Call read_eem to upload and read the file
     if file_path:
-        eem = pd.read_excel(file_path)
+        eem = pd.read_excel(file_path)  # Read the Excel file into a DataFrame
+        # Modify column names: keep the first column as is, and extract numbers from other columns
         new_columns = [col if i == 0 else int(re.search(r'\d+', col).group()) for i, col in enumerate(eem.columns)]
-        eem.columns = new_columns
+        eem.columns = new_columns  # Set the new column names
         return eem
     else:
         print("No file selected.")
