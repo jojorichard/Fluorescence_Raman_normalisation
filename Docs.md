@@ -97,23 +97,6 @@ It is important to note that the present function only works  for excel files.
 For any other type of file, one could use the pathfile form the above function and converts it dataframe. 
 
 
-
-
-**🎥 Filepath print**
-
-The function prints the filepath to the console oncce the file is uploaded.
-```
-print_file_path()
-```   
-It is important to check whether the correct filepath was printed to ensure a smooth continuation.
-
-**❌ Unsuccessful upload**
-
-The function displays in the GUI "unsuccessful upload" upon failed uplaod. 
-```
-_display_error_message()
-```
-The message is written in red at the botton of the upload window.
 ### function's name
 The function in one sentence
 ```
