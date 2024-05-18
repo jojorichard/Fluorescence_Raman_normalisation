@@ -298,7 +298,6 @@ def plot_fluorescence_graph():
             print("Please answer by 'yes' or 'no'.")
             
 
-
 def plot_superimposed_graphs():
     """
     Function to plot a superposition of graphs on a standard graph and, if wanted, an interactive graph.
@@ -329,8 +328,6 @@ def plot_superimposed_graphs():
 
     
     # Creation of lists to store the values
-    chemins = []
-    Feuils = []
     Xs = []
     wavelengths = []
     Ys = []
@@ -339,29 +336,23 @@ def plot_superimposed_graphs():
     while True:
         q1 = input("Are all the values in the same file ? (yes/no) ")
         if q1 == "yes":
-            chemin = input("What is the exact file location : ")
+            eem = read_excel()
             for i in range(1, int(number_of_graph) + 1):
-                Feuil = input(f"What is exact name of the sheet on Excel for curve {i}: ")
-                X = input(f"What is the exact name of the emission wavelength column on Excel for curve {i}: ")
-                wavelength = input(f"What is the excitation wavelength of interest for curve {i} in nm: ")
-                Y = input(f"What is the exact name of the excitation wavelength column of interest on Excel for curve {i}: ")
+                X = eem["EmWl [nm]"]
+                wavelength = int(input(f"What is the excitation wavelength of interest for curve {i} in nm: "))
+                Y = eem[wavelength]
                 # Adding the variables to the corresponding list
-                chemins.append(chemin)
-                Feuils.append(Feuil)
                 Xs.append(X)
                 wavelengths.append(wavelength)
                 Ys.append(Y)
             break
         elif q1 == "no":
             for i in range(1, int(number_of_graph) + 1):
-                chemin = input(f"What is the exact file location for curve {i}: ")
-                Feuil = input(f"What is exact name of the sheet on Excel for curve {i}: ")
-                X = input(f"What is the exact name of the excitation wavelength column on Excel for curve {i}: ")
-                wavelength = input(f"What is the wavelength of interest for curve {i} in nm: ")
-                Y = input(f"What is the exact name of the emission wavelength column of interest on Excel for curve {i}: ")
+                eem = read_excel()
+                X = eem["EmWl [nm]"]
+                wavelength = int(input(f"What is the excitation wavelength of interest for curve {i} in nm: "))
+                Y = eem[wavelength]
                 # Adding the variables to the corresponding list
-                chemins.append(chemin)
-                Feuils.append(Feuil)
                 Xs.append(X)
                 wavelengths.append(wavelength)
                 Ys.append(Y)
@@ -389,9 +380,8 @@ def plot_superimposed_graphs():
 
     colors = ["black", "blue", "red", "green", "magenta", "yellow", "cyan"]
     for i in range(number_of_graph):
-        df = pd.read_excel(chemins[i], sheet_name=None)
-        EmWl = df[Feuils[i]][Xs[i]]
-        Int = df[Feuils[i]][Ys[i]]
+        EmWl = eem["EmWl [nm]"]
+        Int = eem[wavelength]
         color = colors[i]
         wavelength = wavelengths[i]
         plt.plot(EmWl, Int, label = f'λ = {wavelength}',color = color)
@@ -404,20 +394,15 @@ def plot_superimposed_graphs():
     fig = go.Figure() 
 
     # Add each curve from data in Excel files
-    for i, chemins in enumerate(chemins):
-        # Load the value from an Excel file
-        df = pd.read_excel(chemins) 
-
+    for i in range(number_of_graph):
         # Select columns corresponding to x and y values
         x_col_name = Xs[i]
         y_col_name = Ys[i]  
-        x_data = df[x_col_name]
-        y_data = df[y_col_name]
     
         # Add curve to figure
         color = colors[i]
         wavelength = wavelengths[i]
-        fig.add_trace(go.Scatter(x=x_data, y=y_data, marker=dict(color= color), mode='lines', name=f'λ = {wavelength}'))
+        fig.add_trace(go.Scatter(x=x_col_name, y=y_col_name, marker=dict(color= color), mode='lines', name=f'λ = {wavelength}'))
 
     # Configuration des boutons pour afficher/supprimer les courbes
     buttons = []
