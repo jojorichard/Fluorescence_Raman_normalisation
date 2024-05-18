@@ -161,6 +161,8 @@ def Area(eem):
     dif = np.diff(raman['EmWl [nm]'])
     fluo_avg = (raman[350][:-1] + raman[350][1:]) / 2
     A = np.sum(dif[0] * fluo_avg)
+    print(f'Area of water Raman peak: {A}')
+
     return A
 
 def Raman_normalisation(eem, Area):
