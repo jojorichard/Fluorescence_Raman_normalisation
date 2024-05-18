@@ -143,9 +143,6 @@ def read_excel():
     else:
         print("No file selected.")
 
-# Call read_excel function to upload and read Excel file
-eem_data = read_excel()
-print(eem_data)  # Print the DataFrame to console
 
 
 
