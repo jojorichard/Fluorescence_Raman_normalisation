@@ -379,8 +379,8 @@ def plot_superimposed_graphs():
 
     colors = ["black", "blue", "red", "green", "magenta", "yellow", "cyan"]
     for i in range(number_of_graph):
-        EmWl = eem["EmWl [nm]"]
-        Int = eem[wavelength]
+        EmWl = Xs[i]
+        Int = Ys[i]
         color = colors[i]
         wavelength = wavelengths[i]
         plt.plot(EmWl, Int, label = f'λ = {wavelength}',color = color)
