@@ -70,7 +70,7 @@ def eem():
 @pytest.mark.mpl_image_compare()
 def simulated_input_and_reference(request, monkeypatch):
     input_values, reference_image = request.param[:-1], request.param[-1]
-    monkeypatch.setattr('builtins.input', lambda _: iter(input_values).__next__)
+    monkeypatch.setattr('builtins.input', input_values.pop(0))
     return reference_image
     
 def test_plot_fluorescence_graph(monkeypatch, simulated_input_and_reference, eem):
