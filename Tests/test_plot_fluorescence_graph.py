@@ -64,8 +64,8 @@ def eem():
 
     return pd.DataFrame(sample_data)
 
-@pytest.fixture(params=[('250\nyes\nyes\n', 'baseline/standard_plot.png'),
-                        ('250\nno\nyes\n', 'baseline/inter_plot.png')])
+@pytest.fixture(params=[('250', 'yes', 'no', 'baseline/standard_plot.png'),
+                        ('250', 'no', 'yes', 'baseline/inter_plot.png')])
 
 @pytest.mark.mpl_image_compare()
 def simulated_input_and_reference(request, monkeypatch):
