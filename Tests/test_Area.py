@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import pytest 
-from ..fluo_raman_norm import Area
+from fluo_raman_norm import Area
 
 @pytest.fixture
 def eem():
