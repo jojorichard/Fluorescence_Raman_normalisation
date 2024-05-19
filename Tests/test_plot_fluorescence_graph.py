@@ -70,6 +70,7 @@ def eem():
 @pytest.mark.mpl_image_compare()
 def simulated_input_and_reference(request, monkeypatch):
     input_values, reference_image = request.param[:-1], request.param[-1]
+    input_values = list(input_values)
     monkeypatch.setattr('builtins.input', input_values.pop(0))
     return reference_image
     
