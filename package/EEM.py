@@ -213,7 +213,7 @@ def remove_rayleigh_scattering(eem, order=1, width=10):
 
 
 
-def plot_fluorescence_graph():
+def plot_fluorescence_graph(eem):
     """
     Function to plot fluorescence data on a standard graph and/or an interactive graph.
 
@@ -250,8 +250,9 @@ def plot_fluorescence_graph():
             # Graduation of the axis
             plt.xticks(fontsize=30)
             plt.yticks(fontsize=30)
+            plt.savefig('Raman_spectrum.png')
             plt.show()
-            plt.savefig('Raman_spectrum.svg')
+           
             break
         elif choice1 == "no":
             break
