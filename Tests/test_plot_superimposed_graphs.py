@@ -10,6 +10,7 @@ def test_plot_superimposed_graphs():
     import io
     import sys
     import pandas as pd
+    import pytest
 
     # Données d'échantillon pour le test
     sample_data = {

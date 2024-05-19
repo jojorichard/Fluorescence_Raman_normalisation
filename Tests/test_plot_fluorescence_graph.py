@@ -10,6 +10,7 @@ def test_plot_fluorescence_graph():
     import io
     import sys
     import pandas as pd
+    import pytest
 
     # Données d'échantillon pour le test
     sample_data = {
