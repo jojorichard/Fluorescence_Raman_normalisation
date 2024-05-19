@@ -76,6 +76,7 @@ def simulated_input_and_reference(request, monkeypatch):
     
 def test_plot_fluorescence_graph(monkeypatch, simulated_input_and_reference, eem):
     reference_image = simulated_input_and_reference
+    monkeypatch.setattr('builtins.input', lambda _: reference_image)
     plot_fluorescence_graph(eem)
     
 
