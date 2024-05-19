@@ -11,6 +11,7 @@ def test_plot_fluorescence_graph():
     import sys
     import pandas as pd
     import pytest
+    from EEM import plot_fluorescence_graph
 
     # Données d'échantillon pour le test
     sample_data = {
