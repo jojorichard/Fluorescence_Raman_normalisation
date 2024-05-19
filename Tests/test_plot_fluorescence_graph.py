@@ -64,19 +64,18 @@ def eem():
 
     return pd.DataFrame(sample_data)
 
-@pytest.fixture(params=[('250', 'yes', 'no', 'baseline/standard_plot.png'),
-                        ('250', 'no', 'yes', 'baseline/inter_plot.png')])
 
-@pytest.mark.mpl_image_compare()
-def simulated_input_and_reference(request, monkeypatch):
-    input_values, reference_image = request.param[:-1], request.param[-1]
-    input_values = list(input_values)
-    monkeypatch.setattr('builtins.input', input_values.pop(0))
-    return reference_image
+
+@pytest.mark.mpl_image_compare('reference/standard_plot.png')    
+def test_plot_fluorescence_graph_standard(monkeypatch, eem):
+    inputs = ["250", "yes", "no"] 
+    monkeypatch.setattr('builtins.input', lambda _: inputs.pop(0))
+    plot_fluorescence_graph(eem)
     
-def test_plot_fluorescence_graph(monkeypatch, simulated_input_and_reference, eem):
-    reference_image = simulated_input_and_reference
-    monkeypatch.setattr('builtins.input', lambda _: reference_image)
+@pytest.mark.mpl_image_compare('reference/standard_plot.png') 
+def test_plot_fluorescence_graph_inter(monkeypatch, eem):
+    inputs = ["250", "no", "yes"] 
+    monkeypatch.setattr('builtins.input', lambda _: inputs.pop(0))
     plot_fluorescence_graph(eem)
     
 
