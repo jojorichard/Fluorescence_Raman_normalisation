@@ -17,7 +17,7 @@ iniconfig==2.0.0
     # via pytest
 kiwisolver==1.4.5
     # via matplotlib
-matplotlib==3.9.0
+matplotlib>=3.9.0
     # via -r requirements.in
 mypy==1.10.0
     # via -r requirements.in
