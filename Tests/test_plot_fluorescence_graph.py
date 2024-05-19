@@ -66,13 +66,13 @@ def eem():
 
 
 
-@pytest.mark.mpl_image_compare('reference/standard_plot.png')    
+@pytest.mark.mpl_image_compare('reference/standard_plot.png',remove_text=True)    
 def test_plot_fluorescence_graph_standard(monkeypatch, eem):
     inputs = ["250", "yes", "no"] 
     monkeypatch.setattr('builtins.input', lambda _: inputs.pop(0))
     plot_fluorescence_graph(eem)
     
-@pytest.mark.mpl_image_compare('reference/standard_plot.png') 
+@pytest.mark.mpl_image_compare('reference/standard_plot.png',remove_text=True) 
 def test_plot_fluorescence_graph_inter(monkeypatch, eem):
     inputs = ["250", "no", "yes"] 
     monkeypatch.setattr('builtins.input', lambda _: inputs.pop(0))
