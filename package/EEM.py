@@ -244,7 +244,7 @@ def plot_fluorescence_graph(eem):
 
             # Formating of the axis and title of the graph
             plt.title("Raman spectrum", fontsize=70)
-            plt.xlabel(r'Excitation wavelength [nm]', fontsize=50)
+            plt.xlabel(r'Emission wavelength [nm]', fontsize=50)
             plt.ylabel(r'Fluorescence', fontsize=50)
 
             # Graduation of the axis
@@ -268,8 +268,8 @@ def plot_fluorescence_graph(eem):
     # Configuration of the layout of the interactive graphic
     fig.update_layout(
         title='Interactive graphics with zoom',
-        xaxis_title='Fluorescence', 
-        yaxis_title='Excitation wavelength [nm]',
+        xaxis_title='Emission wavelength [nm]', 
+        yaxis_title='Fluorescence',
         title_font=dict(size=25),  # Size of the title 
         title_x=0.5,  # To center the title
         xaxis=dict(
@@ -367,7 +367,7 @@ def plot_superimposed_graphs():
     # Size of the graph, formating of the axis and title of the graph
     plt.figure(figsize=(40,30))
     plt.title("Raman spectrum", fontsize=70)
-    plt.xlabel(r'Excitation wavelength [nm]',  fontsize=50)
+    plt.xlabel(r'Emission wavelength [nm]',  fontsize=50)
     plt.ylabel(r'Fluorescence', fontsize=50)
 
     # Graduation of the axis
@@ -445,8 +445,8 @@ def plot_superimposed_graphs():
                 yanchor="top",
                 font=dict(size=14))], # Font size
         title='Interactive graphics with zoom',
-        xaxis_title='Fluorescence', 
-        yaxis_title='Excitation wavelength [nm]',
+        xaxis_title='Emission wavelength [nm]', 
+        yaxis_title='Fluorescence',
         title_font=dict(size=25),  # Size of the title 
         title_x=0.5,  # To center the title
         xaxis=dict(
