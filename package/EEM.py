@@ -126,44 +126,64 @@ def read_eem():
 
     return file_path
 
-def read_excel():
+def read_excel(path):
     """
-    Uploads and reads an Excel file, then modifies column names.
+    Read a specific excel files of a spectrometer were the values are listed in the following form:
 
-    Returns:
-        pandas.DataFrame or None: The DataFrame containing the Excel file data, or None if no file is selected.
+    	EmWl [nm]	Int(250)	Int(260)	Int(270)	Int(280)	Int(290)	Int(300)	Int(310)	Int(320)	Int(330)
+         350.0  	8.3780	    46.4330	    71.5440	    101.3680	115.7660	103.8230	111.0970	121.6770	58.7180	
+         350.5	    9.5323	    47.8672    	71.8733	    99.4352	    116.3693	104.4283	110.9135	123.3000	61.2646
+         ...	     ...	      ...	      ...         ...	      ...	      ...	      ...	       ...	      ...
+         600.0	    2.8920	    19.2880	    53.0750	    59.5580	    42.0960    	999.9990	290.3740	13.1150	    12.2750
+
+    where Int(XXX) containg the exitation values wiht the intensity measured by the spectrometer in the collumn and EmWL [nm] contain the emission wavelength
+
+    And return a standardised Dataframe in a form that can be treated by the other function of the package.
+
+    Args:
+    - path the files path of the excel that can be entered manually in case of error of the read_eem function
+    
+    Returns: eem standardised Dataframe in a form that can be treated by the other function of the package.
     """
-    file_path = read_eem()  # Call read_eem to upload and read the file
-    if file_path:
-        eem = pd.read_excel(file_path)  # Read the Excel file into a DataFrame
-        # Modify column names: keep the first column as is, and extract numbers from other columns
-        new_columns = [col if i == 0 else int(re.search(r'\d+', col).group()) for i, col in enumerate(eem.columns)]
-        eem.columns = new_columns  # Set the new column names
-        return eem
-    else:
-        print("No file selected.")
+    
+    try:
+        file_path = read_eem()  # Call read_eem to upload and read the file
+    except: # If an exception is raised than read the file path manually input 
+        print('An error as occured in the read_eem function. Excecute read_excel(path) with the path file of your file')
+        file_path = path
+        
+    eem = pd.read_excel(file_path)  # Read the Excel file into a DataFrame
+    new_columns = [col if i == 0 else int(re.search(r'\d+', col).group()) for i, col in enumerate(eem.columns)]   # put the Dataframe in the standardised form for this package
+    eem.columns = new_columns  
+    return eem
 
 
 
 
-def Area(eem):
+
+def Area(eem, blank = False):
     '''
     Calculate the Area of the water Raman peak computed for 350 nm exitation waveleght and emission from 371 nm to 428 nm according to the following paper:
     Lawaetz, A. J., & Stedmon, C. A. (2009). Fluorescence Intensity Calibration Using the Raman Scatter Peak of Water. Applied Spectroscopy, 63(8), 936-940.
     https://journals.sagepub.com/doi/10.1366/000370209788964548
 
     Args: 
-        - eem: dataframe containing the eem matrice created with de read_eem function
+     - eem: dataframe containing the eem matrice created with de read_eem function
+     -  blank: False by default. Can be initialised with a eem containing the blank. The eem need to be in the particular form specified in the Readme
 
     Returns: Arp the Area of the water Raman peak calculated using the trapezoidal rule
     '''
-    raman = eem.loc[(eem['EmWl [nm]'] >= 371) & (eem['EmWl [nm]'] <= 428)]
-    dif = np.diff(raman['EmWl [nm]'])
-    fluo_avg = (raman[350][:-1] + raman[350][1:]) / 2
-    A = np.sum(dif[0] * fluo_avg)
+    
+    if blank == False:  #check if a blank were input and if not setup the blank to be eem
+        blank = eem
+        
+    raman = blank.loc[(blank['EmWl [nm]'] >= 371) & (blank['EmWl [nm]'] <= 428)] # Create a view of the DataFrame containing only the Raman peak of water 
+    dif = np.diff(raman['EmWl [nm]']) #Calculating the high of the trapezoid
+    fluo_avg = (raman[350][:-1] + raman[350][1:]) / 2  #Calculating the base of the trapezoid
+    A = np.sum(dif[0] * fluo_avg) #Computing the integral with the trapezoidal rule
     print(f'Area of water Raman peak: {A}')
-
     return A
+
 
 def Raman_normalisation(eem, Area):
     '''
@@ -177,15 +197,32 @@ def Raman_normalisation(eem, Area):
     '''
  
     columns_of_interest = eem.columns[1:] 
-    normalised = eem.copy()
-    normalised[columns_of_interest] = eem[columns_of_interest].div(Area)
-    normalised.to_excel('normalised_Raman.xlsx', index=False)
-    return normalised
+    normalised = eem.copy() #Create a copy of the Dataframe which will be normalised
+    normalised[columns_of_interest] = eem[columns_of_interest].div(Area) #Normalisation of the values with de area of the water Raman peak
+    normalised.to_excel('normalised_Raman.xlsx', index=False) #Creation of a excel files with the normalised values
+    return normalised #Return the normalised DataFrame. Convinient for plot. 
 
 
 
-def fluo_raman_norm(eem):
-    A = Area(eem)
+
+def fluo_raman_norm(eem, blank = False):
+    '''
+    Call the Area function to calculate the area of the water Raman peak and the Raman_normalisation function to Normalise the DataFrame.
+
+    Args: 
+     - eem: dataframe containing the eem matrice created with de read_eem function
+     -  blank: False by default. Can be initialised with a eem containing the blank. The eem need to be in the particular form specified in the Readme
+
+    Return: A dataframe containing the normalised matrice
+
+    '''
+    if blank == False: #If no blank treat the eem as the blank
+        A = Area(eem)
+    elif isinstance(blank, pd.DataFrame): #If blank is a Dataframe calculate the Area of the water Raman peak 
+        A = Area(eem, blank)
+    else: #If blank isn't a Dataframe raise an error
+        raise ValueError('blank needs to be a valid DataFrame in normalised form')
+        
     return Raman_normalisation(eem, A)
 
 
@@ -199,13 +236,13 @@ def remove_rayleigh_scattering(eem, order=1, width=10):
         - order: The order of the Rayleigh scattering that need to be remover. Allow the values 1 or 2. Default is set to 1
         - width: The width of the cut. A higher cut could supress data of interest. Default set to 10 nm
 
-    Return: A copy of the eem DataFrame with the removed value set to NaN
+    Return: A copy of the eem DataFrame with the removed value set to NoDataValue (NaN)
     '''
-    df = eem.copy()
-    if order not in [1, 2]:
+    df = eem.copy() #Create a copy of the DataFrame to let the initial DataFrame unchanged 
+    if order not in [1, 2]: #Verify the order of the rayleigh scattering to be removed
          raise ValueError("The value of 'order' must be either 1 or 2. This function removes Rayleigh scattering peaks of either first or second order.")
     for col in df.columns[1:]:
-        df.loc[(df['EmWl [nm]'] >= order * float(col) - width) & (df['EmWl [nm]'] <= order * float(col) + width), col] = np.nan
+        df.loc[(df['EmWl [nm]'] >= order * float(col) - width) & (df['EmWl [nm]'] <= order * float(col) + width), col] = np.nan #Replace the values of the Rayleigh scattering with NoDataValue from numpy i.e NaN
 
     return df
 
@@ -487,11 +524,11 @@ def plot_3D_contour_inter(eem, levels = 30, Normalisation = True):
         - Normalisation: Boolean used to specify whether or not normalisation has already been carried out. Only used to change the colorbar unit between a.u and R.u.
 
     '''
-    if Normalisation:
+    if Normalisation:  #Verify the normalisation to choose the Unit in the legend
         unit = 'R.u'
     else:
         unit = 'a.u'
-    x = np.array(eem['EmWl [nm]'])
+    x = np.array(eem['EmWl [nm]'])  #Initinialise the values for the plot
     Z = eem.iloc[:, 1:].values
     y = np.array(eem.columns[1:])
 
@@ -517,12 +554,12 @@ def plot_3D_contour(eem, levels = 25, Normalisation = True):
         - Normalisation: Boolean used to specify whether or not normalisation has already been carried out. Only used to change the colorbar unit between a.u and R.u.
 
     '''
-    if Normalisation:
+    if Normalisation:  #Verify the normalisation to choose the Unit in the legend
         unit = 'R.u'
     else:
         unit = 'a.u'
    
-    x = np.array(eem['EmWl [nm]'])
+    x = np.array(eem['EmWl [nm]'])  #Initinialise the values for the plot
     Z = eem.iloc[:, 1:].values
     y = np.array(eem.columns[1:])
     X,Y = np.meshgrid(x,y)
@@ -549,11 +586,11 @@ def plot_3D_surface_inter(eem, Normalisation = True):
         - Normalisation: Boolean used to specify whether or not normalisation has already been carried out. Only used to change the colorbar unit between a.u and R.u.
     '''
     
-    if Normalisation:
+    if Normalisation:  #Verify the normalisation to choose the Unit in the legend
         unit = 'R.u'
     else:
         unit = 'a.u'
-    x = np.array(eem['EmWl [nm]'])
+    x = np.array(eem['EmWl [nm]'])  #Initinialise the values for the plot
     Z = eem.iloc[:, 1:].values
     y = np.array(eem.columns[1:])
 
@@ -567,4 +604,5 @@ def plot_3D_surface_inter(eem, Normalisation = True):
     )
     
     fig.show()
+    
 
