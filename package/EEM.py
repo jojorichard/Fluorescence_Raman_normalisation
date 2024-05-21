@@ -596,12 +596,14 @@ def plot_3D_surface_inter(eem, Normalisation = True):
 
     fig = go.Figure(data=go.Surface(x=x, y=y, z=Z.transpose(), colorscale='jet'))
     fig.update_layout(
-        scene=dict(
-            xaxis_title='λ<sub>em</sub> [nm]',
-            yaxis_title='λ<sub>ex</sub> [nm]',
-            zaxis_title=f'Fl [{unit}]'
+            scene=dict(
+                xaxis_title='λ<sub>em</sub> [nm]',
+                yaxis_title='λ<sub>ex</sub> [nm]',
+                zaxis_title=f'Fl [{unit}]'
+            ),
+            width=800,  
+            height=800 
         )
-    )
     
     fig.show()
     
