@@ -242,8 +242,7 @@ def plot_fluorescence_graph(eem):
             plt.plot(EmWl, Int, label=f'λ = {wavelength}', color='black')
             plt.legend(fontsize=30)
 
-            # Formating of the axis and title of the graph
-            plt.title("Raman spectrum", fontsize=70)
+            # Formating of the axis of the graph
             plt.xlabel(r'Emission wavelength [nm]', fontsize=50)
             plt.ylabel(r'Fluorescence', fontsize=50)
 
@@ -366,7 +365,6 @@ def plot_superimposed_graphs():
     
     # Size of the graph, formating of the axis and title of the graph
     plt.figure(figsize=(40,30))
-    plt.title("Raman spectrum", fontsize=70)
     plt.xlabel(r'Emission wavelength [nm]',  fontsize=50)
     plt.ylabel(r'Fluorescence', fontsize=50)
 
