@@ -7,7 +7,7 @@
 ### 📈 Function to plot a specific excited wavelength on a graph
 This function plots fluorescence data on a standard graph and/or an interactive graph, depending on the users choices.
 ```
-plot_fluorescence_graph()
+plot_fluorescence_graph(eem)
 ```   
 This function prompts the user to provide the excitation wavelength of interest in nanometers (nm) to label the curve on the graph and to select the values of interest. It then plots the fluorescence data on a standard graph and/or an interactive graph using Plotly.
 ### 📈 Function to plot several excited wavelength on a graph
