@@ -86,12 +86,12 @@ It is important to note that the present function only works  for excel files of
 
 For any other type of file, one could use the pathfile form the above function and converts it dataframe. 
 
-### function's name
-The function in one sentence
+### Caluclation of the Area
+Take a dataframe and/or a blank and do the normalisation of the data
 ```
-copy paste
+fluo_raman_norm(eem, blank = False):
 ```
-Details
+
 ### function's name
 The function in one sentence
 ```
