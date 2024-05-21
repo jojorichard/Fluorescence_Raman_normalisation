@@ -111,7 +111,7 @@ copy paste
 ```
 Details
 
-The description of the complementary features can be found under ![features description](https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/notebook/project_report.ipynb))
+The description of the complementary features can be found under ![features description.](https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/Features_description.md)
 ## 📫 Reaching us 
 Justine Serra : justine.serratosio@gmail.com
 
