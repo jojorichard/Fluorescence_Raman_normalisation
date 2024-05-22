@@ -1,5 +1,16 @@
 # How to use the package
+
 ## Full example
+
+```
+eem = read_excel() # another read function
+eem_norm = fluo_raman_norm(eem)
+eem_norm_Removed_Rscattering = remove_rayleigh_scattering(eem_norm, order='both')
+
+plot_3D_surface_inter(eem_norm_Removed_Rscattering)
+plot_3D_contour_inter(eem_norm_Removed_Rscattering)
+plot_3D_contour(eem_norm_Removed_Rscattering)
+```
 
 ## Step by Step
 ### 1) load the EEM matrice to be processed
@@ -32,15 +43,15 @@ eem = read_excel()
 ### 3) Optional Remove Rayleigh scattering. (Recommanded before plotting)
 #### Of first order
 ```
-remove_rayleigh_scattering(eem_norm, order=1)
+eem_norm_Removed_Rscattering = remove_rayleigh_scattering(eem_norm, order=1)
 ```
 #### Of second order
 ```
-remove_rayleigh_scattering(eem_norm, order=2)
+eem_norm_Removed_Rscattering = remove_rayleigh_scattering(eem_norm, order=2)
 ```
 #### Of both order 
 ```
-remove_rayleigh_scattering(eem_norm, order='both')
+eem_norm_Removed_Rscattering = remove_rayleigh_scattering(eem_norm, order='both')
 ```
 
 ### Example of graph without removing the Rayleigh scattering
@@ -63,26 +74,26 @@ remove_rayleigh_scattering(eem_norm, order='both')
 #### 3D Surface plot
 If normalised
 ```
-plot_3D_surface_inter(eem_norm)
+plot_3D_surface_inter(eem_norm_Removed_Rscattering)
 ```
 If not normalised (this argument is valid for all 3D function)
 ![Surface_3D_normaliser](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/bb81fea8-7f79-447c-95d3-a86e67a2bf86)
 
 ```
-eem = remove_rayleigh_scattering(eem, order='both')
+eem = remove_rayleigh_scattering(eem_norm_Removed_Rscattering, order='both')
 plot_3D_surface_inter(eem, Normalisation = False)
 ```
 ![Surface_3D_non_norm](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/f43e98ef-3fbe-450e-9e13-4468f3cf365b)
 
 ### 3D interactive contour plot
 ```
-plot_3D_contour_inter(eem_norm)
+plot_3D_contour_inter(eem_norm_Removed_Rscattering)
 ```
 ![Contour_inter_normaliser](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/8f2d6b3e-65e4-41af-9a55-0e83b4027e6a)
 
 ### 3D contour plot
 ```
-plot_3D_contour(eem_norm)
+plot_3D_contour(eem_norm_Removed_Rscattering)
 ```
 ![Contour_normaliser](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/b91dddd1-342a-4737-8dff-70fc92fc4425)
 
