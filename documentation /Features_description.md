@@ -121,28 +121,56 @@ It is important to check whether the correct filepath was printed to ensure a sm
 
 
 ### Calculattion of the area of water's Raman peak
-Calculate the Area of the water Raman peak computed for 350 nm exitation waveleght and emission from 371 nm to 428 nm according to the following paper:
+Take a dataframe of an EEM matrice or a blank and calculate the Area of the water Raman peak computed for 350 nm exitation waveleght and emission from 371 nm to 428 nm according to the following paper:
     Lawaetz, A. J., & Stedmon, C. A. (2009). Fluorescence Intensity Calibration Using the Raman Scatter Peak of Water. Applied Spectroscopy, 63(8), 936-940.
     https://journals.sagepub.com/doi/10.1366/000370209788964548
 ```
 Area(eem, blank = False)
 ```
-Details
-### function's name
-The function in one sentence
+If the blank (water) is on a other file the file can be load in a dataframe and specified as follow blank = DataFrame
+The integral is computed using the trapezoidal rule.
+
+### Raman normalisation
+Take a dataframe of an EEM matrice and the Area of the water raman peak calculated with the Area function and normalise the EEM matrice by dividing the values with the area.
 ```
-copy paste
+Raman_normalisation(eem, Area)
 ```
-Details
-### function's name
-The function in one sentence
+
+### Plot contour graph
+Take a dataframe of an EEM matrice and plot a contour graph
 ```
-copy paste
+plot_3D_contour(eem, levels = 25, Normalisation = True)
 ```
-Details
-### function's name
-The function in one sentence
+ Plot an 3D contour graph with the folowing axes:
+        - x: the emmited wavelenght in nm
+        - y: the exitation wavelenght in nm
+        - z: the intensity in a.u or R.u depending if the data are normalised or not
+
+The number of levels showed in the graph can be changed by specify a number with levels = number. The default values of levels is set to 25. Note that a high levels value may affect the legibility of the graph. 
+The Normalisation argument can be specified to be False if the function is called with an non normalised EEM matrice. It allows to label correctly the fluorescence axes.
+
+### Plot an interactive contour graph 
+Take a dataframe of an EEM matrice and plot an interactive contour graph
 ```
-copy paste
+plot_3D_contour_inter(eem, levels = 30, Normalisation = True)
 ```
-Details
+ Plot an 3D contour graph with the folowing axes:
+        - x: the emmited wavelenght in nm
+        - y: the exitation wavelenght in nm
+        - z: the intensity in a.u or R.u depending if the data are normalised or not
+
+The number of levels showed in the graph can be changed by specify a number with levels = number. The default values of levels is set to 25. Note that a high levels value may affect the legibility of the graph. 
+The Normalisation argument can be specified to be False if the function is called with an non normalised EEM matrice. It allows to label correctly the fluorescence axes.
+
+### Plot an interactive surface graph
+Take a dataframe of an EEM matrice and plot an interactive contour graph
+```
+plot_3D_surface_inter(eem, Normalisation = True)
+```
+ Plot an 3D surface interactive graph with the folowing axes:
+        - x: the emmited wavelenght in nm
+        - y: the exitation wavelenght in nm
+        - z: the intensity in a.u or R.u depending if the data are normalised or not
+
+The Normalisation argument can be specified to be False if the function is called with an non normalised EEM matrice. It allows to label correctly the fluorescence axes.
+
