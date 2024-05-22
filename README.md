@@ -1,6 +1,7 @@
 # ⚡ Fluorescence spectroscopy analysis ⚡
 
-![spectre 3D](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/894e23a3-ff94-4a60-85b4-d2d7a1648a05)
+![Graphique](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/dc2cf7c0-6011-45c3-bb12-784114e40ce0)
+
 
 **J'ai juste recopié l'exemple du prof, faudra voir si on ajoute / enlève des trucs ou pas !!!**
 
