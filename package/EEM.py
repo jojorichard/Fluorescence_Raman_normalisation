@@ -309,14 +309,14 @@ def plot_fluorescence_graph(eem):
         title_font=dict(size=25),  # Size of the title 
         title_x=0.5,  # To center the title
         xaxis=dict(
-            title='Fluorescence',
+            title='Emission wavelength [nm]',
             title_font=dict(size=20),  # Size of the label of the x axis
             rangeselector=dict(
                 buttons=list([
                     dict(step="all") ])),
             rangeslider=dict(visible=True), 
             type="linear"),
-        yaxis=dict(title='Excitation wavelength [nm]', 
+        yaxis=dict(title='Fluorescence', 
                    title_font=dict(size=20)),  # Size of the label of the y axis
         hovermode='closest',
         height=700,  # Height in pixels
@@ -333,8 +333,7 @@ def plot_fluorescence_graph(eem):
         elif choice2 != "no":
             print("Please answer by 'yes' or 'no'.")
             
-
-def plot_superimposed_graphs():
+def plot_superimposed_graphs(eem, eem1 = False, eem2 = False, eem3 = False, eem4 = False, eem5 = False, eem6 = False):
     """
     Function to plot a superposition of graphs on a standard graph and, if wanted, an interactive graph.
 
@@ -347,6 +346,7 @@ def plot_superimposed_graphs():
     None
     """
 
+    '''
     while True:
         try:
             number_of_graph = int(input("How many graphs would you like to superimpose :"))
@@ -358,7 +358,8 @@ def plot_superimposed_graphs():
                 break
         except ValueError:
             print("Please enter a valid number.")
-
+    '''
+    
             
     # Extraction of the values of interest
 
@@ -367,34 +368,179 @@ def plot_superimposed_graphs():
     Xs = []
     wavelengths = []
     Ys = []
+    number_of_graph = 0
 
-    # Loop to collect variables for each graph
-    while True:
-        q1 = input("Are all the values in the same file ? (yes/no) ")
-        if q1 == "yes":
-            eem = read_excel()
-            for i in range(1, int(number_of_graph) + 1):
-                X = eem["EmWl [nm]"]
-                wavelength = int(input(f"What is the excitation wavelength of interest for curve {i} in nm: "))
-                Y = eem[wavelength]
-                # Adding the variables to the corresponding list
-                Xs.append(X)
-                wavelengths.append(wavelength)
-                Ys.append(Y)
-            break
-        elif q1 == "no":
-            for i in range(1, int(number_of_graph) + 1):
-                eem = read_excel()
-                X = eem["EmWl [nm]"]
-                wavelength = int(input(f"What is the excitation wavelength of interest for curve {i} in nm: "))
-                Y = eem[wavelength]
-                # Adding the variables to the corresponding list
-                Xs.append(X)
-                wavelengths.append(wavelength)
-                Ys.append(Y)
-            break
-        elif q1 != "no":
-            print("Please answer by 'yes' or 'no'.")
+    # Loop to collect variables for each graph    
+
+    if isinstance(eem, pd.DataFrame):
+        while True:
+            try:
+                number_of_column = int(input("How many columns would you like to take from file n°1 :"))
+                if number_of_column > 7-number_of_graph:
+                    print("A maximum of 7 different graphs can be superimposed !")
+                elif number_of_column < 1:
+                    print("The number of column should be at least 1 !")
+                else:
+                    number_of_graph = number_of_column
+                    break
+            except ValueError:
+                print("Please enter a valid number.")
+        for i in range(1, int(number_of_column) + 1):
+            X = eem["EmWl [nm]"]
+            wavelength = int(input(f"What is the excitation wavelength of interest for curve {i} in nm: "))
+            Y = eem[wavelength]
+            # Adding the variables to the corresponding list
+            Xs.append(X)
+            wavelengths.append(wavelength)
+            Ys.append(Y)
+    elif eem != False: #If eem isn't a Dataframe raise an error
+        raise ValueError('eem needs to be a valid DataFrame in normalised form')
+        
+    if isinstance(eem1, pd.DataFrame):
+        while True:
+            try:
+                number_of_column = int(input("How many columns would you like to take from file n°2 :"))
+                if number_of_column > 7-number_of_graph:
+                    print("A maximum of 7 different graphs can be superimposed !")
+                elif number_of_column < 1:
+                    print("The number of column should be at least 1 !")
+                else:
+                    number_of_graph += number_of_column
+                    break
+            except ValueError:
+                print("Please enter a valid number.")
+        for i in range(1, int(number_of_column) + 1):
+            X = eem1["EmWl [nm]"]
+            wavelength = int(input(f"What is the excitation wavelength of interest for curve {i} in nm: "))
+            Y = eem1[wavelength]
+            # Adding the variables to the corresponding list
+            Xs.append(X)
+            wavelengths.append(wavelength)
+            Ys.append(Y)
+    elif eem1 != False: #If eem isn't a Dataframe raise an error
+        raise ValueError('eem needs to be a valid DataFrame in normalised form')
+
+    if isinstance(eem2, pd.DataFrame):
+        while True:
+            try:
+                number_of_column = int(input("How many columns would you like to take from file n°3 :"))
+                if number_of_column > 7-number_of_graph:
+                    print("A maximum of 7 different graphs can be superimposed !")
+                elif number_of_column < 1:
+                    print("The number of column should be at least 1 !")
+                else:
+                    number_of_graph += number_of_column
+                    break
+            except ValueError:
+                print("Please enter a valid number.")
+        for i in range(1, int(number_of_column) + 1):
+            X = eem2["EmWl [nm]"]
+            wavelength = int(input(f"What is the excitation wavelength of interest for curve {i} in nm: "))
+            Y = eem2[wavelength]
+            # Adding the variables to the corresponding list
+            Xs.append(X)
+            wavelengths.append(wavelength)
+            Ys.append(Y)
+    elif eem2 != False: #If eem isn't a Dataframe raise an error
+        raise ValueError('eem needs to be a valid DataFrame in normalised form')
+
+    if isinstance(eem3, pd.DataFrame):
+        while True:
+            try:
+                number_of_column = int(input("How many columns would you like to take from file n°4 :"))
+                if number_of_column > 7-number_of_graph:
+                    print("A maximum of 7 different graphs can be superimposed !")
+                elif number_of_column < 1:
+                    print("The number of column should be at least 1 !")
+                else:
+                    number_of_graph += number_of_column
+                    break
+            except ValueError:
+                print("Please enter a valid number.")
+        for i in range(1, int(number_of_column) + 1):
+            X = eem3["EmWl [nm]"]
+            wavelength = int(input(f"What is the excitation wavelength of interest for curve {i} in nm: "))
+            Y = eem3[wavelength]
+            # Adding the variables to the corresponding list
+            Xs.append(X)
+            wavelengths.append(wavelength)
+            Ys.append(Y)
+    elif eem3 != False: #If eem isn't a Dataframe raise an error
+        raise ValueError('eem needs to be a valid DataFrame in normalised form')
+        
+    if isinstance(eem4, pd.DataFrame):
+        while True:
+            try:
+                number_of_column = int(input("How many columns would you like to take from file n°5 :"))
+                if number_of_column > 7-number_of_graph:
+                    print("A maximum of 7 different graphs can be superimposed !")
+                elif number_of_column < 1:
+                    print("The number of column should be at least 1 !")
+                else:
+                    number_of_graph += number_of_column
+                    break
+            except ValueError:
+                print("Please enter a valid number.")
+        for i in range(1, int(number_of_column) + 1):
+            X = eem4["EmWl [nm]"]
+            wavelength = int(input(f"What is the excitation wavelength of interest for curve {i} in nm: "))
+            Y = eem4[wavelength]
+            # Adding the variables to the corresponding list
+            Xs.append(X)
+            wavelengths.append(wavelength)
+            Ys.append(Y)
+    elif eem4 != False: #If eem isn't a Dataframe raise an error
+        raise ValueError('eem needs to be a valid DataFrame in normalised form')
+        
+    if isinstance(eem5, pd.DataFrame):
+        while True:
+            try:
+                number_of_column = int(input("How many columns would you like to take from file n°6 :"))
+                if number_of_column > 7-number_of_graph:
+                    print("A maximum of 7 different graphs can be superimposed !")
+                elif number_of_column < 1:
+                    print("The number of column should be at least 1 !")
+                else:
+                    number_of_graph += number_of_column
+                    break
+            except ValueError:
+                print("Please enter a valid number.")
+        for i in range(1, int(number_of_column) + 1):
+            X = eem5["EmWl [nm]"]
+            wavelength = int(input(f"What is the excitation wavelength of interest for curve {i} in nm: "))
+            Y = eem5[wavelength]
+            # Adding the variables to the corresponding list
+            Xs.append(X)
+            wavelengths.append(wavelength)
+            Ys.append(Y)
+    elif eem5 != False: #If eem isn't a Dataframe raise an error
+        raise ValueError('eem needs to be a valid DataFrame in normalised form')
+    
+    if isinstance(eem6, pd.DataFrame):
+        while True:
+            try:
+                number_of_column = int(input("How many columns would you like to take from file n°7 :"))
+                if number_of_column > 7-number_of_graph:
+                    print("A maximum of 7 different graphs can be superimposed !")
+                elif number_of_column < 1:
+                    print("The number of column should be at least 1 !")
+                else:
+                    number_of_graph += number_of_column
+                    break
+            except ValueError:
+                print("Please enter a valid number.")
+        for i in range(1, int(number_of_column) + 1):
+            X = eem6["EmWl [nm]"]
+            wavelength = int(input(f"What is the excitation wavelength of interest for curve {i} in nm: "))
+            Y = eem6[wavelength]
+            # Adding the variables to the corresponding list
+            Xs.append(X)
+            wavelengths.append(wavelength)
+            Ys.append(Y)
+    elif eem6 != False: #If eem isn't a Dataframe raise an error
+        raise ValueError('eem needs to be a valid DataFrame in normalised form')
+
+
     
             
     # General shape of the graph
@@ -414,7 +560,7 @@ def plot_superimposed_graphs():
 
 
     colors = ["black", "blue", "red", "green", "magenta", "yellow", "cyan"]
-    for i in range(number_of_graph):
+    for i in range(len(Xs)):
         EmWl = Xs[i]
         Int = Ys[i]
         color = colors[i]
@@ -429,7 +575,7 @@ def plot_superimposed_graphs():
     fig = go.Figure() 
 
     # Add each curve from data in Excel files
-    for i in range(number_of_graph):
+    for i in range(len(Xs)):
         # Select columns corresponding to x and y values
         x_col_name = Xs[i]
         y_col_name = Ys[i]  
@@ -485,10 +631,10 @@ def plot_superimposed_graphs():
         title_font=dict(size=25),  # Size of the title 
         title_x=0.5,  # To center the title
         xaxis=dict(
-            title='Fluorescence',
+            title='Emission wavelength [nm]',
             title_font=dict(size=20),  # Size of the label of the x axis
             type="linear"),
-        yaxis=dict(title='Excitation wavelength [nm]', 
+        yaxis=dict(title='Fluorescence', 
                    title_font=dict(size=20)),  # Size of the label of the y axis
         hovermode='closest',
         height=650,  # Height in pixels
@@ -511,6 +657,8 @@ def plot_superimposed_graphs():
     
     plt.savefig('Raman_spectrum.svg')  
     plt.show()
+
+
 
 def plot_3D_contour_inter(eem, levels = 30, Normalisation = True):
     '''
