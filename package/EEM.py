@@ -242,8 +242,9 @@ def remove_rayleigh_scattering(eem, order=1, width=10):
     if order not in [1, 2, 'both']: #Verify the order of the rayleigh scattering to be removed
          raise ValueError("The value of 'order' must be either 1, 2 or 'both'. This function removes Rayleigh scattering peaks of either first or second order.")
     if order == 'both':
-        df.loc[(df['EmWl [nm]'] >= 1 * float(col) - width) & (df['EmWl [nm]'] <= 1 * float(col) + width), col] = np.nan #Replace the values of the Rayleigh scattering with NoDataValue from numpy i.e NaN
-        df.loc[(df['EmWl [nm]'] >= 2 * float(col) - width) & (df['EmWl [nm]'] <= 2 * float(col) + width), col] = np.nan #Replace the values of the Rayleigh scattering with NoDataValue from numpy i.e NaN
+        for col in df.columns[1:]:
+            df.loc[(df['EmWl [nm]'] >= 1 * float(col) - width) & (df['EmWl [nm]'] <= 1 * float(col) + width), col] = np.nan #Replace the values of the Rayleigh scattering with NoDataValue from numpy i.e NaN
+            df.loc[(df['EmWl [nm]'] >= 2 * float(col) - width) & (df['EmWl [nm]'] <= 2 * float(col) + width), col] = np.nan #Replace the values of the Rayleigh scattering with NoDataValue from numpy i.e NaN
     else:
         for col in df.columns[1:]:
             df.loc[(df['EmWl [nm]'] >= order * float(col) - width) & (df['EmWl [nm]'] <= order * float(col) + width), col] = np.nan #Replace the values of the Rayleigh scattering with NoDataValue from numpy i.e NaN
