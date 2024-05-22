@@ -18,7 +18,7 @@ pip install git+https://github.com/jojorichard/EEM.git
 ## 🛠️ Development installation
 Clone this repository locally from GitHub:
 ```
-git clone https://github.com/carla-simulator/carla.git .
+git clone https://github.com/jojorichard/Fluorescence_Raman_normalisation.git .
 ```
 Then add and commit changes as usual. 
 Contributions from third parties or the implementation of the reading of a file format not yet supported are of course welcome. To see how to implement support for the new format, refer to "Implementation of a new file format" in the documentation section.
