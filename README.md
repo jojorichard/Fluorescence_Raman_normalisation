@@ -6,39 +6,23 @@ This package is a tool for processing Excitation Emission Matrix (EEM). It inclu
 
 
 ## :notebook_with_decorative_cover: Documentation
+  - ![features description.](https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/documentation%20/Features_description.md)
+  - https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/documentation%20/Implementation%20of%20a%20new%20file%20format%20.md
   - https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/notebook/package_report.ipynb
+    
 ## ⚙️ Installation
-Create a new environment, you may also give the environment a different name.
 ```
-conda create -n fluo python=3.10 
+pip install git+https://github.com/jojorichard/EEM.git
 ```
-```
-conda activate fluo
-```
-If you need jupyter lab, install it
 
-```
-(fluo) $ pip install jupyterlab
-```
 ## 🛠️ Development installation
-Initialize Git (only for the first time).
+Clone this repository locally from GitHub:
+```
+git clone https://github.com/carla-simulator/carla.git .
+```
+Then add and commit changes as usual. 
+Contributions from third parties or the implementation of the reading of a file format not yet supported are of course welcome. To see how to implement support for the new format, refer to "Implementation of a new file format" in the documentation section.
 
-Note: You should have create an empty repository on https://github.com:_ _ _pschwllr/fluo_ _ _.
-```
-git init
-git add * 
-git add .*
-git commit -m "Initial commit" 
-git branch -M main
-git remote add origin git@github.com:_ _ _pschwllr/fluo_ _ _.git 
-git push -u origin main
-```
-Then add and commit changes as usual.
-
-To install the package, run
-```
-(fluo) $ pip install -e "._ _ _[test,doc]"_ _ _
-```
 ## 🔎 Run test and coverage
 ```
 (conda_env) $ pip install tox
@@ -52,56 +36,7 @@ Works after running tox
 ```
 ## 📄 Testing
 Models and results can be found _ _ _here_ _ _. -> mettre un lien qui renvoie à un document à télécharcher
-## 💡Features
 
-
-### 💫 File's upload 
-The function uploads the file, find the pathfile and retrun it.
-```
-read_eem()
-```   
-The function (containing 6 sub-functions) opens a Tkinter window for selecting an Excel file, displays its contents in dataframe, 
-and asks the user for confirmation on the data display.✅ ❌
-
-It is important to note that if the file is not under the excel format, the function will only return the path without displaying its contents.
-
-### 🔭 Normalised dataframe
-The function converts the file into normalised dataframe and prints it.
-```
-read_excel()
-```
-The function converts the excel file into dataframe by taking the pathfile form the above function and converts it in normalised dataframe.
-
-It is important to note that the present function only works  for excel files of a specific spectrometer.
-
-For any other type of file, one could use the pathfile form the above function and converts it dataframe. 
-
-### Caluclation of the Area
-Take a dataframe and/or a blank and do the normalisation of the data
-```
-fluo_raman_norm(eem, blank = False):
-```
-
-### function's name
-The function in one sentence
-```
-copy paste
-```
-Details
-### function's name
-The function in one sentence
-```
-copy paste
-```
-Details
-### function's name
-The function in one sentence
-```
-copy paste
-```
-Details
-
-The description of the complementary features can be found under ![features description.](https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/Features_description.md)
 ## 📫 Reaching us 
 Justine Serra : justine.serratosio@gmail.com
 
