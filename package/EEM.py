@@ -126,7 +126,7 @@ def read_eem():
 
     return file_path
 
-def read_excel(path):
+def read_excel(path = False):
     """
     Read a specific excel files of a spectrometer were the values are listed in the following form:
 
