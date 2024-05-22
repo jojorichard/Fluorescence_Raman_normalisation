@@ -88,12 +88,14 @@ print_file_path()
 It is important to check whether the correct filepath was printed to ensure a smooth continuation.
 
 ### 🔭 Normalised dataframe
-The function converts the file into normalised dataframe and prints it.
+The function converts the file into normalised dataframe and return it.
 ```
 read_excel()
 ```
 The function converts the excel file into dataframe by taking the pathfile form the above function and converts it in normalised dataframe.
-It is important to note that the present function only works  for excel files.
+
+It is important to note that the present function only works  for excel files of a specific spectrometer.
+
 For any other type of file, one could use the pathfile form the above function and converts it dataframe. 
 
 
