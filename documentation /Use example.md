@@ -8,3 +8,27 @@ exemple with an excel files
 eem = read_excel()
 ```
 ![Tuto read_excel](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/d7f3a432-950c-47df-8ac7-7d7728fcd84e)
+
+ ### 2) Normalise the EEM matrice
+ If the blank is the loaded eem
+ ´´´
+ eem_norm = fluo_raman_norm(eem)
+ ´´´
+ If the blank is in another file
+ ´´´
+ blank = read_excel()
+ eem_norm = fluo_raman_norm(eem, blank = blank)
+ ´´´
+ The normalised EEM matrice is saved in an excel file called "normalised_Ramnan.xlsx" of the follwing form and it's DataFrame is returned
+ 
+ | EmWl [nm] | 250        | 255        | 260        | 265        | 270        | 275        | 280        | 285        | 290        | 295        | 300        |
+| --------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
+| 350       | 0.0008789  | 0.0023753  | 0.0028547  | 0.004495   | 0.0065382  | 0.0060588  | 0.0084375  | 0.0080449  | 0.0088119  | 0.0091292  | 0.0088656  |
+| 350.5     | 0.0010234  | 0.0022913  | 0.002919   | 0.0044307  | 0.0058528  | 0.0064289  | 0.0076323  | 0.009171   | 0.0087779  | 0.0084182  | 0.0080242  |
+| 351       | 0.0011219  | 0.0022533  | 0.0030072  | 0.0044122  | 0.0055507  | 0.0064891  | 0.0079348  | 0.0089342  | 0.0090996  | 0.0080688  | 0.007986   |
+| 351.5     | 0.0011135  | 0.0022734  | 0.0030723  | 0.0044049  | 0.0056659  | 0.0065027  | 0.0079862  | 0.0089206  | 0.0089053  | 0.0079954  | 0.0079835  |
+| 352       | 0.0011124  | 0.0022865  | 0.0031589  | 0.0043866  | 0.0056515  | 0.0065596  | 0.0079579  | 0.0087859  | 0.00886    | 0.007912   | 0.0078569  |
+
+## 3) Optional Remove Rayleigh scattering. (Recommanded before plotting)
+
+
