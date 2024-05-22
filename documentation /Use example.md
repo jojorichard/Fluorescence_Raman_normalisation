@@ -58,7 +58,40 @@ remove_rayleigh_scattering(eem_norm, order='both')
 ### Example of graph with removing  Rayleigh scattering with width = 5 (default = 10)
 ![newplot (2)](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/08e896af-6f23-4d1a-84f0-63ee67b6ffa7)
 
+### 4) Plot several graphs
 
+#### 3D Surface plot
+If normalised
+```
+plot_3D_surface_inter(eem_norm)
+```
+If not normalised (this argument is valid for all 3D function)
+![Surface_3D_normaliser](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/bb81fea8-7f79-447c-95d3-a86e67a2bf86)
 
+```
+eem = remove_rayleigh_scattering(eem, order='both')
+plot_3D_surface_inter(eem, Normalisation = False)
+```
+![Surface_3D_non_norm](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/f43e98ef-3fbe-450e-9e13-4468f3cf365b)
+
+### 3D interactive contour plot
+```
+plot_3D_contour_inter(eem_norm)
+```
+![Contour_inter_normaliser](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/8f2d6b3e-65e4-41af-9a55-0e83b4027e6a)
+
+### 3D contour plot
+```
+plot_3D_contour(eem_norm)
+```
+![Contour_normaliser](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/b91dddd1-342a-4737-8dff-70fc92fc4425)
+
+ #### with levels = 10 (default 25)
+ ![graph](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/184e07d6-69d4-42f8-9954-74d8edea04d5)
+
+#### with levels = 100
+![graph](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/353d7146-4b1c-4b12-994b-5aadc130c6d8)
+
+#### Excpected graph with anotation
 
 
