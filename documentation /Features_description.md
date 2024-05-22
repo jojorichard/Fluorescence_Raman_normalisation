@@ -1,6 +1,38 @@
 # ⚡Fluorescence spectroscopy analysis⚡
 
+##:warning: WARNING :warning:
+To be read by the package properly dataframe containing the EEM matrice need to be standardised in a particular way please refer to the "Implementation of a new file format.md" to see the form required. 
+
 ## 💡Main features
+
+### 🔭 Read and standardise an raw Excel file from the spectrometer
+The function read an raw Excel file and rearange the data in a DataFrame that can be read by the other function.
+```
+read_excel(path = False)
+```
+The function converts the excel file into dataframe by taking the pathfile form the read_eem function and converts it in a standardised dataframe.
+If there is an error while excecuting the read_eem function it is possible to input the path file manually by specifing it as follow  path ='user/username/example.xlsx'
+It is important to note that the present function only works  for excel files of a specific spectrometer.
+
+For any other type of file, one could use the pathfile form the above function and converts it dataframe please refer to "Implementation of a new file format.md". 
+
+### Normalisation of an EEM matrice
+Take a dataframe of an EEM matrice and optionally a blank and normalise the EEM matrice according to the Area of the Raman peak of water computed for 350 nm exitation waveleght and emission from 371 nm to 428 nm according to the following paper:
+    Lawaetz, A. J., & Stedmon, C. A. (2009). Fluorescence Intensity Calibration Using the Raman Scatter Peak of Water. Applied Spectroscopy, 63(8), 936-940. 
+    https://journals.sagepub.com/doi/10.1366/000370209788964548
+```
+fluo_raman_norm(eem, blank = False)
+```
+The function calls two other function. Area and Raman_normalisation described in the next section.
+
+### Remove Rayleigh scattering of first and/or second order
+Take a dataframe of an EEM matrice and remove the Rayleigh scattering for a beter visualisation in the graph.
+The Rayleigh scatteing are removed according the following paper:	Anal. Methods, 2013,5, 6557-6566, https://pubs.rsc.org/en/content/articlelanding/2013/ay/c3ay41160e
+```
+remove_rayleigh_scattering(eem, order=1, width=10)
+```
+The order can be specified by calling the function with order = 1 or order = 2, order = 'both'.
+The width of the band that is removed can me specified by calling the function with width = values. Default width set to 10
 
 ## 💡Complementary features
 
@@ -87,22 +119,13 @@ print_file_path()
 ```   
 It is important to check whether the correct filepath was printed to ensure a smooth continuation.
 
-### 🔭 Normalised dataframe
-The function converts the file into normalised dataframe and return it.
+
+### Calculattion of the area of water's Raman peak
+Calculate the Area of the water Raman peak computed for 350 nm exitation waveleght and emission from 371 nm to 428 nm according to the following paper:
+    Lawaetz, A. J., & Stedmon, C. A. (2009). Fluorescence Intensity Calibration Using the Raman Scatter Peak of Water. Applied Spectroscopy, 63(8), 936-940.
+    https://journals.sagepub.com/doi/10.1366/000370209788964548
 ```
-read_excel()
-```
-The function converts the excel file into dataframe by taking the pathfile form the above function and converts it in normalised dataframe.
-
-It is important to note that the present function only works  for excel files of a specific spectrometer.
-
-For any other type of file, one could use the pathfile form the above function and converts it dataframe. 
-
-
-### function's name
-The function in one sentence
-```
-copy paste
+Area(eem, blank = False)
 ```
 Details
 ### function's name
