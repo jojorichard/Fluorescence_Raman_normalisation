@@ -8,6 +8,7 @@ This package is a tool for processing Excitation Emission Matrix (EEM). It inclu
 ## :notebook_with_decorative_cover: Documentation
   - ![features description.](https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/documentation%20/Features_description.md)
   - https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/documentation%20/Implementation%20of%20a%20new%20file%20format%20.md
+  - https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/documentation%20/Use%20example.md
   - https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/notebook/package_report.ipynb
     
 ## ⚙️ Installation
