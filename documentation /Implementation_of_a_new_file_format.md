@@ -12,8 +12,8 @@ The data must be arranged in the following form:
 
 
 
-## Example of an excel file converted in a standardised DataFrame
-### Original excel files 
+## Example of an excel file converted in standardised DataFrame
+### Original excel file 
 | EmWl [nm] | Int(250) | Int(260) | Int(270) | Int(280) | Int(290) | Int(300) |
 | --------- | -------- | -------- | -------- | -------- | -------- | -------- |
 | 350       | 8.378    | 46.433   | 71.544   | 101.368  | 115.766  | 103.823  |
@@ -32,13 +32,13 @@ The data must be arranged in the following form:
 | 352.0     | 9.9390  | 49.4724 | 74.7073 | 101.0268| 118.1397| 107.7044|
 
 ## Implement a read function for your own file
-If the files that you wan't to read isn't already suported by the package you can create your a function that read the files in a dataframe and order the data as described above.
-### 1) Load the file path
-you can call the folowing function in your function in order to load your files and return the path file of the file. 
+If your file isn't already suported by the package, you can create a function that reads the file and converts them in standardised DataFrame as shown above.
+### 1) Find the filepath
+You can call the following function in your function in order to upload your file and return the corresponding filepath. 
 ```
 read_eem()
 ```
-### 2) Load your file into a DataFrame
+### 2) Conversion into a DataFrame
 Use panda to load your file into a DataFrame, documentation about the files that can be read py pandas can be found here: https://pandas.pydata.org/docs/reference/frame.html
 
 ### 3) Organise your data as described above and return the DataFrame
