@@ -13,7 +13,7 @@ setup(
      dependency_links=[
         'https://github.com/jojorichard/Fluorescence_Raman_normalisation.git#egg=Fluorescence_Raman_normalisation'
     ],
-    url='https://github.com/jojorichard/EEM',  
+    url='https://github.com/jojorichard/Fluorescence_Raman_normalisation',  
     author='Jonas Richard', 
     author_email='jonas.richard@hotmail.fr',  
     maintainer='Justine Serra, Coralie Reuse, Jonas Richard',  
