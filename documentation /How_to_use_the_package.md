@@ -14,7 +14,7 @@ plot_3D_contour(eem_norm_Removed_Rscattering)
 
 ## Pocedure
 ### 1) load the EEM matrice to be processed
-#### exemple with an excel files
+#### exemple with an excel file
 ```
 eem = read_excel()
 ```
