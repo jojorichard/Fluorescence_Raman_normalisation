@@ -58,7 +58,7 @@ def read_newfile():
 
 # Supported file formats
 
-## Excel file from the following form 
+## Excel file in the following form 
 
 | EmWl [nm] | Int(250) | Int(260) | Int(270) | Int(280) | Int(290) | Int(300) |
 | --------- | -------- | -------- | -------- | -------- | -------- | -------- |
