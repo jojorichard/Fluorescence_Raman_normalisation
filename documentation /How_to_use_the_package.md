@@ -13,14 +13,14 @@ plot_3D_contour(eem_norm_Removed_Rscattering)
 ```
 
 ## Pocedure
-### 1) load the EEM matrice to be processed
-#### exemple with an excel file
+### 1) Upload the EEM matrice (file's data)
+#### Example with an excel file
 ```
 eem = read_excel()
 ```
 ![1) Popup to upload a file](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/7c6659a7-ebd5-45e2-9a22-ae398a53ba9f)
 
- ### 2) Normalise the EEM matrice
+ ### 2) EEM matrice's normalisation
  #### If the blank is the loaded eem
  ```
  eem_norm = fluo_raman_norm(eem)
