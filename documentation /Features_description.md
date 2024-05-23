@@ -1,7 +1,7 @@
 # ⚡Fluorescence spectroscopy analysis⚡
 
 ## :warning: WARNING :warning:
-To be read by the package properly dataframe containing the EEM matrice need to be standardised in a particular way please refer to the "Implementation of a new file format.md" to see the form required. 
+The dataframe containing the EEM matrice needs to be specifically standardised to ensure the proper package's functioning. Please refer to the "Implementation of a new file format.md" to see the form required. 
 
 ## 💡Main features 💡
 
