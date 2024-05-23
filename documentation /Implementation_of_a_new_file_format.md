@@ -1,4 +1,4 @@
-# How to organise your data for using the package
+# Data's organisation to use the package
  
 The package has been designed to work with a standardised form of DataFrame to enable the use of a wide range of file formats.
 
@@ -31,15 +31,15 @@ The data must be arranged in the following form:
 | 351.5     | 9.8104  | 48.9186 | 73.7622 | 100.3105| 117.4956| 106.5844|
 | 352.0     | 9.9390  | 49.4724 | 74.7073 | 101.0268| 118.1397| 107.7044|
 
-## Implement a read function for your own file
-If your file isn't already suported by the package, you can create a function that reads the file and converts them in standardised DataFrame as shown above.
+## Implement function to read a particular file
+If your file isn't already suported by the package, you can create a function that reads the file and converts the data in standardised DataFrame, as shown above.
 ### 1) Find the filepath
-You can call the following function in your function in order to upload your file and return the corresponding filepath. 
+You can call the following function in your function to upload your file and return the corresponding filepath. 
 ```
 read_eem()
 ```
 ### 2) Conversion into a DataFrame
-Use panda to load your file into a DataFrame, documentation about the files that can be read py pandas can be found here: https://pandas.pydata.org/docs/reference/frame.html
+The use of panda is recommended to convert your file into a DataFrame. The following documentation states the files that can be read by panda: https://pandas.pydata.org/docs/reference/frame.html
 
 ### 3) Organise your data as described above and return the DataFrame
 
