@@ -71,7 +71,7 @@ def read_newfile():
 ```
 def read_excel(path = False):
     """
-    Read a specific excel files of a spectrometer were the values are listed in the following form:
+    Reads a specific spectrometer's excel file where the values are structured in the following form:
 
     	EmWl [nm]	Int(250)	Int(260)	Int(270)	Int(280)	Int(290)	Int(300)	Int(310)	Int(320)	Int(330)
          350.0  	8.3780	    46.4330	    71.5440	    101.3680	115.7660	103.8230	111.0970	121.6770	58.7180	
@@ -79,19 +79,20 @@ def read_excel(path = False):
          ...	     ...	      ...	      ...         ...	      ...	      ...	      ...	       ...	      ...
          600.0	    2.8920	    19.2880	    53.0750	    59.5580	    42.0960    	999.9990	290.3740	13.1150	    12.2750
 
-    where Int(XXX) containg the exitation values wiht the intensity measured by the spectrometer in the collumn and EmWL [nm] contain the emission wavelength
+    Int(XXX) contains the excitation wavelength with the measured intensity in the corresponding column EmWL [nm] contains the emission wavelengths
 
-    And return a standardised Dataframe in a form that can be treated by the other function of the package.
+    It returns a standardised Dataframe in a form that can be treated by the other package's functions.
 
     Args:
-    - path the files path of the excel that can be entered manually in case of error of the read_eem function
+    - The filepath
+    In case of error in the read_eem function, the filepath can be entered manually.
     
-    Returns: eem standardised Dataframe in a form that can be treated by the other function of the package.
+    Returns: eem standardised Dataframe in a form that can be treated by the other pakage's functions.
     """
     
     try:
         file_path = read_eem()  # Call read_eem to upload and read the file
-    except: # If an exception is raised than read the file path manually input 
+    except: # If an exception is raised, it reads the filepath manually entered 
         print('An error as occured in the read_eem function. Excecute read_excel(path) with the path file of your file')
         file_path = path
         
@@ -102,4 +103,4 @@ def read_excel(path = False):
 
 ```
 
-## Add future function here
+## Add your future function here
