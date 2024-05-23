@@ -32,7 +32,7 @@ The data must be arranged in the following form:
 | 352.0     | 9.9390  | 49.4724 | 74.7073 | 101.0268| 118.1397| 107.7044|
 
 ## Implement function to read a particular file
-If your file isn't already suported by the package, you can create a function that reads the file and converts the data in standardised DataFrame, as shown above.
+If your file isn't suported by the present package, you can create a function that reads the file and converts the data in standardised DataFrame, as shown above.
 ### 1) Find the filepath
 You can call the following function in your function to upload your file and return the corresponding filepath. 
 ```
@@ -41,7 +41,7 @@ read_eem()
 ### 2) Conversion into a DataFrame
 The use of panda is recommended to convert your file into a DataFrame. The following documentation states the files that can be read by panda: https://pandas.pydata.org/docs/reference/frame.html
 
-### 3) Organise your data as described above and return the DataFrame
+### 3) Organise the data as shown above to return the usable DataFrame
 
 ## Small example
 ```
@@ -56,7 +56,7 @@ def read_newfile():
   return eem
 ```
 
-# File that are already suported
+# Supported file formats
 
 ## Excel file from the following form 
 
