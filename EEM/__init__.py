@@ -1,4 +1,4 @@
-__name__ = "package"
+__name__ = "EEM"
 from .EEM import read_eem
 from .EEM import read_excel
 from .EEM import Area
