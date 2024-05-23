@@ -21,7 +21,7 @@ eem = read_excel()
 ![1) Popup to upload a file](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/7c6659a7-ebd5-45e2-9a22-ae398a53ba9f)
 
  ### 2) EEM matrice's normalisation
- #### If the blank is the file (eem)
+ #### If the blank is in the file (eem)
  ```
  eem_norm = fluo_raman_norm(eem)
 ```
