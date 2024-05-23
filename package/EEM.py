@@ -158,9 +158,6 @@ def read_excel(path = False):
     return eem
 
 
-
-
-
 def Area(eem, blank = False):
     '''
     Calculate the Area of the water Raman peak computed for 350 nm exitation waveleght and emission from 371 nm to 428 nm according to the following paper:
@@ -201,8 +198,6 @@ def Raman_normalisation(eem, Area):
     normalised[columns_of_interest] = eem[columns_of_interest].div(Area) #Normalisation of the values with de area of the water Raman peak
     normalised.to_excel('normalised_Raman.xlsx', index=False) #Creation of a excel files with the normalised values
     return normalised #Return the normalised DataFrame. Convinient for plot. 
-
-
 
 
 def fluo_raman_norm(eem, blank = False):
@@ -250,9 +245,6 @@ def remove_rayleigh_scattering(eem, order=1, width=10):
             df.loc[(df['EmWl [nm]'] >= order * float(col) - width) & (df['EmWl [nm]'] <= order * float(col) + width), col] = np.nan #Replace the values of the Rayleigh scattering with NoDataValue from numpy i.e NaN
 
     return df
-
-
-
 
 
 def plot_fluorescence_graph(eem):
@@ -335,7 +327,8 @@ def plot_fluorescence_graph(eem):
             break
         elif choice2 != "no":
             print("Please answer by 'yes' or 'no'.")
-            
+
+
 def plot_superimposed_graphs(eem, eem1 = False, eem2 = False, eem3 = False, eem4 = False, eem5 = False, eem6 = False):
     """
     Function to plot a superposition of graphs on a standard graph and, if wanted, an interactive graph.
@@ -541,12 +534,8 @@ def plot_superimposed_graphs(eem, eem1 = False, eem2 = False, eem3 = False, eem4
             Ys.append(Y)
     elif eem6 != False: #If eem isn't a Dataframe raise an error
         raise ValueError('eem needs to be a valid DataFrame in normalised form')
-
-
-    
             
     # General shape of the graph
-
     
     # Size of the graph, formating of the axis and title of the graph
     plt.figure(figsize=(40,30))
@@ -661,7 +650,6 @@ def plot_superimposed_graphs(eem, eem1 = False, eem2 = False, eem3 = False, eem4
     plt.show()
 
 
-
 def plot_3D_contour_inter(eem, levels = 30, Normalisation = True):
     '''
     Plot an interactive 3D contour graph with the folowing axes:
@@ -691,6 +679,7 @@ def plot_3D_contour_inter(eem, levels = 30, Normalisation = True):
     fig.data[0].colorbar.title = f"Fl [{unit}]"
     
     fig.show()
+
 
 def plot_3D_contour(eem, levels = 25, Normalisation = True):
     '''
@@ -725,6 +714,7 @@ def plot_3D_contour(eem, levels = 25, Normalisation = True):
 
     plt.show()  
 
+
 def plot_3D_surface_inter(eem, Normalisation = True):
     '''
     Plot an 3D surface interactive graph with the folowing axes:
@@ -757,4 +747,3 @@ def plot_3D_surface_inter(eem, Normalisation = True):
     
     fig.show()
     
-
