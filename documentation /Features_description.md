@@ -3,7 +3,7 @@
 ## :warning: WARNING :warning:
 To be read by the package properly dataframe containing the EEM matrice need to be standardised in a particular way please refer to the "Implementation of a new file format.md" to see the form required. 
 
-## 💡Main features
+## 💡Main features 💡
 
 ### 🔭 Read and standardise an raw Excel file from the spectrometer
 The function read an raw Excel file and rearange the data in a DataFrame that can be read by the other function.
@@ -16,7 +16,7 @@ It is important to note that the present function only works  for excel files of
 
 For any other type of file, one could use the pathfile form the above function and converts it dataframe please refer to "Implementation of a new file format.md". 
 
-### Normalisation of an EEM matrice
+### 🧾Normalisation of an EEM matrice
 Take a dataframe of an EEM matrice and optionally a blank and normalise the EEM matrice according to the Area of the Raman peak of water computed for 350 nm exitation waveleght and emission from 371 nm to 428 nm according to the following paper:
     Lawaetz, A. J., & Stedmon, C. A. (2009). Fluorescence Intensity Calibration Using the Raman Scatter Peak of Water. Applied Spectroscopy, 63(8), 936-940. 
     https://journals.sagepub.com/doi/10.1366/000370209788964548
@@ -25,7 +25,7 @@ fluo_raman_norm(eem, blank = False)
 ```
 The function calls two other function. Area and Raman_normalisation described in the next section.
 
-### Remove Rayleigh scattering of first and/or second order
+### ✂️Remove Rayleigh scattering of first and/or second order
 Take a dataframe of an EEM matrice and remove the Rayleigh scattering for a beter visualisation in the graph.
 The Rayleigh scatteing are removed according the following paper:	Anal. Methods, 2013,5, 6557-6566, https://pubs.rsc.org/en/content/articlelanding/2013/ay/c3ay41160e
 ```
@@ -34,7 +34,7 @@ remove_rayleigh_scattering(eem, order=1, width=10)
 The order can be specified by calling the function with order = 1 or order = 2, order = 'both'.
 The width of the band that is removed can me specified by calling the function with width = values. Default width set to 10
 
-## 💡Complementary features
+## 💡Complementary features 💡
 
 ### 📈 Function to plot a specific excited wavelength on a graph
 This function plots fluorescence data on a standard graph and/or an interactive graph, depending on the users choices.
@@ -120,7 +120,7 @@ print_file_path()
 It is important to check whether the correct filepath was printed to ensure a smooth continuation.
 
 
-### Calculattion of the area of water's Raman peak
+### 🧮Calculation of the area of water's Raman peak
 Take a dataframe of an EEM matrice or a blank and calculate the Area of the water Raman peak computed for 350 nm exitation waveleght and emission from 371 nm to 428 nm according to the following paper:
     Lawaetz, A. J., & Stedmon, C. A. (2009). Fluorescence Intensity Calibration Using the Raman Scatter Peak of Water. Applied Spectroscopy, 63(8), 936-940.
     https://journals.sagepub.com/doi/10.1366/000370209788964548
@@ -130,13 +130,13 @@ Area(eem, blank = False)
 If the blank (water) is on a other file the file can be load in a dataframe and specified as follow blank = DataFrame
 The integral is computed using the trapezoidal rule.
 
-### Raman normalisation
+### 📐Raman normalisation
 Take a dataframe of an EEM matrice and the Area of the water raman peak calculated with the Area function and normalise the EEM matrice by dividing the values with the area.
 ```
 Raman_normalisation(eem, Area)
 ```
 
-### Plot contour graph
+### 📉Plot contour graph
 Take a dataframe of an EEM matrice and plot a contour graph
 ```
 plot_3D_contour(eem, levels = 25, Normalisation = True)
@@ -149,7 +149,7 @@ plot_3D_contour(eem, levels = 25, Normalisation = True)
 The number of levels showed in the graph can be changed by specify a number with levels = number. The default values of levels is set to 25. Note that a high levels value may affect the legibility of the graph. 
 The Normalisation argument can be specified to be False if the function is called with an non normalised EEM matrice. It allows to label correctly the fluorescence axes.
 
-### Plot an interactive contour graph 
+### 📉Plot an interactive contour graph 
 Take a dataframe of an EEM matrice and plot an interactive contour graph
 ```
 plot_3D_contour_inter(eem, levels = 30, Normalisation = True)
@@ -162,7 +162,7 @@ plot_3D_contour_inter(eem, levels = 30, Normalisation = True)
 The number of levels showed in the graph can be changed by specify a number with levels = number. The default values of levels is set to 25. Note that a high levels value may affect the legibility of the graph. 
 The Normalisation argument can be specified to be False if the function is called with an non normalised EEM matrice. It allows to label correctly the fluorescence axes.
 
-### Plot an interactive surface graph
+### 📉Plot an interactive surface graph
 Take a dataframe of an EEM matrice and plot an interactive contour graph
 ```
 plot_3D_surface_inter(eem, Normalisation = True)
