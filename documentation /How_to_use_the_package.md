@@ -78,9 +78,15 @@ plot_fluorescence_graph(eem)
 ```
 ![Capture d'écran 2024-05-23 165402](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/f11c8d96-2487-41c7-bb9e-c405dd49e496)
 
-Expected graph with superimposed curve
+Expected graph with superimposed curve, with all value in the same file
 ```
 plot_superimposed_graphs(eem, eem1 = False, eem2 = False, eem3 = False, eem4 = False, eem5 = False, eem6 = False)
+```
+Expected graph with superimposed curve, with all value in two different files
+```
+eem = read_excel()
+eem1 = fluo_raman_norm(eem)
+plot_superimposed_graphs(eem, eem1 = eem1, eem2 = False, eem3 = False, eem4 = False, eem5 = False, eem6 = False)
 ```
 ![Capture d'écran 2024-05-23 164628](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/9f74d508-8a74-4085-8c4e-1b309c18bb76)
 
