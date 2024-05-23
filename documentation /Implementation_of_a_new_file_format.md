@@ -73,11 +73,11 @@ def read_excel(path = False):
     """
     Reads a specific spectrometer's excel file where the values are structured in the following form:
 
-    	EmWl [nm]	Int(250)	Int(260)	Int(270)	Int(280)	Int(290)	Int(300)	Int(310)	Int(320)	Int(330)
-         350.0  	8.3780	    46.4330	    71.5440	    101.3680	115.7660	103.8230	111.0970	121.6770	58.7180	
-         350.5	    9.5323	    47.8672    	71.8733	    99.4352	    116.3693	104.4283	110.9135	123.3000	61.2646
-         ...	     ...	      ...	      ...         ...	      ...	      ...	      ...	       ...	      ...
-         600.0	    2.8920	    19.2880	    53.0750	    59.5580	    42.0960    	999.9990	290.3740	13.1150	    12.2750
+    	EmWl [nm] Int(250) Int(260)	Int(270)	Int(280)	Int(290)	Int(300)	Int(310)	Int(320)	Int(330)
+         350.0 8.3780   46.4330	  71.5440	 101.3680	115.7660	103.8230	111.0970	121.6770	58.7180	
+         350.5 9.5323	  47.8672   71.8733	 99.4352	 116.3693	104.4283	110.9135	123.3000	61.2646
+         ...	   ...	     ...	    ...       ...	    ...	      ...	      ...	       ...	      ...
+         600.0 2.8920	  19.2880	  53.0750	  59.5580	 42.0960  999.9990	290.3740	13.1150	 12.2750
 
     Int(XXX) contains the excitation wavelength with the measured intensity in the corresponding column EmWL [nm] contains the emission wavelengths
 
