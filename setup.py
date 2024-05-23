@@ -15,7 +15,7 @@ setup(
     author_email='jonas.richard@hotmail.fr',  
     maintainer='Justine Serra, Coralie Reuse, Jonas Richard',  
     maintainer_email='justine.serratosio@gmail.com, coralie.reuse23@gmail.com, jonas.richard@hotmail.fr', 
-    description='Un package pour l’analyse des données de fluorescence',  
+    description='Processing of EEM',  
     long_description=open('README.md').read(),  
     long_description_content_type='text/markdown',
     classifiers=[
