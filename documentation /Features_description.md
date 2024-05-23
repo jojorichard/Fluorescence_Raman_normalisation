@@ -5,8 +5,8 @@ To be read by the package properly dataframe containing the EEM matrice need to 
 
 ## 💡Main features 💡
 
-### 🔭 Read and standardise an raw Excel file from the spectrometer
-The function read an raw Excel file and rearange the data in a DataFrame that can be read by the other function.
+### 🔭 Read and standardise the spectrometer's Excel file
+The function reads a raw Excel file and rearrange the data in a DataFrame that can be read by the other function.
 ```
 read_excel(path = False)
 ```
