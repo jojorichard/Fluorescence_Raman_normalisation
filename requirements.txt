@@ -70,3 +70,4 @@ typing-extensions==4.11.0
 tzdata==2024.1
     # via pandas
 openpyxl
+git+https://github.com/jojorichard/Fluorescence_Raman_normalisation.git
