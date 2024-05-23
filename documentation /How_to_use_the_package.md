@@ -66,7 +66,7 @@ eem_norm_Removed_Rscattering = remove_rayleigh_scattering(eem_norm, order='both'
 ### Example of a graph after removing the Rayleigh scattering (removed strip's width = 50 (default = 10))
 ![Width_50](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/879d659d-1a0c-4d46-9943-2ee854212e7c)
 
-### Example of a graph after removing the Rayleigh scattering (removed strip's with width = 5 (default = 10))
+### Example of a graph after removing the Rayleigh scattering (removed strip's width = 5 (default = 10))
 ![newplot (2)](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/08e896af-6f23-4d1a-84f0-63ee67b6ffa7)
 
 ### 4) Plot several graphs
@@ -78,11 +78,11 @@ plot_fluorescence_graph(eem)
 ```
 ![Capture d'écran 2024-05-23 165402](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/f11c8d96-2487-41c7-bb9e-c405dd49e496)
 
-Expected graph with superimposed curve, with all value in the same file
+Expected graph with superimposed curves (values in the same file)
 ```
 plot_superimposed_graphs(eem, eem1 = False, eem2 = False, eem3 = False, eem4 = False, eem5 = False, eem6 = False)
 ```
-Expected graph with superimposed curve, with all value in two different files
+Expected graph with superimposed curve (values in two different files)
 ```
 eem = read_excel()
 eem1 = fluo_raman_norm(eem)
