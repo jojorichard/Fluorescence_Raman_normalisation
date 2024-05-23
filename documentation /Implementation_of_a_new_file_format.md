@@ -6,9 +6,9 @@ The data must be arranged in the following form:
 
 | EmWl [nm]                                         | Initial excitation wavelength (integer)               | ... | Final excitation wavelength (integer)               |
 | -------------------------------------------------- | -------------------------------------------------------------- | --- | -------------------------------------------------------------- |
-| Initial emitted wavelength (integer)    | Fluorescence's intensity corresponding to the initial excitation/emission wavelength (integer)                  | ... | ...                                                            |
+| Initial emitted wavelength (integer)    | Initial fluorescence's intensity corresponding to the initial excitation/emission wavelength (integer)                  | ... | ...                                                            |
 | ...                                                | ...                                                            | ... | ...                                                            |
-| Final emitted wavelength      | ...                                                            | ... |  Fluorescence's intensity corresponding to the final excitation/emission wavelength (integer)                   |
+| Final emitted wavelength      | ...                                                            | ... |  Final fluorescence's intensity corresponding to the final excitation/emission wavelength (integer)                   |
 
 
 
