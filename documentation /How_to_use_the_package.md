@@ -21,7 +21,7 @@ eem = read_excel()
 ![1) Popup to upload a file](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/7c6659a7-ebd5-45e2-9a22-ae398a53ba9f)
 
  ### 2) EEM matrice's normalisation
- #### If the blank is in the file (eem)
+ #### If the blank is included in the file (eem)
  ```
  eem_norm = fluo_raman_norm(eem)
 ```
@@ -54,7 +54,7 @@ eem_norm_Removed_Rscattering = remove_rayleigh_scattering(eem_norm, order=2)
 eem_norm_Removed_Rscattering = remove_rayleigh_scattering(eem_norm, order='both')
 ```
 
-### Example of a graph without removing the Rayleigh scattering
+### Example of a graph after removing the Rayleigh scattering
 ![Contour_avec_rayleight](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/dc6b63a2-0a5b-4a90-995b-48cda94bc0d0)
 
 ### Example of graph without removing the first-order Rayleigh scattering 
