@@ -4,11 +4,11 @@ The package has been designed to work with a standardised form of DataFrame to e
 
 The data must be arranged in the following form:
 
-| EmWl [nm]                                         | Initial excitation wavelenght (integer)               | ... | Final excitation wavelenght's (integer)               |
+| EmWl [nm]                                         | Initial excitation wavelength (integer)               | ... | Final excitation wavelength (integer)               |
 | -------------------------------------------------- | -------------------------------------------------------------- | --- | -------------------------------------------------------------- |
-| Initial emmited wavelenght (integer)    | integer of intensity of fluorescence corresponding at initial value of excitation/emmision wavelenght                  | ... | ...                                                            |
+| Initial emited wavelength (integer)    | Fluorescence's intensity corresponding to the initial excitation/emission wavelength (integer)                  | ... | ...                                                            |
 | ...                                                | ...                                                            | ... | ...                                                            |
-| Final emmited wavelenght      | ...                                                            | ... | integrer of intensity of fluorescence corresponding at final value of exitation/emmision wavelenght                    |
+| Final emmited wavelength      | ...                                                            | ... |  Fluorescence's intensity corresponding to the final excitation/emission wavelength                    |
 
 
 
