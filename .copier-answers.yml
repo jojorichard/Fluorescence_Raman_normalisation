@@ -1,9 +1,0 @@
-# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
-_commit: 9fb0443
-_src_path: gh:schwallergroup/copier-liac-minimal
-author_email: null
-author_name: Jonas
-github_org: jojorichard
-package_name: normalisation
-project_name: fluo_raman_norm
-short_description: --
