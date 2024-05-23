@@ -16,7 +16,7 @@ setup(
     maintainer='Justine Serra, Coralie Reuse, Jonas Richard',  
     maintainer_email='justine.serratosio@gmail.com, coralie.reuse23@gmail.com, jonas.richard@hotmail.fr', 
     description='Processing of EEM',  
-    long_description=open('README.md').read(),  
+    long_description=open('README.md', encoding='utf-8').read(),  # Modification ici
     long_description_content_type='text/markdown',
     classifiers=[
         'Programming Language :: Python :: 3',
@@ -24,4 +24,3 @@ setup(
         'Operating System :: OS Independent',
     ],
 )
-
