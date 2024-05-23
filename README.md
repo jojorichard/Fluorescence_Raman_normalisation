@@ -13,7 +13,7 @@ This package is a tool for processing Excitation Emission Matrix (EEM). It inclu
     
 ## ⚙️ Installation
 ```
-pip install https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/package/EEM.py
+pip install git+https://github.com/jojorichard/Fluorescence_Raman_normalisation.git
 ```
 
 ## 🛠️ Development installation
