@@ -259,13 +259,11 @@ def plot_fluorescence_graph(eem):
     """
     Function to plot fluorescence data on a standard graph and/or an interactive graph.
 
-    This function prompts the user to provide the file location, the sheet name, 
-    the names of the excitation and emission wavelength columns in an Excel file, 
-    and the wavelength of interest in nanometers (nm). It then plots the fluorescence 
+    This function prompts the user to upload the file and specify the wavelength of interest in nanometers (nm). It then plots the fluorescence 
     data on a standard graph and an interactive graph using Plotly.
-
-    Returns:
-    None
+    Args:
+        - eem: dataframe containing the eem matrice created with de read_eem function
+    Returns: None
     """
     # Wavelenth of interest
 
@@ -342,13 +340,12 @@ def plot_superimposed_graphs(eem, eem1 = False, eem2 = False, eem3 = False, eem4
     """
     Function to plot a superposition of graphs on a standard graph and, if wanted, an interactive graph.
 
-    This function prompts the user to input the number of graphs they want to superimpose. 
-    It then collects data for each graph, including file location, sheet name, column names 
-    for excitation and emission wavelengths, and the wavelength of interest. It plots both 
-    a static and an interactive graph showing the superimposed curves.
-
-    Returns:
-    None
+    This function prompts the user to upload the file containing the value for the curves. 
+    It then collects the wavelength of interest. It plots both a static and an interactive 
+    graph showing the superimposed curves.
+    Args:
+        - eem: dataframe containing the eem matrice created with de read_eem function
+    Returns: None
     """
 
     '''
