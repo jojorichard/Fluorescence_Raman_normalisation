@@ -18,7 +18,7 @@ plot_3D_contour(eem_norm_Removed_Rscattering)
 ```
 eem = read_excel()
 ```
-![Tuto read_excel](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/d7f3a432-950c-47df-8ac7-7d7728fcd84e)
+![1) Popup to upload a file](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/7c6659a7-ebd5-45e2-9a22-ae398a53ba9f)
 
  ### 2) Normalise the EEM matrice
  #### If the blank is the loaded eem
