@@ -8,7 +8,7 @@ This package is a tool for processing Excitation Emission Matrix (EEM). It inclu
 ## :notebook_with_decorative_cover: Documentation
   - ![Description of all the features](https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/documentation%20/Features_description.md)
   - ![Implementation of a new file format](https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/documentation%20/Implementation%20of%20a%20new%20file%20format%20.md)
-  - ![Examples of the whole code](https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/documentation%20/Use%20example.md)
+  - ![Example of the whole code](https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/documentation%20/Use%20example.md)
   - ![Notebook](https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/notebook/package_report.ipynb)
     
 ## ⚙️ Installation
@@ -35,8 +35,7 @@ Works after running tox
 (conda_env) $ pip install "genbadge[coverage]"
 (conda_env) $ genbadge coverage -i coverage.xml
 ```
-## 📄 Testing
-Models and results can be found _ _ _here_ _ _. -> mettre un lien qui renvoie à un document à télécharcher
+
 
 ## 📫 Reaching us 
 Justine Serra : justine.serratosio@gmail.com
