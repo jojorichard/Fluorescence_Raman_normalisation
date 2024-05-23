@@ -21,7 +21,7 @@ eem = read_excel()
 ![1) Popup to upload a file](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/7c6659a7-ebd5-45e2-9a22-ae398a53ba9f)
 
  ### 2) EEM matrice's normalisation
- #### If the blank is the loaded eem
+ #### If the blank is the file (eem)
  ```
  eem_norm = fluo_raman_norm(eem)
 ```
@@ -30,7 +30,7 @@ eem = read_excel()
  blank = read_excel()
  eem_norm = fluo_raman_norm(eem, blank = blank)
  ```
- The normalised EEM matrice is saved in an excel file called "normalised_Ramnan.xlsx" of the follwing form and it's DataFrame is returned
+ The normalised EEM matrice is saved in an excel file called "normalised_Ramnan.xlsx" in the follwing form. The corresponding DataFrame is returned as shown below:
  
  | EmWl [nm] | 250        | 255        | 260        | 265        | 270        | 275        | 280        | 285        | 290        | 295        | 300        |
 | --------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
