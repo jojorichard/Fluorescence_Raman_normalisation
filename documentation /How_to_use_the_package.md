@@ -71,6 +71,20 @@ eem_norm_Removed_Rscattering = remove_rayleigh_scattering(eem_norm, order='both'
 
 ### 4) Plot several graphs
 
+### 2D graphs
+Expected graph with on curve
+```
+plot_fluorescence_graph(eem)
+```
+![Capture d'écran 2024-05-23 165402](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/f11c8d96-2487-41c7-bb9e-c405dd49e496)
+
+Expected graph with superimposed curve
+```
+plot_superimposed_graphs(eem, eem1 = False, eem2 = False, eem3 = False, eem4 = False, eem5 = False, eem6 = False)
+```
+![Capture d'écran 2024-05-23 164628](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/9f74d508-8a74-4085-8c4e-1b309c18bb76)
+
+
 #### 3D Surface plot
 If normalised
 ```
@@ -103,6 +117,5 @@ plot_3D_contour(eem_norm_Removed_Rscattering)
 #### with levels = 100
 ![graph](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/353d7146-4b1c-4b12-994b-5aadc130c6d8)
 
-#### Excpected graph with anotation
 
 
