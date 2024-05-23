@@ -1,6 +1,6 @@
-# How to use the package
+# How do you use the package?
 
-## Full example
+## Example
 
 ```
 eem = read_excel() # another read function
@@ -12,7 +12,7 @@ plot_3D_contour_inter(eem_norm_Removed_Rscattering)
 plot_3D_contour(eem_norm_Removed_Rscattering)
 ```
 
-## Step by Step
+## Pocedure
 ### 1) load the EEM matrice to be processed
 #### exemple with an excel files
 ```
@@ -40,33 +40,33 @@ eem = read_excel()
 | 351.5     | 0.0011135  | 0.0022734  | 0.0030723  | 0.0044049  | 0.0056659  | 0.0065027  | 0.0079862  | 0.0089206  | 0.0089053  | 0.0079954  | 0.0079835  |
 | 352       | 0.0011124  | 0.0022865  | 0.0031589  | 0.0043866  | 0.0056515  | 0.0065596  | 0.0079579  | 0.0087859  | 0.00886    | 0.007912   | 0.0078569  |
 
-### 3) Optional Remove Rayleigh scattering. (Recommanded before plotting)
-#### Of first order
+### 3) Optional: Remove Rayleigh scattering. (Recommanded before plotting)
+#### First order
 ```
 eem_norm_Removed_Rscattering = remove_rayleigh_scattering(eem_norm, order=1)
 ```
-#### Of second order
+#### Second order
 ```
 eem_norm_Removed_Rscattering = remove_rayleigh_scattering(eem_norm, order=2)
 ```
-#### Of both order 
+#### Both order 
 ```
 eem_norm_Removed_Rscattering = remove_rayleigh_scattering(eem_norm, order='both')
 ```
 
-### Example of graph without removing the Rayleigh scattering
+### Example of a graph without removing the Rayleigh scattering
 ![Contour_avec_rayleight](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/dc6b63a2-0a5b-4a90-995b-48cda94bc0d0)
 
-### Example of graph with removing  Rayleigh scattering of first order
+### Example of graph without removing the first-order Rayleigh scattering 
 ![Contour_sans_rayleight_1](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/1d498a4b-be16-43b3-9f55-55557b6fa396)
 
-### Example of graph with removing  Rayleigh scattering of second order
+### Example of a graph after removing the second-order Rayleigh scattering
 ![newplot (1)](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/66179bdb-a3d9-4f35-8f8c-ea9bbaf27ef8)
 
-### Example of graph with removing  Rayleigh scattering with width = 50 (default = 10)
+### Example of a graph after removing the Rayleigh scattering (removed strip's width = 50 (default = 10))
 ![Width_50](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/879d659d-1a0c-4d46-9943-2ee854212e7c)
 
-### Example of graph with removing  Rayleigh scattering with width = 5 (default = 10)
+### Example of a graph after removing the Rayleigh scattering (removed strip's with width = 5 (default = 10))
 ![newplot (2)](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/08e896af-6f23-4d1a-84f0-63ee67b6ffa7)
 
 ### 4) Plot several graphs
