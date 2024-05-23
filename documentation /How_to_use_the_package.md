@@ -54,25 +54,25 @@ eem_norm_Removed_Rscattering = remove_rayleigh_scattering(eem_norm, order=2)
 eem_norm_Removed_Rscattering = remove_rayleigh_scattering(eem_norm, order='both')
 ```
 
-### A graph after removing the Rayleigh scattering:
+### Expected graph after removing the Rayleigh scattering:
 ![Contour_avec_rayleight](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/dc6b63a2-0a5b-4a90-995b-48cda94bc0d0)
 
-### A graph without removing the first-order Rayleigh scattering:
+### Expected graph without removing the first-order Rayleigh scattering:
 ![Contour_sans_rayleight_1](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/1d498a4b-be16-43b3-9f55-55557b6fa396)
 
-### A graph after removing the second-order Rayleigh scattering:
+### Expected graph after removing the second-order Rayleigh scattering:
 ![newplot (1)](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/66179bdb-a3d9-4f35-8f8c-ea9bbaf27ef8)
 
-### A graph after removing the Rayleigh scattering (removed strip's width = 50 (default = 10)):
+### Expected graph after removing the Rayleigh scattering (removed strip's width = 50 (default = 10)):
 ![Width_50](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/879d659d-1a0c-4d46-9943-2ee854212e7c)
 
-### A graph after removing the Rayleigh scattering (removed strip's width = 5 (default = 10)):
+### Expected graph after removing the Rayleigh scattering (removed strip's width = 5 (default = 10)):
 ![newplot (2)](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/08e896af-6f23-4d1a-84f0-63ee67b6ffa7)
 
 ### 4) Plot several graphs
 
 ### 2D graphs
-Expected graph with on curve
+Expected graph with one curve
 ```
 plot_fluorescence_graph(eem)
 ```
