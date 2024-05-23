@@ -143,7 +143,8 @@ def read_excel(path = False):
     Args:
     - path the files path of the excel that can be entered manually in case of error of the read_eem function
     
-    Returns: eem standardised Dataframe in a form that can be treated by the other function of the package.
+    Returns: 
+        - eem standardised Dataframe in a form that can be treated by the other function of the package.
     """
     
     try:
@@ -168,7 +169,8 @@ def Area(eem, blank = False):
      - eem: dataframe containing the eem matrice created with de read_eem function
      -  blank: False by default. Can be initialised with a eem containing the blank. The eem need to be in the particular form specified in the Readme
 
-    Returns: Arp the Area of the water Raman peak calculated using the trapezoidal rule
+    Returns:
+        - Arp the Area of the water Raman peak calculated using the trapezoidal rule
     '''
     
     if blank == False:  #check if a blank were input and if not setup the blank to be eem
@@ -190,7 +192,8 @@ def Raman_normalisation(eem, Area):
     - eem: dataframe containing the eem matrice created with de read_eem function
     - Area: a dataframe containing the wavelenght exitation in each collumn and the associaced Raman Area
     
-    Returns: A dataframe containing the normalised matrice
+    Returns: 
+        - A dataframe containing the normalised matrice
     '''
  
     columns_of_interest = eem.columns[1:] 
@@ -208,8 +211,8 @@ def fluo_raman_norm(eem, blank = False):
      - eem: dataframe containing the eem matrice created with de read_eem function
      -  blank: False by default. Can be initialised with a eem containing the blank. The eem need to be in the particular form specified in the Readme
 
-    Return: A dataframe containing the normalised matrice
-
+    Return: 
+        - A dataframe containing the normalised matrice
     '''
     if blank == False: #If no blank treat the eem as the blank
         A = Area(eem)
@@ -231,7 +234,8 @@ def remove_rayleigh_scattering(eem, order=1, width=10):
         - order: The order of the Rayleigh scattering that need to be remover. Allow the values 1 or 2. Default is set to 1
         - width: The width of the cut. A higher cut could supress data of interest. Default set to 10 nm
 
-    Return: A copy of the eem DataFrame with the removed value set to NoDataValue (NaN)
+    Return:
+        - A copy of the eem DataFrame with the removed value set to NoDataValue (NaN)
     '''
     df = eem.copy() #Create a copy of the DataFrame to let the initial DataFrame unchanged 
     if order not in [1, 2, 'both']: #Verify the order of the rayleigh scattering to be removed
@@ -255,7 +259,6 @@ def plot_fluorescence_graph(eem):
     data on a standard graph and an interactive graph using Plotly.
     Args:
         - eem: dataframe containing the eem matrice created with de read_eem function
-    Returns: None
     """
     # Wavelenth of interest
 
@@ -338,7 +341,6 @@ def plot_superimposed_graphs(eem, eem1 = False, eem2 = False, eem3 = False, eem4
     graph showing the superimposed curves.
     Args:
         - eem: dataframe containing the eem matrice created with de read_eem function
-    Returns: None
     """
 
     '''
