@@ -47,7 +47,7 @@ This function plots a superposition of several excited wavelenghts on a standard
  ```    
 plot_superimposed_graphs()
 ``` 
-This function prompts the user to input the number of graphs they want to superimpose. It then collects data for each graph, including file location, sheet name on Excel, column names for excitation and emission wavelengths, and the excited wavelengths of interest to label the graph. It plots a static graph and, if wanted, an interactive graph showing the superimposed curves.
+This function prompts the user to upload the values for each curve. It then collects the excited wavelengths of interest to label the graph. It plots a static graph and, if wanted, an interactive graph showing the superimposed curves.
 
 ### 💫 File's upload 
 The function uploads the file, find the pathfile and retrun it.
