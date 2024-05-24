@@ -35,41 +35,47 @@ This function calls two other functions : Area and Raman_normalisation (describe
 
 ### ✂️Remove Rayleigh scattering of first and/or second order
 
-This function has for argument the standardised DataFrame removes the Rayleigh scattering.
+This function removes the Rayleigh scattering.
+
 The Rayleigh scatteing are removed according the following paper:	Anal. Methods, 2013,5, 6557-6566, https://pubs.rsc.org/en/content/articlelanding/2013/ay/c3ay41160e
 ```
 remove_rayleigh_scattering(eem, order=1, width=10)
 ```
+This function has for argument the standardised DataFrame. 
+
 The order can be specified by calling the function with order = 1 or order = 2, order = 'both'.
 
-The width of the removed band can me specified by calling the function with width = values. Default width set to 10.
+The width of the removed band can be specified by setting : width = values. Default width set to 10.
 
 This step allows for a better data visualisation.
 
 ## 💡Complementary features 💡
 
 ### 📈 Function to plot a specific excited wavelength (graph)
-This function plots fluorescence data on a standard graph and/or an interactive graph, depending on the users choices.
+
+This function plots fluorescence data on a standard graph and/or an interactive graph, depending on the user's choice.
 ```
 plot_fluorescence_graph(eem)
 ```   
 This function prompts the user to provide the excitation wavelength of interest in nanometers (nm) to label the curve on the graph and to select the values of interest. Then, it plots the fluorescence data on a standard graph and/or an interactive graph using Plotly.
 ### 📈 Function to plot several excited wavelength (graph)
+
 This function plots a superposition of several excited wavelenghts on a standard graph and, if wanted, an interactive graph.   
  ```    
 plot_superimposed_graphs(eem, eem1 = False, eem2 = False, eem3 = False, eem4 = False, eem5 = False, eem6 = False)
 ``` 
-This function prompts the user to enter the values for each curve. It then collects the excited wavelengths of interest to label the graph. It plots a static graph and, if wanted, an interactive graph showing the superimposed curves.
+This function prompts the user to enter the values for every curves. Then, it collects the excited wavelengths of interest to label the graph. It plots a static graph and, if wanted, an interactive graph showing the superimposed curves.
 
 ### 💫 File's upload 
-This function uploads the file, find the filepath and retrun it.
+
+This function uploads the file, find the filepath and retruns it.
 ```
 read_eem()
 ```   
 The function (containing 6 sub-functions) opens a Tkinter window for selecting an Excel file, displays its contents in DataFrame, 
 and asks the user for confirmation on the data display.✅ ❌
 
-It is important to note that if the file is not under the excel format, the function will only return the path without displaying its contents.
+It is important to note that if the file is not under the excel format, the function will only return the path without displaying its content.
 
 **▶ Window to upload the excel file and dataframe display**
 
