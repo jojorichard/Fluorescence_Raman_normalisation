@@ -12,7 +12,7 @@ The data must be arranged in the following form:
 
 
 
-## Example of an excel file converted in standardised DataFrame
+## Example of an excel file converted into a standardised DataFrame
 ### Original excel file 
 | EmWl [nm] | Int(250) | Int(260) | Int(270) | Int(280) | Int(290) | Int(300) |
 | --------- | -------- | -------- | -------- | -------- | -------- | -------- |
@@ -80,7 +80,7 @@ def read_excel(path = False):
     600.0     2.8920    19.2880   53.0750   59.5580   42.0960  999.9990  290.3740   13.1150   12.2750
 
 
-    Int(XXX) contains the excitation wavelength with the measured intensity in the corresponding column EmWL [nm] contains the emission wavelengths
+    Int(XXX) contains the excitation wavelength with the measured intensity in the corresponding column EmWL [nm] contains the emission wavelengths.
 
     It returns a standardised Dataframe in a form that can be treated by the other package's functions.
 
@@ -94,11 +94,11 @@ def read_excel(path = False):
     try:
         file_path = read_eem()  # Call read_eem to upload and read the file
     except: # If an exception is raised, it reads the filepath manually entered 
-        print('An error as occured in the read_eem function. Excecute read_excel(path) with the path file of your file')
+        print('An error as occured in the read_eem function. Execute read_excel(path) with the filepath of your file')
         file_path = path
         
     eem = pd.read_excel(file_path)  # Read the Excel file into a DataFrame
-    new_columns = [col if i == 0 else int(re.search(r'\d+', col).group()) for i, col in enumerate(eem.columns)]   # put the Dataframe in the standardised form for this package
+    new_columns = [col if i == 0 else int(re.search(r'\d+', col).group()) for i, col in enumerate(eem.columns)]   # put the Dataframe in the standardised form 
     eem.columns = new_columns  
     return eem
 
