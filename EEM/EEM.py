@@ -277,16 +277,16 @@ def plot_fluorescence_graph(eem):
             plt.plot(EmWl, Int, label=f'λ = {wavelength}', color='black')
             plt.legend(fontsize=30)
 
-            # Formating of the axis of the graph
-            plt.xlabel(r'Emission wavelength [nm]', fontsize=50)
+            # Formating of the axis and title of the graph
+            plt.title("Raman spectrum", fontsize=70)
+            plt.xlabel(r'Excitation wavelength [nm]', fontsize=50)
             plt.ylabel(r'Fluorescence', fontsize=50)
 
             # Graduation of the axis
             plt.xticks(fontsize=30)
             plt.yticks(fontsize=30)
-            plt.savefig('Raman_spectrum.png')
             plt.show()
-           
+            plt.savefig('Raman_spectrum.svg')
             break
         elif choice1 == "no":
             break
@@ -302,19 +302,19 @@ def plot_fluorescence_graph(eem):
     # Configuration of the layout of the interactive graphic
     fig.update_layout(
         title='Interactive graphics with zoom',
-        xaxis_title='Emission wavelength [nm]', 
-        yaxis_title='Fluorescence',
+        xaxis_title='Fluorescence', 
+        yaxis_title='Excitation wavelength [nm]',
         title_font=dict(size=25),  # Size of the title 
         title_x=0.5,  # To center the title
         xaxis=dict(
-            title='Emission wavelength [nm]',
+            title='Fluorescence',
             title_font=dict(size=20),  # Size of the label of the x axis
             rangeselector=dict(
                 buttons=list([
                     dict(step="all") ])),
             rangeslider=dict(visible=True), 
             type="linear"),
-        yaxis=dict(title='Fluorescence', 
+        yaxis=dict(title='Excitation wavelength [nm]', 
                    title_font=dict(size=20)),  # Size of the label of the y axis
         hovermode='closest',
         height=700,  # Height in pixels
@@ -342,21 +342,6 @@ def plot_superimposed_graphs(eem, eem1 = False, eem2 = False, eem3 = False, eem4
     Args:
         - eem: dataframe containing the eem matrice created with de read_eem function
     """
-
-    '''
-    while True:
-        try:
-            number_of_graph = int(input("How many graphs would you like to superimpose :"))
-            if number_of_graph > 7:
-                print("A maximum of 7 different graphs can be superimposed !")
-            elif number_of_graph < 2:
-                print("The number of graph should be at least 2 !")
-            else:
-                break
-        except ValueError:
-            print("Please enter a valid number.")
-    '''
-    
             
     # Extraction of the values of interest
 
