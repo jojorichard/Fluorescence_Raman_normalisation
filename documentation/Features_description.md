@@ -11,18 +11,19 @@ This function reads a raw Excel file and arrange the data in a DataFrame that ca
 read_excel(path = False)
 ```
 This function converts the excel file into a standardised DataFrame by taking the filepath from the read_eem function.
-If there is an error while excecuting the read_eem function, it is possible to manually enter the filepath (specified form: path ='user/username/example.xlsx'
+If there is an error while excecuting the read_eem function, it is possible to manually enter the filepath (specified form: path ='user/username/example.xlsx')
 It is important to note that the present function only works for excel files of a specific form.
 
 For any other type of file, one could use the pathfile from the read_eem function and create a new function to convert file into a standardised DataFrame. Please refer to [Implementation](https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/documentation/Implementation_of_a_new_file_format.md). 
 
 ### 🧾EEM matrice normalisation
-This function a dataframe of an EEM matrice and optionally a blank and normalise the EEM matrice according to the area of the Raman peak of water computed for 350 nm exitation waveleght and emission from 371 nm to 428 nm according to the following paper:
+This function normalises the EEM matrice according to the area of the Raman peak of water computed for 350 nm exitation waveleght and emission from 371 nm to 428 nm according to the following paper:
     Lawaetz, A. J., & Stedmon, C. A. (2009). Fluorescence Intensity Calibration Using the Raman Scatter Peak of Water. Applied Spectroscopy, 63(8), 936-940. 
     https://journals.sagepub.com/doi/10.1366/000370209788964548
 ```
 fluo_raman_norm(eem, blank = False)
 ```
+It can, optionally consider the blank measure.
 This function calls two other functions : Area and Raman_normalisation (described below).
 
 ### ✂️Remove Rayleigh scattering of first and/or second order
