@@ -17,7 +17,7 @@ If there is an error while excecuting the read_eem function, it is possible to m
 
 It is important to note that the present function only works for excel files of a specific form.
 
-For any other type of file, one could use the pathfile from the read_eem function and create a new function to convert file into a standardised DataFrame. Please refer to [Implementation](https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/documentation/Implementation_of_a_new_file_format.md). 
+For any other type of file, one could use the filepath from the read_eem function and create a new function to convert the data into a standardised DataFrame. Please refer to [Implementation](https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/documentation/Implementation_of_a_new_file_format.md). 
 
 ### 🧾EEM matrice normalisation
 
