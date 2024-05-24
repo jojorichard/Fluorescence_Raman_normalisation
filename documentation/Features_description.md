@@ -6,6 +6,7 @@ The dataframe containing the EEM matrice needs to be specifically standardised t
 ## 💡Main features 💡
 
 ### 🔭 Read and standardise the spectrometer's Excel file
+
 This function reads a raw Excel file and arrange the data in a DataFrame that can be read by the other functions.
 ```
 read_excel(path = False)
@@ -17,6 +18,7 @@ It is important to note that the present function only works for excel files of 
 For any other type of file, one could use the pathfile from the read_eem function and create a new function to convert file into a standardised DataFrame. Please refer to [Implementation](https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/documentation/Implementation_of_a_new_file_format.md). 
 
 ### 🧾EEM matrice normalisation
+
 This function normalises the EEM matrice according to the area of the Raman peak of water computed for 350 nm exitation waveleght and emission from 371 nm to 428 nm according to the following paper:
     Lawaetz, A. J., & Stedmon, C. A. (2009). Fluorescence Intensity Calibration Using the Raman Scatter Peak of Water. Applied Spectroscopy, 63(8), 936-940. 
     https://journals.sagepub.com/doi/10.1366/000370209788964548
@@ -24,16 +26,21 @@ This function normalises the EEM matrice according to the area of the Raman peak
 fluo_raman_norm(eem, blank = False)
 ```
 It can, optionally consider the blank measure.
+
 This function calls two other functions : Area and Raman_normalisation (described below).
 
 ### ✂️Remove Rayleigh scattering of first and/or second order
-Take a dataframe of an EEM matrice and remove the Rayleigh scattering for a beter visualisation in the graph.
+
+This function takes the standardised DataFrame removes the Rayleigh scattering.
 The Rayleigh scatteing are removed according the following paper:	Anal. Methods, 2013,5, 6557-6566, https://pubs.rsc.org/en/content/articlelanding/2013/ay/c3ay41160e
 ```
 remove_rayleigh_scattering(eem, order=1, width=10)
 ```
 The order can be specified by calling the function with order = 1 or order = 2, order = 'both'.
-The width of the band that is removed can me specified by calling the function with width = values. Default width set to 10
+
+The width of the removed band can me specified by calling the function with width = values. Default width set to 10.
+
+This step allows for a better data visualisation.
 
 ## 💡Complementary features 💡
 
