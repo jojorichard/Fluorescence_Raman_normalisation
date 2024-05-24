@@ -1,6 +1,6 @@
 # ⚡ Fluorescence spectroscopy analysis ⚡
 
-This package is a tool for processing Excitation Emission Matrix (EEM). It includes several functions such as fluorescence normalisation based on the Raman peak of water. The ability to remove the first and second order Rayleigh scattering and the plotting of several graphs ranging from 2D graphs of excitation wavelengths against fluorescence to 3D contourplots or surfaceplots for data visualisation.
+This package is a tool for processing Excitation Emission Matrix (EEM). It includes several functions such as fluorescence normalisation based on the Raman peak of water. The ability to remove the first and second order Rayleigh scattering and the plotting of several graphs is also included. The contained graphs are the following: 2D graphs, 3D contourplots and surfaceplots for data visualisation.
 
 ![Graphique](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/dc2cf7c0-6011-45c3-bb12-784114e40ce0)
 
@@ -22,7 +22,8 @@ Clone this repository locally from GitHub:
 git clone https://github.com/jojorichard/Fluorescence_Raman_normalisation.git .
 ```
 Then add and commit changes as usual. 
-Contributions from third parties or the implementation of the reading of a file format not yet supported are of course welcome. To see how to implement support for the new format, refer to "Implementation of a new file format" in the documentation section.
+
+Contributions from third parties are welcomed. Indeed, the implementation of a new function reading new file formats would be greatly be appreciated. To see how to implement it, please refer to "Implementation of a new file format" in the documentation section.
 
 ## 🔎 Run test and coverage
 ```
