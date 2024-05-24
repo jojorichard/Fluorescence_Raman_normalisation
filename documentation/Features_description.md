@@ -45,7 +45,7 @@ This function prompts the user to provide the excitation wavelength of interest 
 ### 📈 Function to plot several excited wavelength on a graph
 This function plots a superposition of several excited wavelenghts on a standard graph and, if wanted, an interactive graph.   
  ```    
-plot_superimposed_graphs()
+plot_superimposed_graphs(eem, eem1 = False, eem2 = False, eem3 = False, eem4 = False, eem5 = False, eem6 = False)
 ``` 
 This function prompts the user to upload the values for each curve. It then collects the excited wavelengths of interest to label the graph. It plots a static graph and, if wanted, an interactive graph showing the superimposed curves.
 
