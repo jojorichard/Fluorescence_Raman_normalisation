@@ -44,25 +44,25 @@ This step allows for a better data visualisation.
 
 ## 💡Complementary features 💡
 
-### 📈 Function to plot a specific excited wavelength on a graph
+### 📈 Function to plot a specific excited wavelength (graph)
 This function plots fluorescence data on a standard graph and/or an interactive graph, depending on the users choices.
 ```
 plot_fluorescence_graph(eem)
 ```   
-This function prompts the user to provide the excitation wavelength of interest in nanometers (nm) to label the curve on the graph and to select the values of interest. It then plots the fluorescence data on a standard graph and/or an interactive graph using Plotly.
-### 📈 Function to plot several excited wavelength on a graph
+This function prompts the user to provide the excitation wavelength of interest in nanometers (nm) to label the curve on the graph and to select the values of interest. Then, it plots the fluorescence data on a standard graph and/or an interactive graph using Plotly.
+### 📈 Function to plot several excited wavelength (graph)
 This function plots a superposition of several excited wavelenghts on a standard graph and, if wanted, an interactive graph.   
  ```    
 plot_superimposed_graphs(eem, eem1 = False, eem2 = False, eem3 = False, eem4 = False, eem5 = False, eem6 = False)
 ``` 
-This function prompts the user to upload the values for each curve. It then collects the excited wavelengths of interest to label the graph. It plots a static graph and, if wanted, an interactive graph showing the superimposed curves.
+This function prompts the user to enter the values for each curve. It then collects the excited wavelengths of interest to label the graph. It plots a static graph and, if wanted, an interactive graph showing the superimposed curves.
 
 ### 💫 File's upload 
-The function uploads the file, find the pathfile and retrun it.
+The function uploads the file, find the filepath and retrun it.
 ```
 read_eem()
 ```   
-The function (containing 6 sub-functions) opens a Tkinter window for selecting an Excel file, displays its contents in dataframe, 
+The function (containing 6 sub-functions) opens a Tkinter window for selecting an Excel file, displays its contents in DataFrame, 
 and asks the user for confirmation on the data display.✅ ❌
 It is important to note that if the file is not under the excel format, the function will only return the path without displaying its contents.
 
