@@ -92,11 +92,11 @@ plot_superimposed_graphs(eem, eem1 = eem1, eem2 = False, eem3 = False, eem4 = Fa
 
 
 #### 3D Surface plot
-If normalised
+If normalised:
 ```
 plot_3D_surface_inter(eem_norm_Removed_Rscattering)
 ```
-If not normalised (this argument is valid for all 3D function)
+If not normalised (this argument is valid for every 3D functions):
 ![Surface_3D_normaliser](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/bb81fea8-7f79-447c-95d3-a86e67a2bf86)
 
 ```
@@ -117,10 +117,10 @@ plot_3D_contour(eem_norm_Removed_Rscattering)
 ```
 ![Contour_normaliser](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/b91dddd1-342a-4737-8dff-70fc92fc4425)
 
- #### with levels = 10 (default 25)
+ #### With levels = 10 (default 25)
  ![graph](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/184e07d6-69d4-42f8-9954-74d8edea04d5)
 
-#### with levels = 100
+#### With levels = 100
 ![graph](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/353d7146-4b1c-4b12-994b-5aadc130c6d8)
 
 
