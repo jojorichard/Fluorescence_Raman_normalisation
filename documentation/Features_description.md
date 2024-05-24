@@ -58,7 +58,7 @@ plot_superimposed_graphs(eem, eem1 = False, eem2 = False, eem3 = False, eem4 = F
 This function prompts the user to enter the values for each curve. It then collects the excited wavelengths of interest to label the graph. It plots a static graph and, if wanted, an interactive graph showing the superimposed curves.
 
 ### 💫 File's upload 
-The function uploads the file, find the filepath and retrun it.
+This function uploads the file, find the filepath and retrun it.
 ```
 read_eem()
 ```   
@@ -68,14 +68,14 @@ It is important to note that if the file is not under the excel format, the func
 
 **▶ Window to upload the excel file and dataframe display**
 
-The function handles the file upload process and displays the contents converted in dataframe if it's an Excel file.
+This function handles the file upload process and displays the contents converted in DataFrame if it's an Excel file.
 
 ```
 _handle_upload()
 ```
-The function returns the pathfile (str) or None if no file is selected.
+The function returns the filepath (str) or None if no file is selected.
 
-It is important to note that the function returns the pathfile of any file regardless of its type; only a excel file's contents (converted in dataframe) is displayed. 
+It is important to note that the function returns the filepath of any file regardless of its type; only a excel file's contents (converted in DataFrame) is displayed. 
 
 **🔬 Content display and confirmation on the data display**
 
