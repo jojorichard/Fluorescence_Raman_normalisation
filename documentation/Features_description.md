@@ -149,19 +149,23 @@ This functions normalises the EEM matrice by dividing the values by the area.
 ```
 Raman_normalisation(eem, Area)
 ```
-This functions has for arguments: EEM matrix converted into a DataFrame and the area of the water raman peak
+This functions has for arguments: EEM matrix converted into a DataFrame and the area of the water raman peak.
 
 ### 📉Plot contour graph
-Take a dataframe of an EEM matrice and plot a contour graph
+
+This function plots a contour graph.
 ```
 plot_3D_contour(eem, levels = 25, Normalisation = True)
 ```
- Plot an 3D contour graph with the folowing axes:
+ It plots an 3D contour graph with the folowing axes:
         - x: the emmited wavelenght in nm
         - y: the exitation wavelenght in nm
-        - z: the intensity in a.u or R.u depending if the data are normalised or not
+        - z: the intensity in a.u or R.u depending on the normalisation of the data (normalised or not)
 
-The number of levels showed in the graph can be changed by specify a number with levels = number. The default values of levels is set to 25. Note that a high levels value may affect the legibility of the graph. 
+This function has for argument the EEM matrix. The argument can be set to False if the function is called with an unnormalised EEM matrice. It allows to correctly label the fluorescence axes.
+
+The number of levels showed in the graph can be changed by specifying: number levels = number. The default values of levels is set to 25. It is important to note that high levels may affect the legibility of the graph. 
+
 The Normalisation argument can be specified to be False if the function is called with an non normalised EEM matrice. It allows to label correctly the fluorescence axes.
 
 ### 📉Plot an interactive contour graph 
