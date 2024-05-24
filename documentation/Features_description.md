@@ -160,36 +160,43 @@ plot_3D_contour(eem, levels = 25, Normalisation = True)
  It plots an 3D contour graph with the folowing axes:
         - x: the emmited wavelenght in nm
         - y: the exitation wavelenght in nm
-        - z: the intensity in a.u or R.u depending on the normalisation of the data (normalised or not)
+        - z: the intensity in a.u or R.u depending on the data normalisation  (normalised or not)
 
 This function has for argument the EEM matrix. The argument can be set to False if the function is called with an unnormalised EEM matrice. It allows to correctly label the fluorescence axes.
 
-The number of levels showed in the graph can be changed by specifying: number levels = number. The default values of levels is set to 25. It is important to note that high levels may affect the legibility of the graph. 
+The number of levels showed in the graph can be changed by specifying the number: levels = number. The default values of levels is set to 25. It is important to note that high levels may affect the legibility of the graph. 
 
-The Normalisation argument can be specified to be False if the function is called with an non normalised EEM matrice. It allows to label correctly the fluorescence axes.
+The normalisation argument can be set to False if the function is called with an unnormalised EEM matrice. It allows the correct labelling of the fluorescence axes.
 
 ### 📉Plot an interactive contour graph 
-Take a dataframe of an EEM matrice and plot an interactive contour graph
+
+This function plots an interactive contour graph.
 ```
 plot_3D_contour_inter(eem, levels = 30, Normalisation = True)
 ```
  Plot an 3D contour graph with the folowing axes:
         - x: the emmited wavelenght in nm
-        - y: the exitation wavelenght in nm
-        - z: the intensity in a.u or R.u depending if the data are normalised or not
+        - y: the excitation wavelenght in nm
+        - z: the intensity in a.u or R.u depending on the data normalisation (normalised or not)
 
-The number of levels showed in the graph can be changed by specify a number with levels = number. The default values of levels is set to 25. Note that a high levels value may affect the legibility of the graph. 
-The Normalisation argument can be specified to be False if the function is called with an non normalised EEM matrice. It allows to label correctly the fluorescence axes.
+This function has for argument the EEM matrix.
+
+The number of levels showed in the graph can be changed by specifying the number: levels = number. The default levels's value is set to 25. It is important to note that high levels may affect the legibility of the graph. 
+
+The normalisation argument can be set to False if the function is called with an unnormalised EEM matrice. It allows the correct labelling of the fluorescence axes.
 
 ### 📉Plot an interactive surface graph
-Take a dataframe of an EEM matrice and plot an interactive contour graph
+
+This function plots an interactive contour graph.
 ```
 plot_3D_surface_inter(eem, Normalisation = True)
 ```
  Plot an 3D surface interactive graph with the folowing axes:
         - x: the emmited wavelenght in nm
-        - y: the exitation wavelenght in nm
-        - z: the intensity in a.u or R.u depending if the data are normalised or not
+        - y: the excitation wavelenght in nm
+        - z: the intensity in a.u or R.u depending on the data normalisation (normalised or not)
 
-The Normalisation argument can be specified to be False if the function is called with an non normalised EEM matrice. It allows to label correctly the fluorescence axes.
+This function has for argument the EEM matrix.
+The normalisation argument can be set to False if the function is called with an unnormalised EEM matrice. It allows the correct labelling of the fluorescence axes.
+
 
