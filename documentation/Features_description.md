@@ -1,7 +1,7 @@
 # ⚡Fluorescence spectroscopy analysis⚡
 
 ## :warning: WARNING :warning:
-The dataframe containing the EEM matrice needs to be specifically standardised to ensure the proper package's functioning. Please refer to the [Implementation] https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/documentation/Implementation_of_a_new_file_format.md) to see the form required. 
+The dataframe containing the EEM matrice needs to be specifically standardised to ensure the proper package's functioning. Please refer to the [Implementation](https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/documentation/Implementation_of_a_new_file_format.md) to see the form required. 
 
 ## 💡Main features 💡
 
