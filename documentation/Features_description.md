@@ -21,7 +21,7 @@ For any other type of file, one could use the filepath from the read_eem functio
 
 ### 🧾EEM matrice normalisation
 
-This function normalises the EEM matrix according to the area of the Raman peak of water. The Raman peak of water is computed for 350 nm exitation waveleght and emission from 371 nm to 428 nm according to the following paper:
+This function normalises the EEM matrix according to the area of the Raman peak of water. The Raman peak of water is computed for 350 nm excitation and emission wavelengths from 371 nm to 428 nm according to the following paper:
     Lawaetz, A. J., & Stedmon, C. A. (2009). Fluorescence Intensity Calibration Using the Raman Scatter Peak of Water. Applied Spectroscopy, 63(8), 936-940. 
     https://journals.sagepub.com/doi/10.1366/000370209788964548
 ```
@@ -79,18 +79,18 @@ It is important to note that if the file is not under the excel format, the func
 
 **▶ Window to upload the excel file and dataframe display**
 
-This function handles the file upload process and displays the contents converted in DataFrame if it's an Excel file.
+This function handles the file upload process and displays the content converted in DataFrame (if it's an Excel file).
 
 ```
 _handle_upload()
 ```
 The function returns the filepath (str) or None if no file is selected.
 
-It is important to note that the function returns the filepath of any file regardless of its type; only a excel file's contents (converted in DataFrame) is displayed. 
+It is important to note that the function returns the filepath of any file regardless of its type; only a excel file's content (converted in DataFrame) is displayed. 
 
 **🔬 Content display and confirmation on the data display**
 
-The function displays the DataFrame (converted from the uploaded excel file) and asks the user's confirmation on the correct or incorrect dataframe display.
+The function displays the DataFrame (converted from the uploaded excel file) and asks the user's confirmation on the correct or incorrect DataFrame display.
 ```
 _process_excel_file()
 ```
