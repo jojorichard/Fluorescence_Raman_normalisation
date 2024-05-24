@@ -1,18 +1,18 @@
 # ⚡Fluorescence spectroscopy analysis⚡
 
 ## :warning: WARNING :warning:
-The dataframe containing the EEM matrice needs to be specifically standardised to ensure the proper package's functioning. Please refer to the [Implementation](https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/documentation/Implementation_of_a_new_file_format.md) to see the form required. 
+The dataframe containing the EEM matrice needs to be specifically standardised to ensure the proper package's functioning. Please refer to the [Implementation](https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/documentation/Implementation_of_a_new_file_format.md) to see the required form. 
 
 ## 💡Main features 💡
 
 ### 🔭 Read and standardise the spectrometer's Excel file
-The function reads a raw Excel file and rearrange the data in a DataFrame that can be read by the other function.
+This function reads a raw Excel file and arrange the data in a DataFrame that can be read by the other functions.
 ```
 read_excel(path = False)
 ```
-The function converts the excel file into dataframe by taking the pathfile form the read_eem function and converts it in a standardised dataframe.
-If there is an error while excecuting the read_eem function it is possible to input the path file manually by specifing it as follow  path ='user/username/example.xlsx'
-It is important to note that the present function only works  for excel files of a specific spectrometer.
+This function converts the excel file into a standardised DataFrame by taking the filepath from the read_eem function.
+If there is an error while excecuting the read_eem function, it is possible to manually enter the filepath (specified form: path ='user/username/example.xlsx'
+It is important to note that the present function only works for excel files of a specific form.
 
 For any other type of file, one could use the pathfile form the above function and converts it dataframe please refer to "Implementation of a new file format.md". 
 
