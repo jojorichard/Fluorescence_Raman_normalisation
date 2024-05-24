@@ -145,10 +145,11 @@ The integral is computed using the trapezoidal rule.
 
 ### 📐Raman normalisation
 
-Take a dataframe of an EEM matrice and the Area of the water raman peak calculated with the Area function and normalise the EEM matrice by dividing the values with the area.
+This functions normalises the EEM matrice by dividing the values by the area.
 ```
 Raman_normalisation(eem, Area)
 ```
+This functions has for arguments: EEM matrix converted into a DataFrame and the area of the water raman peak
 
 ### 📉Plot contour graph
 Take a dataframe of an EEM matrice and plot a contour graph
