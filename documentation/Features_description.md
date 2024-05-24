@@ -19,19 +19,20 @@ For any other type of file, one could use the pathfile from the read_eem functio
 
 ### 🧾EEM matrice normalisation
 
-This function normalises the EEM matrice according to the area of the Raman peak of water computed for 350 nm exitation waveleght and emission from 371 nm to 428 nm according to the following paper:
+This function normalises the EEM matrix according to the area of the Raman peak of water computed for 350 nm exitation waveleght and emission from 371 nm to 428 nm according to the following paper:
     Lawaetz, A. J., & Stedmon, C. A. (2009). Fluorescence Intensity Calibration Using the Raman Scatter Peak of Water. Applied Spectroscopy, 63(8), 936-940. 
     https://journals.sagepub.com/doi/10.1366/000370209788964548
 ```
 fluo_raman_norm(eem, blank = False)
 ```
+This function has for arguments the EEM matrix converted into a DataFrame. 
 It can, optionally consider the blank measure.
 
 This function calls two other functions : Area and Raman_normalisation (described below).
 
 ### ✂️Remove Rayleigh scattering of first and/or second order
 
-This function takes the standardised DataFrame removes the Rayleigh scattering.
+This function has for argument the standardised DataFrame removes the Rayleigh scattering.
 The Rayleigh scatteing are removed according the following paper:	Anal. Methods, 2013,5, 6557-6566, https://pubs.rsc.org/en/content/articlelanding/2013/ay/c3ay41160e
 ```
 remove_rayleigh_scattering(eem, order=1, width=10)
@@ -100,7 +101,7 @@ The message is written in green at the botton of the upload window.
 
 This function is called in _handle_upload() function.
 
-**✅ Successful upload for non excel files**
+**✅ Successful upload for non-excel files**
 
 The function displays "successful upload" in the GUI upon successful for non-Excel files in the GUI.
 ```
@@ -122,7 +123,7 @@ This function is called in _handle_upload() function.
 
 **🎥 Filepath print**
 
-The function prints the filepath to the console oncce the file is uploaded.
+The function prints the filepath to the console once the file is uploaded.
 ```
 print_file_path()
 ```   
@@ -130,16 +131,20 @@ It is important to check whether the correct filepath was printed to ensure a sm
 
 
 ### 🧮Calculation of the area of water's Raman peak
-Take a dataframe of an EEM matrice or a blank and calculate the Area of the water Raman peak computed for 350 nm exitation waveleght and emission from 371 nm to 428 nm according to the following paper:
+
+This functions calculates the area of the water's Raman peak computed for 350 nm excitation wavelenght, and emission from 371 nm to 428 nm, according to the following paper:
     Lawaetz, A. J., & Stedmon, C. A. (2009). Fluorescence Intensity Calibration Using the Raman Scatter Peak of Water. Applied Spectroscopy, 63(8), 936-940.
     https://journals.sagepub.com/doi/10.1366/000370209788964548
 ```
 Area(eem, blank = False)
 ```
-If the blank (water) is on a other file the file can be load in a dataframe and specified as follow blank = DataFrame
+This functions has for arguments: EEM matrice converted into a DataFrame and the blank.
+If the blank (water) is in another file, it can be uploaded and converted into a DataFrame and specified as follow: blank = DataFrame
+
 The integral is computed using the trapezoidal rule.
 
 ### 📐Raman normalisation
+
 Take a dataframe of an EEM matrice and the Area of the water raman peak calculated with the Area function and normalise the EEM matrice by dividing the values with the area.
 ```
 Raman_normalisation(eem, Area)
