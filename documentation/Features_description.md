@@ -14,7 +14,7 @@ This function converts the excel file into a standardised DataFrame by taking th
 If there is an error while excecuting the read_eem function, it is possible to manually enter the filepath (specified form: path ='user/username/example.xlsx'
 It is important to note that the present function only works for excel files of a specific form.
 
-For any other type of file, one could use the pathfile form the above function and converts it dataframe please refer to "Implementation of a new file format.md". 
+For any other type of file, one could use the pathfile from the read_eem function and create a new function to convert file into a standardised DataFrame. Please refer to [Implementation](https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/documentation/Implementation_of_a_new_file_format.md). 
 
 ### 🧾Normalisation of an EEM matrice
 Take a dataframe of an EEM matrice and optionally a blank and normalise the EEM matrice according to the Area of the Raman peak of water computed for 350 nm exitation waveleght and emission from 371 nm to 428 nm according to the following paper:
