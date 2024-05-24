@@ -64,6 +64,7 @@ read_eem()
 ```   
 The function (containing 6 sub-functions) opens a Tkinter window for selecting an Excel file, displays its contents in DataFrame, 
 and asks the user for confirmation on the data display.✅ ❌
+
 It is important to note that if the file is not under the excel format, the function will only return the path without displaying its contents.
 
 **▶ Window to upload the excel file and dataframe display**
@@ -79,11 +80,11 @@ It is important to note that the function returns the filepath of any file regar
 
 **🔬 Content display and confirmation on the data display**
 
-The function displays the dataframe (converted from the uploaded excel file) and asks the user's confirmation on the correct or incorrect dataframe display.
+The function displays the DataFrame (converted from the uploaded excel file) and asks the user's confirmation on the correct or incorrect dataframe display.
 ```
 _process_excel_file()
 ```
-This function is called in the _handle_upload() function above. It asks the user's confirmation (yes/no) before continuing reading the code.
+This function is called in the _handle_upload() function above. It asks the user's confirmation (yes/no) before continuing the code.
 
 It is important to note that a ValueError is raised if the user's answer is "no" as the code left will not work appropriately.
 
