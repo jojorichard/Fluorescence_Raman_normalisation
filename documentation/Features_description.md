@@ -12,7 +12,9 @@ This function reads a raw Excel file and arrange the data in a DataFrame that ca
 read_excel(path = False)
 ```
 This function converts the excel file into a standardised DataFrame by taking the filepath from the read_eem function.
+
 If there is an error while excecuting the read_eem function, it is possible to manually enter the filepath (specified form: path ='user/username/example.xlsx')
+
 It is important to note that the present function only works for excel files of a specific form.
 
 For any other type of file, one could use the pathfile from the read_eem function and create a new function to convert file into a standardised DataFrame. Please refer to [Implementation](https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/documentation/Implementation_of_a_new_file_format.md). 
