@@ -23,7 +23,7 @@ git clone https://github.com/jojorichard/Fluorescence_Raman_normalisation.git .
 ```
 Then add and commit changes as usual. 
 
-Contributions from third parties are welcomed. Indeed, the implementation of a new function reading new file formats would be greatly be appreciated. To see how to implement it, please refer to "Implementation of a new file format" in the documentation section.
+Contributions from third parties are welcomed. Indeed, the implementation of a new function reading new file formats would be greatly be appreciated. To see how to implement it, please refer to [Implementation](https://github.com/jojorichard/Fluorescence_Raman_normalisation/blob/main/documentation/Implementation_of_a_new_file_format.md) in the documentation section.
 
 ## 🔎 Run test and coverage
 ```
