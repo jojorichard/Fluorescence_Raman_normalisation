@@ -21,14 +21,15 @@ For any other type of file, one could use the filepath from the read_eem functio
 
 ### 🧾EEM matrice normalisation
 
-This function normalises the EEM matrix according to the area of the Raman peak of water computed for 350 nm exitation waveleght and emission from 371 nm to 428 nm according to the following paper:
+This function normalises the EEM matrix according to the area of the Raman peak of water. The Raman peak of water is computed for 350 nm exitation waveleght and emission from 371 nm to 428 nm according to the following paper:
     Lawaetz, A. J., & Stedmon, C. A. (2009). Fluorescence Intensity Calibration Using the Raman Scatter Peak of Water. Applied Spectroscopy, 63(8), 936-940. 
     https://journals.sagepub.com/doi/10.1366/000370209788964548
 ```
 fluo_raman_norm(eem, blank = False)
 ```
-This function has for arguments the EEM matrix converted into a DataFrame. 
-It can, optionally consider the blank measure.
+This function has for argument the EEM matrix (converetd into a DataFrame).
+
+Optionnaly, the function can consider the blank measure.
 
 This function calls two other functions : Area and Raman_normalisation (described below).
 
