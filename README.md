@@ -37,15 +37,6 @@ Contributions from third parties are welcomed. Indeed, the implementation of a n
 (conda_env) $ tox
 ```
 
-## 🔌 Generate coverage badge
-
-The coverage badge works after running tox.
-```
-(conda_env) $ pip install "genbadge[coverage]"
-(conda_env) $ genbadge coverage -i coverage.xml
-```
-
-
 ## 📫 Reaching us 
 
 Justine Serra : justine.serratosio@gmail.com
