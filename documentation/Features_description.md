@@ -183,9 +183,9 @@ This function plots an interactive contour graph.
 plot_3D_contour_inter(eem, levels = 30, Normalisation = True)
 ```
  Plot an 3D contour graph with the following axes:
-        - x: the emitted wavelenght in nm
-        - y: the excitation wavelenght in nm
-        - z: the intensity in a.u or R.u depending on the data normalisation (normalised or not)
+ - x: the emitted wavelenght in nm
+ - y: the excitation wavelenght in nm
+ - z: the intensity in a.u or R.u depending on the data normalisation (normalised or not)
 
 This function has for argument the EEM matrix.
 
