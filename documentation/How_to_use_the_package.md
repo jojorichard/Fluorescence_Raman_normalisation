@@ -84,7 +84,7 @@ eem_norm_Removed_Rscattering = remove_rayleigh_scattering(eem_norm, order='both'
 
 ### 4) Plot several graphs
 
-### 2D graphs
+#### 2D graphs
  ```
 from EEM import plot_fluorescence_graph
 from EEM import plot_superimposed_graphs
@@ -125,7 +125,7 @@ plot_3D_surface_inter(eem, Normalisation = False)
 ```
 ![Surface_3D_non_norm](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/f43e98ef-3fbe-450e-9e13-4468f3cf365b)
 
-### 3D interactive contour plot
+#### 3D interactive contour plot
  ```
 from EEM import plot_3D_contour_inter
 ```
@@ -134,7 +134,7 @@ plot_3D_contour_inter(eem_norm_Removed_Rscattering)
 ```
 ![Contour_inter_normaliser](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/8f2d6b3e-65e4-41af-9a55-0e83b4027e6a)
 
-### 3D contour plot
+#### 3D contour plot
  ```
 from EEM import plot_3D_contour
 ```
@@ -143,13 +143,13 @@ plot_3D_contour(eem_norm_Removed_Rscattering)
 ```
 ![Contour_normaliser](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/b91dddd1-342a-4737-8dff-70fc92fc4425)
 
- #### With levels = 10 (default 25)
+ ##### With levels = 10 (default 25)
  ```
 plot_3D_contour(eem_norm_Removed_Rscattering, levels = 10)
 ```
  ![graph](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/184e07d6-69d4-42f8-9954-74d8edea04d5)
 
-#### With levels = 100
+##### With levels = 100
 ```
 plot_3D_contour(eem_norm_Removed_Rscattering, levels = 100)
 ```
