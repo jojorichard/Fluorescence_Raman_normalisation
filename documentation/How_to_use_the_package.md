@@ -98,7 +98,7 @@ Expected graph with one curve:
 ```
 plot_fluorescence_graph(eem)
 ```
-![Capture d'écran 2024-05-23 165402](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/f11c8d96-2487-41c7-bb9e-c405dd49e496)
+![2D graphs](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/f11c8d96-2487-41c7-bb9e-c405dd49e496)
 
 Expected graph with superimposed curves (with all values in the same file):
 ```
@@ -110,7 +110,7 @@ eem = read_excel()
 eem1 = fluo_raman_norm(eem)
 plot_superimposed_graphs(eem, eem1 = eem1)
 ```
-![Capture d'écran 2024-05-23 164628](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/9f74d508-8a74-4085-8c4e-1b309c18bb76)
+![2D superimposed graphs](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/9f74d508-8a74-4085-8c4e-1b309c18bb76)
 
 
 #### 3D Surface plot
@@ -122,6 +122,8 @@ If normalised:
 plot_3D_surface_inter(eem_norm_Removed_Rscattering)
 ```
 ![Surface_3D_normaliser](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/bb81fea8-7f79-447c-95d3-a86e67a2bf86)
+![Surface_3D_normaliser](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/fa6ad6fe-754c-4072-bac6-1f675737f42e)
+
 
 If not normalised (this argument is valid for every 3D functions):
 ```
@@ -129,6 +131,8 @@ eem = remove_rayleigh_scattering(eem_norm_Removed_Rscattering, order='both')
 plot_3D_surface_inter(eem, Normalisation = False)
 ```
 ![Surface_3D_non_norm](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/f43e98ef-3fbe-450e-9e13-4468f3cf365b)
+![Surface_3D_non_norm](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/04d9ed36-5628-4152-a259-4300ce80ca4d)
+
 
 #### 3D interactive contour plot
  ```
@@ -138,6 +142,8 @@ from EEM import plot_3D_contour_inter
 plot_3D_contour_inter(eem_norm_Removed_Rscattering)
 ```
 ![Contour_inter_normaliser](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/8f2d6b3e-65e4-41af-9a55-0e83b4027e6a)
+![Contour_inter_normaliser](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/c662ce02-6209-4d1e-a3bf-b36c7f526828)
+
 
 #### 3D contour plot
  ```
@@ -147,18 +153,23 @@ from EEM import plot_3D_contour
 plot_3D_contour(eem_norm_Removed_Rscattering)
 ```
 ![Contour_normaliser](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/b91dddd1-342a-4737-8dff-70fc92fc4425)
+![Contour_normaliser](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/047d55c0-ef50-47b0-a832-ce16c3485770)
+
 
  With levels = 10 (default 25):
  ```
 plot_3D_contour(eem_norm_Removed_Rscattering, levels = 10)
 ```
  ![graph](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/184e07d6-69d4-42f8-9954-74d8edea04d5)
+ ![graph](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/025fb11a-c305-4495-96af-317f9d3d482f)
+
 
 With levels = 100:
 ```
 plot_3D_contour(eem_norm_Removed_Rscattering, levels = 100)
 ```
 ![graph](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/353d7146-4b1c-4b12-994b-5aadc130c6d8)
+![graph](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/5dbe4e3a-7153-4b93-90e3-b32652e5a0ae)
 
 
 
