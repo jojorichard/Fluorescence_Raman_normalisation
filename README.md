@@ -19,7 +19,7 @@ Creating a new environment before installing the present package is recommended 
 pip install git+https://github.com/jojorichard/Fluorescence_Raman_normalisation.git
 ```
 To install it, you can copy paste the command above in your terminal or anaconda prompt depending on your computer.
-# Import package
+### Import package
 ```
 import EEM
 ```
