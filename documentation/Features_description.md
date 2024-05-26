@@ -64,7 +64,7 @@ This function plots a superposition of several excited wavelenghts on a standard
  ```    
 plot_superimposed_graphs(eem, eem1 = False, eem2 = False, eem3 = False, eem4 = False, eem5 = False, eem6 = False)
 ``` 
-This function prompts the user to enter the values for every curves. Then, it collects the excited wavelengths of interest to label the graph. It plots a static graph and, if wanted, an interactive graph showing the superimposed curves.
+This function prompts the user to enter the values for every curves. Then, it collects the excited wavelengths of interest to label the graph. These values may be located in the same file or in different files. It finally plots a static graph and, if wanted, an interactive graph showing the superimposed curves.
 
 ### 💫 File's upload 
 
