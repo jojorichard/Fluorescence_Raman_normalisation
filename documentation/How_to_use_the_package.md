@@ -116,9 +116,9 @@ If normalised:
 ```
 plot_3D_surface_inter(eem_norm_Removed_Rscattering)
 ```
-If not normalised (this argument is valid for every 3D functions):
 ![Surface_3D_normaliser](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/bb81fea8-7f79-447c-95d3-a86e67a2bf86)
 
+If not normalised (this argument is valid for every 3D functions):
 ```
 eem = remove_rayleigh_scattering(eem_norm_Removed_Rscattering, order='both')
 plot_3D_surface_inter(eem, Normalisation = False)
