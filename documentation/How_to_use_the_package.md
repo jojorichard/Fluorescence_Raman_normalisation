@@ -17,13 +17,18 @@ plot_3D_contour(eem_norm_Removed_Rscattering)
 ## Pocedure
 ### 1) Upload the EEM matrice (file's data)
 #### Example with an excel file
-
+```
+from EEM import read_excel
+```
 ```
 eem = read_excel()
 ```
 ![1) Popup to upload a file](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/7c6659a7-ebd5-45e2-9a22-ae398a53ba9f)
 
  ### 2) EEM matrice's normalisation
+ ```
+from EEM import fluo_raman_norm
+```
  #### If the blank is included in the file (eem):
 
  ```
@@ -46,6 +51,9 @@ eem = read_excel()
 | 352       | 0.0011124  | 0.0022865  | 0.0031589  | 0.0043866  | 0.0056515  | 0.0065596  | 0.0079579  | 0.0087859  | 0.00886    | 0.007912   | 0.0078569  |
 
 ### 3) Optional: Remove Rayleigh scattering. (Recommanded before plotting)
+ ```
+from EEM import remove_rayleigh_scattering
+```
 #### First order
 ```
 eem_norm_Removed_Rscattering = remove_rayleigh_scattering(eem_norm, order=1)
@@ -77,6 +85,10 @@ eem_norm_Removed_Rscattering = remove_rayleigh_scattering(eem_norm, order='both'
 ### 4) Plot several graphs
 
 ### 2D graphs
+ ```
+from EEM import plot_fluorescence_graph
+from EEM import plot_superimposed_graphs
+```
 Expected graph with one curve
 ```
 plot_fluorescence_graph(eem)
@@ -97,6 +109,9 @@ plot_superimposed_graphs(eem, eem1 = eem1, eem2 = False, eem3 = False, eem4 = Fa
 
 
 #### 3D Surface plot
+ ```
+from EEM import plot_3D_surface_inter
+```
 If normalised:
 ```
 plot_3D_surface_inter(eem_norm_Removed_Rscattering)
@@ -111,12 +126,18 @@ plot_3D_surface_inter(eem, Normalisation = False)
 ![Surface_3D_non_norm](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/f43e98ef-3fbe-450e-9e13-4468f3cf365b)
 
 ### 3D interactive contour plot
+ ```
+from EEM import plot_3D_contour_inter
+```
 ```
 plot_3D_contour_inter(eem_norm_Removed_Rscattering)
 ```
 ![Contour_inter_normaliser](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/8f2d6b3e-65e4-41af-9a55-0e83b4027e6a)
 
 ### 3D contour plot
+ ```
+from EEM import plot_3D_contour
+```
 ```
 plot_3D_contour(eem_norm_Removed_Rscattering)
 ```
