@@ -68,27 +68,22 @@ eem_norm_Removed_Rscattering = remove_rayleigh_scattering(eem_norm, order='both'
 ```
 
 Expected graph after removing the Rayleigh scattering:
-![Contour_avec_rayleight](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/dc6b63a2-0a5b-4a90-995b-48cda94bc0d0)
 ![Contour_avec_rayleight](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/b5c398f0-6a77-4ef2-8ee6-5b1a8e8a1982)
 
 
 Expected graph without removing the first-order Rayleigh scattering:
-![Contour_sans_rayleight_1](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/1d498a4b-be16-43b3-9f55-55557b6fa396)
 ![Contour_sans_rayleight_1](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/51c6eb9c-b0d7-45f0-9c32-72e947a0d8f6)
 
 
 Expected graph after removing the second-order Rayleigh scattering:
-![newplot (1)](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/66179bdb-a3d9-4f35-8f8c-ea9bbaf27ef8)
 ![newplot (1)](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/e963f7f0-9b4d-477b-a233-0d2dea92bd66)
 
 
 Expected graph after removing the Rayleigh scattering (removed strip's width = 50 (default = 10)):
-![Width_50](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/879d659d-1a0c-4d46-9943-2ee854212e7c)
 ![Width_50](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/e1fc636a-495c-4555-9085-ccc6a8f967b4)
 
 
 Expected graph after removing the Rayleigh scattering (removed strip's width = 5 (default = 10)):
-![newplot (2)](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/08e896af-6f23-4d1a-84f0-63ee67b6ffa7)
 ![newplot (2)](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/0c09c6e6-915e-4589-a5c7-07e2b00fb1f4)
 
 
