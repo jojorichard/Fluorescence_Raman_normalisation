@@ -148,7 +148,7 @@ This functions calculates the area of the water's Raman peak computed for 350 nm
 Area(eem, blank = False)
 ```
 This functions has for arguments: EEM matrix converted into a DataFrame and the blank.
-If the blank (water) is in another file, it can be uploaded and converted into a DataFrame and specified as follow: blank = DataFrame
+If the blank (water) is in another file, it can be uploaded and converted into a DataFrame and specified as follow: blank = DataFrame.
 
 The integral is computed using the trapezoidal rule.
 
