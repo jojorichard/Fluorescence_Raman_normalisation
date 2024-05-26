@@ -50,7 +50,7 @@ from EEM import fluo_raman_norm
 | 351.5     | 0.0011135  | 0.0022734  | 0.0030723  | 0.0044049  | 0.0056659  | 0.0065027  | 0.0079862  | 0.0089206  | 0.0089053  | 0.0079954  | 0.0079835  |
 | 352       | 0.0011124  | 0.0022865  | 0.0031589  | 0.0043866  | 0.0056515  | 0.0065596  | 0.0079579  | 0.0087859  | 0.00886    | 0.007912   | 0.0078569  |
 
-### 3) Optional: Remove Rayleigh scattering. (Recommanded before plotting)
+### 3) Optional: Remove Rayleigh scattering (Recommanded before plotting)
  ```
 from EEM import remove_rayleigh_scattering
 ```
