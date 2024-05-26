@@ -97,13 +97,13 @@ plot_fluorescence_graph(eem)
 
 Expected graph with superimposed curves (values in the same file)
 ```
-plot_superimposed_graphs(eem, eem1 = False, eem2 = False, eem3 = False, eem4 = False, eem5 = False, eem6 = False)
+plot_superimposed_graphs(eem)
 ```
 Expected graph with superimposed curve (values in two different files)
 ```
 eem = read_excel()
 eem1 = fluo_raman_norm(eem)
-plot_superimposed_graphs(eem, eem1 = eem1, eem2 = False, eem3 = False, eem4 = False, eem5 = False, eem6 = False)
+plot_superimposed_graphs(eem, eem1 = eem1)
 ```
 ![Capture d'écran 2024-05-23 164628](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/9f74d508-8a74-4085-8c4e-1b309c18bb76)
 
@@ -144,9 +144,15 @@ plot_3D_contour(eem_norm_Removed_Rscattering)
 ![Contour_normaliser](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/b91dddd1-342a-4737-8dff-70fc92fc4425)
 
  #### With levels = 10 (default 25)
+ ```
+plot_3D_contour(eem_norm_Removed_Rscattering, levels = 10)
+```
  ![graph](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/184e07d6-69d4-42f8-9954-74d8edea04d5)
 
 #### With levels = 100
+```
+plot_3D_contour(eem_norm_Removed_Rscattering, levels = 100)
+```
 ![graph](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/353d7146-4b1c-4b12-994b-5aadc130c6d8)
 
 
