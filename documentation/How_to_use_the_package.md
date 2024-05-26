@@ -89,17 +89,17 @@ eem_norm_Removed_Rscattering = remove_rayleigh_scattering(eem_norm, order='both'
 from EEM import plot_fluorescence_graph
 from EEM import plot_superimposed_graphs
 ```
-Expected graph with one curve
+Expected graph with one curve:
 ```
 plot_fluorescence_graph(eem)
 ```
 ![Capture d'écran 2024-05-23 165402](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/f11c8d96-2487-41c7-bb9e-c405dd49e496)
 
-Expected graph with superimposed curves (values in the same file)
+Expected graph with superimposed curves (with all values in the same file):
 ```
 plot_superimposed_graphs(eem)
 ```
-Expected graph with superimposed curve (values in two different files)
+Expected graph with superimposed curve (with values in two different files):
 ```
 eem = read_excel()
 eem1 = fluo_raman_norm(eem)
