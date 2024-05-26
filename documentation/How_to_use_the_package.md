@@ -143,13 +143,13 @@ plot_3D_contour(eem_norm_Removed_Rscattering)
 ```
 ![Contour_normaliser](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/b91dddd1-342a-4737-8dff-70fc92fc4425)
 
- ##### With levels = 10 (default 25)
+ With levels = 10 (default 25):
  ```
 plot_3D_contour(eem_norm_Removed_Rscattering, levels = 10)
 ```
  ![graph](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160777950/184e07d6-69d4-42f8-9954-74d8edea04d5)
 
-##### With levels = 100
+With levels = 100:
 ```
 plot_3D_contour(eem_norm_Removed_Rscattering, levels = 100)
 ```
