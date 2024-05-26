@@ -1,7 +1,9 @@
 # How do you use the package?
 
 ## Example
-
+```
+import EEM
+```
 ```
 eem = read_excel() # another read function
 eem_norm = fluo_raman_norm(eem)
@@ -15,6 +17,7 @@ plot_3D_contour(eem_norm_Removed_Rscattering)
 ## Pocedure
 ### 1) Upload the EEM matrice (file's data)
 #### Example with an excel file
+
 ```
 eem = read_excel()
 ```
@@ -22,10 +25,12 @@ eem = read_excel()
 
  ### 2) EEM matrice's normalisation
  #### If the blank is included in the file (eem):
+
  ```
  eem_norm = fluo_raman_norm(eem)
 ```
 #### If the blank is in another file:
+
  ```
  blank = read_excel()
  eem_norm = fluo_raman_norm(eem, blank = blank)
