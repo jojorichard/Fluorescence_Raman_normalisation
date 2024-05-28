@@ -67,7 +67,7 @@ eem_norm_Removed_Rscattering = remove_rayleigh_scattering(eem_norm, order=2)
 eem_norm_Removed_Rscattering = remove_rayleigh_scattering(eem_norm, order='both')
 ```
 #### Both order but with different widht 
-you need to call the function two time as follow:
+The function need to be called two time as follow:
 ```
 eem_norm_Removed_Rscattering1 = remove_rayleigh_scattering(eem_norm, width = 15 ,order=1)
 
