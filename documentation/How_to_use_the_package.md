@@ -66,6 +66,13 @@ eem_norm_Removed_Rscattering = remove_rayleigh_scattering(eem_norm, order=2)
 ```
 eem_norm_Removed_Rscattering = remove_rayleigh_scattering(eem_norm, order='both')
 ```
+#### Both order but with different widht 
+you need to call the function two time as follow:
+```
+eem_norm_Removed_Rscattering1 = remove_rayleigh_scattering(eem_norm, width = 15 ,order=1)
+
+eem_norm_Removed_Rscattering = remove_rayleigh_scattering(eem_norm_Removed_Rscattering1, width = 20 ,order=2)
+```
 
 Expected graph after removing the Rayleigh scattering:
 ![Contour_avec_rayleight](https://github.com/jojorichard/Fluorescence_Raman_normalisation/assets/160879372/b5c398f0-6a77-4ef2-8ee6-5b1a8e8a1982)
