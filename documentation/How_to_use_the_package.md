@@ -5,13 +5,13 @@
 import EEM
 ```
 ```
-eem = read_excel() # another read function
-eem_norm = fluo_raman_norm(eem)
-eem_norm_Removed_Rscattering = remove_rayleigh_scattering(eem_norm, order='both')
+eem = EEM.read_excel() # another read function
+eem_norm = EEM.fluo_raman_norm(eem)
+eem_norm_Removed_Rscattering = EEM.remove_rayleigh_scattering(eem_norm, order='both')
 
-plot_3D_surface_inter(eem_norm_Removed_Rscattering)
-plot_3D_contour_inter(eem_norm_Removed_Rscattering)
-plot_3D_contour(eem_norm_Removed_Rscattering)
+EEM.plot_3D_surface_inter(eem_norm_Removed_Rscattering)
+EEM.plot_3D_contour_inter(eem_norm_Removed_Rscattering)
+EEM.plot_3D_contour(eem_norm_Removed_Rscattering)
 ```
 
 ## Pocedure
