@@ -180,7 +180,7 @@ def Area(eem, blank = False):
     dif = np.diff(raman['EmWl [nm]']) #Calculating the high of the trapezoid
     fluo_avg = (raman[350][:-1] + raman[350][1:]) / 2  #Calculating the base of the trapezoid
     A = np.sum(dif[0] * fluo_avg) #Computing the integral with the trapezoidal rule
-    print(f'Raman scatter peak's area of water: {A}')
+    print(f"Raman scatter peak's area of water: {A}")
     return A
 
 
