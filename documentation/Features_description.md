@@ -21,7 +21,7 @@ For any other type of file, one could use the filepath from the read_eem functio
 
 ### 🧾EEM matrice normalisation
 
-This function normalises the EEM matrix according to the area of the Raman peak of water. The Raman peak of water is computed for 350 nm excitation and emission wavelengths from 371 nm to 428 nm according to the following paper:
+This function normalises the EEM matrix according to the area of the Raman scatter peak of water. The Raman scatter peak of water is computed for 350 nm excitation and emission wavelengths from 371 nm to 428 nm according to the following paper:
     Lawaetz, A. J., & Stedmon, C. A. (2009). Fluorescence Intensity Calibration Using the Raman Scatter Peak of Water. Applied Spectroscopy, 63(8), 936-940. 
     https://journals.sagepub.com/doi/10.1366/000370209788964548
 ```
@@ -139,9 +139,9 @@ print_file_path()
 It is important to check whether the correct filepath was printed to ensure a smooth continuation.
 
 
-### 🧮Calculation of the area of water's Raman peak
+### 🧮Calculation of Raman scatter peak's area of water
 
-This functions calculates the area of the water's Raman peak computed for 350 nm excitation wavelenght, and emission from 371 nm to 428 nm, according to the following paper:
+This functions calculates the Raman scatter peak's area of water computed for 350 nm excitation wavelenght, and emission from 371 nm to 428 nm, according to the following paper:
     Lawaetz, A. J., & Stedmon, C. A. (2009). Fluorescence Intensity Calibration Using the Raman Scatter Peak of Water. Applied Spectroscopy, 63(8), 936-940.
     https://journals.sagepub.com/doi/10.1366/000370209788964548
 ```
@@ -158,7 +158,7 @@ This functions normalises the EEM matrice by dividing the values by the area.
 ```
 Raman_normalisation(eem, Area)
 ```
-This functions has for arguments: EEM matrix converted into a DataFrame and the area of the raman water peak.
+This functions has for arguments: EEM matrix converted into a DataFrame and the Raman scatter peak's area of water.
 
 ### 📉Plot contour graph
 
