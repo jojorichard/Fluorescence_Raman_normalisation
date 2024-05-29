@@ -40,7 +40,7 @@ from EEM import fluo_raman_norm
  blank = read_excel()
  eem_norm = fluo_raman_norm(eem, blank = blank)
  ```
- The normalised EEM matrix is saved in an excel file called "normalised_Ramnan.xlsx" in the following form. The corresponding DataFrame is returned as shown below:
+ The normalised EEM matrix is saved in an excel file called "normalised_Raman.xlsx" in the following form. The corresponding DataFrame is returned as shown below:
  
  | EmWl [nm] | 250        | 255        | 260        | 265        | 270        | 275        | 280        | 285        | 290        | 295        | 300        |
 | --------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
