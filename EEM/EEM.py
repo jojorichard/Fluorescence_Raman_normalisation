@@ -167,38 +167,38 @@ def Area(eem, blank = False):
 
     Args: 
      - eem: dataframe containing the eem matrice created with de read_eem function
-     -  blank: False by default. Can be initialised with a eem containing the blank. The eem need to be in the particular form specified in the Readme
+     - blank: False by default. Can be initialised with a eem containing the blank. The eem need to be in the particular form specified in the Readme
 
     Returns:
-        - Arp the Area of the water Raman peak calculated using the trapezoidal rule
+        - Arp the Area Raman scatter peak of water calculated using the trapezoidal rule
     '''
     
     if blank == False:  #check if a blank were input and if not setup the blank to be eem
         blank = eem
         
-    raman = blank.loc[(blank['EmWl [nm]'] >= 371) & (blank['EmWl [nm]'] <= 428)] # Create a view of the DataFrame containing only the Raman peak of water 
+    raman = blank.loc[(blank['EmWl [nm]'] >= 371) & (blank['EmWl [nm]'] <= 428)] # Create a view of the DataFrame containing only the Raman scatter peak of water 
     dif = np.diff(raman['EmWl [nm]']) #Calculating the high of the trapezoid
     fluo_avg = (raman[350][:-1] + raman[350][1:]) / 2  #Calculating the base of the trapezoid
     A = np.sum(dif[0] * fluo_avg) #Computing the integral with the trapezoidal rule
-    print(f'Area of water Raman peak: {A}')
+    print(f'Raman scatter peak's area of water: {A}')
     return A
 
 
 def Raman_normalisation(eem, Area):
     '''
-    Normalise all the fluorecence values in each exitation waveleght with the area of the Raman peak computed in the Area function and create a new files with the normalised values
+    Normalise all the fluorecence values in each exitation waveleght with Raman scatter peak's area of water computed in the Area function and create a new files with the normalised values
     
     Args:  
     - eem: dataframe containing the eem matrice created with de read_eem function
     - Area: a dataframe containing the wavelenght exitation in each collumn and the associaced Raman Area
     
     Returns: 
-        - A dataframe containing the normalised matrice
+    - A dataframe containing the normalised matrice
     '''
  
     columns_of_interest = eem.columns[1:] 
     normalised = eem.copy() #Create a copy of the Dataframe which will be normalised
-    normalised[columns_of_interest] = eem[columns_of_interest].div(Area) #Normalisation of the values with de area of the water Raman peak
+    normalised[columns_of_interest] = eem[columns_of_interest].div(Area) #Normalisation of the values with Raman scatter peak's area of waterxx
     normalised.to_excel('normalised_Raman.xlsx', index=False) #Creation of a excel files with the normalised values
     return normalised #Return the normalised DataFrame. Convinient for plot. 
 
