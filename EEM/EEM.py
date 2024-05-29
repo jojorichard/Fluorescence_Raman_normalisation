@@ -198,7 +198,7 @@ def Raman_normalisation(eem, Area):
  
     columns_of_interest = eem.columns[1:] 
     normalised = eem.copy() #Create a copy of the Dataframe which will be normalised
-    normalised[columns_of_interest] = eem[columns_of_interest]/Area #Normalisation of the values with Raman scatter peak's area of waterxx
+    normalised[columns_of_interest] = eem[columns_of_interest].div(Area) #Normalisation of the values with Raman scatter peak's area of waterxx
     normalised.to_excel('normalised_Raman.xlsx', index=False) #Creation of a excel files with the normalised values
     return normalised #Return the normalised DataFrame. Convinient for plot. 
 
